@@ -1,20 +1,33 @@
 import express from 'express';
 
-import { createCart ,getcart,deleteCartById} from '../db/Cart.js';
+import { createCart ,getcart,getcartByuserid,deleteCartById} from '../db/Cart.js';
 
 export const addtocart = async (req, res) => {
     try {
-      const { productid, userid,image,title,price } = req.body;
+      const { productid,title,color,gender,size,price,image,description,userid,category,subcategory,subcategory1,} = req.body;
       if (!productid || !userid) {
+        return res.sendStatus(400);
+      }
+
+      const existingcart = await getcartByuserid(title);
+  
+      if (existingcart) {
         return res.sendStatus(400);
       }
 
       const user  = await createCart({
         productid,
-        userid,
-        image,
         title,
-        price
+color,
+gender,
+size,
+price,
+image,
+description,
+userid,
+category,
+subcategory,
+subcategory1,
       });
       return res.status(200).json(user).end();
     } catch (error) {
