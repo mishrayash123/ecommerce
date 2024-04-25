@@ -13,6 +13,7 @@ const UserSchema = new mongoose.Schema({
   category: { type: String, required: true },
   subcategory: { type: String, required: true },
   subcategory1: { type: String, required: true },
+  details: { type: String, required: true },
 });
 
  export const UserModel = mongoose.model('products', UserSchema);
