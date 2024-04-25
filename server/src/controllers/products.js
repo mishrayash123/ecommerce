@@ -4,7 +4,7 @@ import {createproducts ,getproductsById,getproducts,deleteproductsById, getprodu
 
 export const addtoproducts = async (req, res) => {
     try {
-      const {title,color,gender,size,price,image,description,userid,category,subcategory,subcategory1,} = req.body;
+      const {title,details,color,gender,size,price,image,description,userid,category,subcategory,subcategory1,} = req.body;
       if (!title) {
         return res.sendStatus(400);
       }
@@ -17,6 +17,7 @@ export const addtoproducts = async (req, res) => {
 
       const user  = await createproducts({
         title,
+        details,
 color,
 gender,
 size,
