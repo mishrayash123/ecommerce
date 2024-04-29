@@ -25,6 +25,18 @@ import CARTPAGE1 from "./pages/CARTPAGE1";
 import LOGIN from "./pages/LOGIN";
 import LOGIN1 from "./pages/LOGIN1";
 import Frame from "./pages/Frame";
+import TRACKORDER from "./pages/TRACKORDER";
+import PaymentPage from "./pages/PaymentPage";
+import AFTERADDRESSPAGE from "./pages/AFTERADDRESSPAGE";
+import PROFILE from "./pages/PROFILE";
+import Dashboard6 from "./pages/Dashboard6";
+import Dashboard5 from "./pages/Dashboard5";
+import Dashboard4 from "./pages/Dashboard4";
+import Dashboard3 from "./pages/Dashboard3";
+import TRACKORDER1 from "./pages/TRACKORDER1";
+import Dashboard2 from "./pages/Dashboard2";
+import Dashboard1 from "./pages/Dashboard1";
+import PaymentPage1 from "./pages/PaymentPage1";
 
 function App() {
   const action = useNavigationType();
@@ -122,6 +134,54 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+        case "/payment-page1":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/after-address-page":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/profile":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard1":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard2":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard3":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/track-order":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard4":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/dashboard5":
+        title = "";
+        metaDescription = "";
+        break;
+      case "/payment-page":
+        title = "";
+        metaDescription = "";
+        break;
+        case "/trackorder":
+        title = "";
+        metaDescription = "";
+        break;
     }
 
     if (title) {
@@ -175,6 +235,18 @@ function App() {
       <Route path="/login" element={<LOGIN />} />
       <Route path="/login1" element={<LOGIN1 />} />
       <Route path="/frame-80" element={<Frame />} />
+      <Route path="/trackorder" element={<TRACKORDER />} />
+      <Route path="/payment-page1" element={<PaymentPage />} />
+      <Route path="/after-address-page" element={<AFTERADDRESSPAGE />} />
+      <Route path="/profile" element={<PROFILE />} />
+      <Route path="/dashboard" element={<Dashboard6 />} />
+      <Route path="/dashboard1" element={<Dashboard5 />} />
+      <Route path="/dashboard2" element={<Dashboard4 />} />
+      <Route path="/dashboard3" element={<Dashboard3 />} />
+      <Route path="/track-order" element={<TRACKORDER1 />} />
+      <Route path="/dashboard4" element={<Dashboard2 />} />
+      <Route path="/dashboard5" element={<Dashboard1 />} />
+      <Route path="/payment-page" element={<PaymentPage1 />} />
     </Routes>
   );
 }
