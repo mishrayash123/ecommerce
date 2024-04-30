@@ -20,19 +20,19 @@ const AFTERADDRESSPAGE = () => {
       <img
         className="absolute top-[180.5px] left-[704.5px] max-h-full w-[109px]"
         alt=""
-        src="/vector-141.svg"
+        src="/vector-141q.svg"
       />
       <img
         className="absolute top-[180.5px] left-[979.5px] max-h-full w-[109px]"
         alt=""
-        src="/vector-15.svg"
+        src="/vector-15q.svg"
       />
       <FrameComponent4 />
       <div className="absolute top-[371px] left-[567px] rounded-10xs box-border w-[430px] h-[302px] overflow-hidden text-mini text-darkslategray-700 border-[1px] border-solid border-darkgray-600">
         <img
           className="absolute top-[calc(50%_-_83px)] left-[calc(50%_-_67px)] w-[135px] h-[135px] overflow-hidden object-cover"
           alt=""
-          src="/iconparksolidadd@2x.png"
+          src="/iconparksolidadd@2xq.png"
         />
         <div className="absolute top-[215px] left-[calc(50%_-_73px)] font-medium">
           ADD NEW ADDRESS
