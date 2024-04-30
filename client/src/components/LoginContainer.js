@@ -1,4 +1,37 @@
+import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+
+
 const LoginContainer = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+
+
+  const handleRegister = async(e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("http://localhost:8080/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({email, password
+        }),
+      });
+
+      if (response.ok) {
+        alert("Registered successfully and now you can login your id");
+        navigate("/login");
+      }else {
+        alert("something went wrong...please check credential");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
+
   return (
     <div className="absolute top-[calc(50%_-_601px)] left-[calc(50%_-_56px)] shadow-[0px_0px_33.8px_-4px_rgba(0,_0,_0,_0.25)] rounded-lgi bg-white w-[812px] h-[655px] overflow-hidden text-left text-17xl text-dimgray-800 font-poppins">
       <div className="absolute top-[27px] left-[154px] text-black" >
@@ -23,6 +56,8 @@ const LoginContainer = () => {
       {/* Username Input Field */}
       <input
         type="text"
+        onChange={(e) => setEmail(e.target.value)}
+        value={email}
         className="absolute top-[184px] left-[59px] rounded box-border w-[694px] h-[57px] overflow-hidden border-[1.5px] border-solid border-gray-100"
         style={{ fontSize: '20px' }} // Increased font size here
       />
@@ -30,6 +65,8 @@ const LoginContainer = () => {
       {/* Password Input Field */}
       <input
         type="password"
+        onChange={(e) => setPassword(e.target.value)}
+        value={password}
         className="absolute top-[318px] left-[59px] rounded box-border w-[694px] h-[57px] overflow-hidden border-[1.5px] border-solid border-gray-100"
         style={{ fontSize: '20px' }} // Increased font size here
       />
@@ -42,7 +79,9 @@ const LoginContainer = () => {
         <span className="text-salmon-100">privacy policy</span>
         <span>.</span>
       </div>
-      <div className="absolute top-[533px] left-[calc(50%_-_346px)] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-[13px] px-[299px] text-5xl text-white font-made-tommy">
+      <div className="absolute top-[533px] left-[calc(50%_-_346px)] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-[13px] px-[299px] text-5xl text-white font-made-tommy cursor-pointer"
+      onClick={handleRegister}
+      >
         <b className="relative">Register</b>
       </div>
     </div>

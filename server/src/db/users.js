@@ -3,7 +3,6 @@ import mongoose from 'mongoose';
 // User Config
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true },
-  username: { type: String, required: true },
   fname: { type: String },
   lname: { type: String},
   city: { type: String },
