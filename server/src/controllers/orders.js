@@ -1,6 +1,7 @@
 import express from 'express';
 
 import {createorders ,getproductById,getorders,deleteordersById} from '../db/orders.js';
+import {UserModel} from "../db/orders.js"
 
 export const addtoorders = async (req, res) => {
     try {
@@ -48,6 +49,26 @@ export const addtoorders = async (req, res) => {
       const deletedUser = await deleteordersById(id);
   
       return res.json(deletedUser);
+    } catch (error) {
+      console.log(error);
+      return res.sendStatus(400);
+    }
+  }
+
+
+  export const updateorder = async (req, res) => {
+    try {
+      const { id } = req.params;
+      const  data  = req.body;
+      const updatedItem = await UserModel.findByIdAndUpdate(id.trim(), data, {
+        new: true,
+      });
+  
+      if (!updatedItem) {
+        return res.status(404).json({ message: 'Item not found' });
+      }
+  
+      return res.json(updatedItem);
     } catch (error) {
       console.log(error);
       return res.sendStatus(400);

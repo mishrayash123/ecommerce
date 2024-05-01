@@ -6,6 +6,10 @@ const UserSchema = new mongoose.Schema({
   userid: { type: String, required: true },
   orderid: { type: String, required: true },
   date: { type: String, required: true },
+  ordered: { type: Boolean},
+  shipped: { type: Boolean},
+  ontheway: { type: Boolean},
+  delivered: { type: Boolean},
   quantity: { type: Number, required: true },
   cod:{type:Boolean, required:true}
 });
