@@ -27,10 +27,19 @@ const TRACKORDER1 = () => {
         <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
           Track Order
         </div>
+        
       </div>
       <div className="absolute top-[396px] left-[169px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
         <div className="absolute top-[calc(50%_-_9px)] left-[27px]">FAQ</div>
       </div>
+         {/* Logout Button */}
+      <div className="absolute top-[480px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
+        <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white" style={{ fontFamily: 'Roboto' }}>
+          Logout
+        </button>
+      </div>
+
+
       <Property1Frame6 frameDivTop="225px" frameDivLeft="596px" />
     </div>
   );

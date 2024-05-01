@@ -20,7 +20,7 @@ const TRACKORDER = () => {
         TRACKING ORDER
       </div>
       <div className="absolute top-[318px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
+        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light" style={{ fontFamily: 'Roboto', fontWeight:"bold" }}>
           Profile
         </div>
       </div>
@@ -33,6 +33,12 @@ const TRACKORDER = () => {
         <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
           FAQ
         </div>
+      </div>
+         {/* Logout Button */}
+         <div className="absolute top-[480px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
+        <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white" style={{ fontFamily: 'Roboto' }}>
+          Logout
+        </button>
       </div>
       <FrameComponent1 />
       <div className="absolute top-[953px] left-[calc(50%_-_268px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
