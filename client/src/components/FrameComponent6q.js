@@ -1,16 +1,55 @@
+import React, { useState } from 'react'
+
+
 const FrameComponent6 = () => {
+  const email1 = localStorage.getItem("email");
+  const [fname, setfname] = useState('');
+  const [lname, setlname] = useState('');
+  const [phone, setPhone] = useState('');
+  const [gender, setgender] = useState('');
+  const [defaultaddress, setdefaultaddress] = useState('');
+  const [dob, setdob] = useState('');
+  const [email, setemail] = useState('');
+
+  
+  const handleFormSubmit = async (e) => {
+    const id = localStorage.getItem("paricollectionuserId");
+    e.preventDefault();
+    try {
+        const response = await fetch(`http://localhost:8080/updateusers/${id}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({email,fname,lname,phone,gender,defaultaddress,dob}),
+        });
+  
+        if (response.ok) {
+          alert("Updated");
+          navigate("/profile");
+        }else {
+          alert("something went wrong...please check credential");
+        }
+      } catch (error) {
+        console.error("Error during registration:", error);
+      }
+  }
+
   return (
     <div className="absolute top-[227px] left-[596px] bg-white box-border w-[962px] h-[699px] overflow-hidden text-left text-base text-dimgray-500 font-made-tommy border-[1px] border-solid border-silver-300">
       
       {/* Email ID */}
+
       <div className="absolute top-[61px] left-[45px] rounded-lg bg-whitesmoke-200 box-border w-[355px] h-[40px] overflow-hidden text-sm font-inter border-[1px] border-solid border-silver-300">
         <label htmlFor="email" className="block text-lg text-darkgray-500"></label>
         <input
           type="text"
           id="email"
           className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
-          placeholder="minishamanoj@gmail.com"
+          placeholder={email1}
           style={{ fontSize: '14px' }}
+          value={email}
+          onChange={(e) => setemail(e.target.value)}
         />
       </div>
       
@@ -29,8 +68,10 @@ const FrameComponent6 = () => {
           <input
             type="text"
             className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
-            placeholder="Minisha"
+            placeholder="first name"
             style={{ fontSize: '14px' }}
+            value={fname}
+          onChange={(e) => setfname(e.target.value)}
           />
         </div>
         
@@ -44,6 +85,8 @@ const FrameComponent6 = () => {
             className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
             placeholder="Last Name"
             style={{ fontSize: '14px' }}
+            value={lname}
+          onChange={(e) => setlname(e.target.value)}
           />
         </div>
         
@@ -53,15 +96,36 @@ const FrameComponent6 = () => {
         </div>
         <div className="absolute top-[450px] left-[45px]">
           <label htmlFor="male" className="inline-block mr-2">
-            <input type="radio" id="male" name="gender" value="male" />
+            <input type="radio" id="male" name="gender" value="male" onChange={(e) => {
+                                if(e.target.checked){
+                                    setgender("male")
+                                }
+                                else{
+                                    setgender("")
+                                }
+                            }}/>
             <span className="text-darkgray-700">Male</span>
           </label>
           <label htmlFor="female" className="inline-block mr-2">
-            <input type="radio" id="female" name="gender" value="female" />
+            <input type="radio" id="female" name="gender" value="female" onChange={(e) => {
+                                if(e.target.checked){
+                                    setgender("female")
+                                }
+                                else{
+                                    setgender("")
+                                }
+                            }}/>
             <span className="text-darkgray-700">Female</span>
           </label>
           <label htmlFor="other" className="inline-block">
-            <input type="radio" id="other" name="gender" value="other" />
+            <input type="radio" id="other" name="gender" value="other" onChange={(e) => {
+                                if(e.target.checked){
+                                    setgender("other")
+                                }
+                                else{
+                                    setgender("")
+                                }
+                            }}/>
             <span className="text-darkgray-700">Other</span>
           </label>
         </div>
@@ -79,6 +143,8 @@ const FrameComponent6 = () => {
             className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
             placeholder="Please Enter Your Birthday"
             style={{ fontSize: '14px' }}
+            value={dob}
+          onChange={(e) => setdob(e.target.value)}
           />
         </div>
         
@@ -92,6 +158,8 @@ const FrameComponent6 = () => {
             className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
             placeholder="Mobile Number"
             style={{ fontSize: '14px' }}
+            value={phone}
+          onChange={(e) => setPhone(e.target.value)}
           />
         </div>
         
@@ -106,6 +174,8 @@ const FrameComponent6 = () => {
     className="w-full h-full bg-transparent outline-none text-sm font-inter pl-2"
     placeholder="Default Address"
     style={{ fontSize: '14px' }}
+    value={defaultaddress}
+          onChange={(e) => setdefaultaddress(e.target.value)}
   />
 
         </div>
@@ -134,8 +204,10 @@ const FrameComponent6 = () => {
       />
 
       {/* Save Button */}
-      <div className="absolute top-[626px] left-[calc(50%_-_75px)] rounded-md bg-salmon flex flex-row items-center justify-center py-[7px] px-11 text-5xl text-white">
-        <button className="relative">SAVE</button>
+      <div className="absolute top-[626px] left-[calc(50%_-_75px)] rounded-md bg-salmon flex flex-row items-center justify-center py-[7px] px-11 text-5xl text-white" 
+      
+      >
+        <button className="relative cursor-pointer" onClick={handleFormSubmit}>SAVE</button>
       </div>
     </div>
   );
