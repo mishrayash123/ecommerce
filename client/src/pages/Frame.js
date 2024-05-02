@@ -63,7 +63,7 @@ const ADDRESSPOPUP = () => {
                 loading="lazy"
                 alt=""
                 src="/mdicancelbold.svg"
-                onClick={onMdicancelBoldIconClick}
+                // onClick={onMdicancelBoldIconClick}
               />
             </div>
           </div>
