@@ -13,24 +13,41 @@ import {
 } from "@mui/material";
 
 const ADDRESSPOPUP = () => {
-  const [selectedCountry, setSelectedCountry] = useState("");
-  const [selectedState, setSelectedState] = useState("");
+  const [fname, setfname] = useState('');
+  const [lname, setlname] = useState('');
+  const [phone, setPhone] = useState('');
+  const [zip, setzip] = useState('');
+  const [city, setcity] = useState('');
+  const [state, setstate] = useState('');
+  const [houseno, sethouseno] = useState('');
+  const [street, setstreet] = useState('');
+  const [landmark, setlandmark] = useState('');
+  const [country, setcountry] = useState('');
 
-  const handleCountryChange = (event) => {
-    setSelectedCountry(event.target.value);
-  };
+    const handleFormSubmit = async (e) => {
+      const id = localStorage.getItem("paricollectionuserId");
+      e.preventDefault();
+      try {
+          const response = await fetch(`http://localhost:8080/updateusers/${id}`, {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({fname,landmark,lname,city,country,street,houseno,state,phone,zip}),
+          });
+  
+          if (response.ok) {
+            alert("Updated");
+            navigate("/profile");
+          }else {
+            alert("something went wrong...please check credential");
+          }
+        } catch (error) {
+          console.error("Error during registration:", error);
+        }
+    }
 
-  const handleStateChange = (event) => {
-    setSelectedState(event.target.value);
-  };
 
-  const onMdicancelBoldIconClick = useCallback(() => {
-    // Please sync "ADDRESS PAGE" to the project
-  }, []);
-
-  const onButtonLabelsClick = useCallback(() => {
-    // Please sync "ADDRESS PAGE" to the project
-  }, []);
 
   return (
     <div className="shadow-[0px_0px_5.4px_rgba(0,_0,_0,_0.25)] bg-white w-full overflow-x-auto flex flex-col items-start justify-start pt-[43px] px-[18px] pb-[78px] box-border gap-[45.5px] leading-[normal] tracking-[normal] mq750:gap-[23px]">
@@ -99,6 +116,8 @@ const ADDRESSPOPUP = () => {
                     color: "#000", // Change text color to black
                   },
                 }}
+                value={fname}
+                onChange={(e) => setfname(e.target.value)}
               />
               <TextField
                 className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
@@ -113,6 +132,8 @@ const ADDRESSPOPUP = () => {
                     color: "#000", // Change text color to black
                   },
                 }}
+                value={lname}
+          onChange={(e) => setlname(e.target.value)}
               />
             </div>
           </div>
@@ -131,6 +152,8 @@ const ADDRESSPOPUP = () => {
                 color: "#000", // Change text color to black
               },
             }}
+            value={houseno}
+          onChange={(e) => sethouseno(e.target.value)}
           />
         </div>
         <section className="self-stretch flex flex-row items-start justify-center pt-0 px-[63px] pb-[19px] box-border max-w-full text-left text-3xl text-black font-roboto-flex lg:pl-[31px] lg:pr-[31px] lg:box-border">
@@ -148,6 +171,8 @@ const ADDRESSPOPUP = () => {
                   color: "#000", // Change text color to black
                 },
               }}
+              value={street}
+          onChange={(e) => setstreet(e.target.value)}
             />
             <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-1 box-border max-w-full">
               <TextField
@@ -163,6 +188,8 @@ const ADDRESSPOPUP = () => {
                     color: "#000", // Change text color to black
                   },
                 }}
+                value={landmark}
+          onChange={(e) => setlandmark(e.target.value)}
               />
             </div>
             <div className="self-stretch flex flex-row flex-wrap items-center justify-center pt-0 px-0 pb-2.5 box-border gap-[43px] max-w-full mq750:gap-[21px]">
@@ -179,6 +206,8 @@ const ADDRESSPOPUP = () => {
                     color: "#000", // Change text color to black
                   },
                 }}
+                value={zip}
+          onChange={(e) => setzip(e.target.value)}
               />
               <TextField
                 className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
@@ -193,6 +222,8 @@ const ADDRESSPOPUP = () => {
                     color: "#000", // Change text color to black
                   },
                 }}
+                value={city}
+          onChange={(e) => setcity(e.target.value)}
               />
             </div>
             <div className="self-stretch flex flex-row flex-wrap items-center justify-center pt-0 px-0 pb-1.5 box-border gap-[43px] max-w-full mq750:gap-[21px]">
@@ -254,8 +285,8 @@ const ADDRESSPOPUP = () => {
   color="primary"
   disableUnderline
   displayEmpty
-  value={selectedCountry}
-  onChange={handleCountryChange}
+  value={country}
+          onChange={(e) => setcountry(e.target.value)}
   IconComponent={() => (
     <img
       width="12px"
@@ -332,8 +363,8 @@ const ADDRESSPOPUP = () => {
                   color="primary"
                   disableUnderline
                   displayEmpty
-                  value={selectedState}
-                  onChange={handleStateChange}
+                  value={state}
+          onChange={(e) => setstate(e.target.value)}
                   IconComponent={() => (
                     <img
                       width="12px"
@@ -369,6 +400,8 @@ const ADDRESSPOPUP = () => {
                   placeholder="Phone Number *"
                   type="text"
                   style={{fontSize:"20px"}}
+                  value={phone}
+          onChange={(e) => setPhone(e.target.value)}
                 />
               </div>
               <div className="flex flex-row items-start justify-center py-0 px-0.5 box-border max-w-full text-darkslategray">
@@ -397,7 +430,6 @@ const ADDRESSPOPUP = () => {
                 "&:hover": { borderColor: "#000" },
                 height: 50,
               }}
-              onClick={onButtonLabelsClick}
             >
               CANCEL
             </Button>
@@ -415,6 +447,7 @@ const ADDRESSPOPUP = () => {
                 width: 125,
                 height: 50,
               }}
+         onClick={handleFormSubmit}
             >
               SAVE
             </Button>
