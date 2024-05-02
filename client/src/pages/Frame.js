@@ -1,118 +1,428 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from "react";
+import {
+  Button,
+  TextField,
+  InputAdornment,
+  Icon,
+  IconButton,
+  Select,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+  FormControl,
+} from "@mui/material";
 
-const Frame = () => {
-  const [formData, setFormData] = useState({
-    useCurrentLocation: false,
-    firstName: '',
-    lastName: '',
-    houseNo: '',
-    buildingName: '',
-    streetName: '',
-    landmark: '',
-    postalCode: '',
-    city: '',
-    country: '',
-    state: '',
-    mobileNo: '',
-    makeDefaultAddress: false
-  });
+const ADDRESSPOPUP = () => {
+  const [selectedCountry, setSelectedCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value, checked, type } = e.target;
-    // If the field is a checkbox, use the checked value instead of value
-    const fieldValue = type === 'checkbox' ? checked : value;
-
-    setFormData({
-      ...formData,
-      [name]: fieldValue
-    });
+  const handleCountryChange = (event) => {
+    setSelectedCountry(event.target.value);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log(formData);
+  const handleStateChange = (event) => {
+    setSelectedState(event.target.value);
   };
+
+  const onMdicancelBoldIconClick = useCallback(() => {
+    // Please sync "ADDRESS PAGE" to the project
+  }, []);
+
+  const onButtonLabelsClick = useCallback(() => {
+    // Please sync "ADDRESS PAGE" to the project
+  }, []);
 
   return (
-    <div className="w-full relative shadow-[0px_0px_5.4px_rgba(0,_0,_0,_0.25)] bg-white h-[1383px] overflow-hidden text-left text-21xl text-black font-roboto">
-      <img
-        className="absolute top-[119.5px] left-[calc(50%_-_612.5px)] max-h-full w-[1225px]"
-        alt=""
-        src="/vector-161.svg"
-      />
-      <div className="absolute top-[43px] left-[60px]">Add New Address</div>
-      
-      {/* Form */}
-      <form onSubmit={handleSubmit} className="absolute top-[100px] left-[60px]">
-        <label>
-          Use My Current Location:
-          <input type="checkbox" name="useCurrentLocation" checked={formData.useCurrentLocation} onChange={handleChange} />
-        </label>
-        <div className="flex justify-between">
-          <label>
-            First Name:
-            <input type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
-          </label>
-          <label>
-            Last Name:
-            <input type="text" name="lastName" value={formData.lastName} onChange={handleChange} />
-          </label>
+    <div className="shadow-[0px_0px_5.4px_rgba(0,_0,_0,_0.25)] bg-white w-full overflow-x-auto flex flex-col items-start justify-start pt-[43px] px-[18px] pb-[78px] box-border gap-[45.5px] leading-[normal] tracking-[normal] mq750:gap-[23px]">
+      <header className="w-[1225px] flex flex-col items-start justify-start gap-[29.5px] max-w-full text-left text-[40px] text-black font-roboto-flex">
+        <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[43px] pl-[42px] box-border max-w-full lg:pl-[21px] lg:pr-[21px] lg:box-border">
+          <div className="flex-1 flex flex-row items-start justify-between max-w-full gap-[20px]">
+            <h2 className="m-0 w-[330px] relative text-inherit font-normal font-inherit inline-block whitespace-nowrap max-w-full">
+              Add New Address
+            </h2>
+            <div className="flex flex-col items-start justify-start pt-[5px] px-0 pb-0">
+              <img
+                className="w-[41px] h-[41px] relative overflow-hidden shrink-0 cursor-pointer"
+                loading="lazy"
+                alt=""
+                src="/mdicancelbold.svg"
+                onClick={onMdicancelBoldIconClick}
+              />
+            </div>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <label>
-            House No.:
-            <input type="text" name="houseNo" value={formData.houseNo} onChange={handleChange} />
-          </label>
-          <label>
-            Building Name:
-            <input type="text" name="buildingName" value={formData.buildingName} onChange={handleChange} />
-          </label>
+        <img
+          className="self-stretch relative max-w-full overflow-hidden max-h-full"
+          loading="lazy"
+          alt=""
+          src="/vector-16.svg"
+        />
+      </header>
+      <main className="w-[1225px] flex flex-col items-end justify-start gap-[38px] max-w-full mq750:gap-[19px]">
+        <section className="self-stretch flex flex-row items-start justify-center pt-0 px-[63px] pb-[11px] box-border max-w-full lg:pl-[31px] lg:pr-[31px] lg:box-border">
+          <div className="flex-1 flex flex-col items-start justify-start gap-[49px] max-w-full mq750:gap-[24px]">
+            <Button
+              className="w-[528px] h-[57px] max-w-full"
+              startIcon={
+                <img
+                  width="28px"
+                  height="28px"
+                  src="/location.png"
+                />
+              }
+              disableElevation={true}
+              variant="contained"
+              sx={{
+                textTransform: "none",
+                color: "#fff",
+                fontSize: "24",
+                background: "#00c7f3",
+                borderRadius: "17px",
+                "&:hover": { background: "#00c7f3" },
+                width: 528,
+                height: 57,
+              }}
+            >
+              Use my current location
+            </Button>
+            <div className="self-stretch flex flex-row flex-wrap items-center justify-center gap-[43px] max-w-full mq750:gap-[21px]">
+              <TextField
+                className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
+                placeholder="First Name *"
+                variant="outlined"
+                sx={{
+                  "& fieldset": { borderColor: "#a8a8a8" },
+                  "& .MuiInputBase-root": {
+                    height: "57px",
+                    borderRadius: "6px",
+                    fontSize: "22px",
+                    color: "#000", // Change text color to black
+                  },
+                }}
+              />
+              <TextField
+                className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
+                placeholder="Last Name *"
+                variant="outlined"
+                sx={{
+                  "& fieldset": { borderColor: "#a8a8a8" },
+                  "& .MuiInputBase-root": {
+                    height: "57px",
+                    borderRadius: "6px",
+                    fontSize: "22px",
+                    color: "#000", // Change text color to black
+                  },
+                }}
+              />
+            </div>
+          </div>
+        </section>
+        <div className="self-stretch flex flex-row items-start justify-center pt-0 px-[63px] pb-[15px] box-border max-w-full lg:pl-[31px] lg:pr-[31px] lg:box-border">
+          <TextField
+            className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray max-w-full"
+            placeholder="House No., Building Name *"
+            variant="outlined"
+            sx={{
+              "& fieldset": { borderColor: "#a8a8a8" },
+              "& .MuiInputBase-root": {
+                height: "57px",
+                borderRadius: "6px",
+                fontSize: "22px",
+                color: "#000", // Change text color to black
+              },
+            }}
+          />
         </div>
-        <div className="flex justify-between">
-          <label>
-            Street Name:
-            <input type="text" name="streetName" value={formData.streetName} onChange={handleChange} />
-          </label>
-          <label>
-            Landmark:
-            <input type="text" name="landmark" value={formData.landmark} onChange={handleChange} />
-          </label>
+        <section className="self-stretch flex flex-row items-start justify-center pt-0 px-[63px] pb-[19px] box-border max-w-full text-left text-3xl text-black font-roboto-flex lg:pl-[31px] lg:pr-[31px] lg:box-border">
+          <div className="flex-1 flex flex-col items-start justify-start gap-[43px] max-w-full mq750:gap-[21px]">
+            <TextField
+              className="[border:none] bg-[transparent] self-stretch h-[57px] font-roboto-flex text-3xl text-darkgray"
+              placeholder="Street Name, Area *"
+              variant="outlined"
+              sx={{
+                "& fieldset": { borderColor: "#a8a8a8" },
+                "& .MuiInputBase-root": {
+                  height: "57px",
+                  borderRadius: "6px",
+                  fontSize: "22px",
+                  color: "#000", // Change text color to black
+                },
+              }}
+            />
+            <div className="self-stretch flex flex-row items-start justify-start pt-0 px-0 pb-1 box-border max-w-full">
+              <TextField
+                className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray max-w-full"
+                placeholder="Landmark"
+                variant="outlined"
+                sx={{
+                  "& fieldset": { borderColor: "#a8a8a8" },
+                  "& .MuiInputBase-root": {
+                    height: "57px",
+                    borderRadius: "6px",
+                    fontSize: "22px",
+                    color: "#000", // Change text color to black
+                  },
+                }}
+              />
+            </div>
+            <div className="self-stretch flex flex-row flex-wrap items-center justify-center pt-0 px-0 pb-2.5 box-border gap-[43px] max-w-full mq750:gap-[21px]">
+              <TextField
+                className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
+                placeholder="Postal Code *"
+                variant="outlined"
+                sx={{
+                  "& fieldset": { borderColor: "#a8a8a8" },
+                  "& .MuiInputBase-root": {
+                    height: "57px",
+                    borderRadius: "6px",
+                    fontSize: "22px",
+                    color: "#000", // Change text color to black
+                  },
+                }}
+              />
+              <TextField
+                className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"
+                placeholder="City / District *"
+                variant="outlined"
+                sx={{
+                  "& fieldset": { borderColor: "#a8a8a8" },
+                  "& .MuiInputBase-root": {
+                    height: "57px",
+                    borderRadius: "6px",
+                    fontSize: "22px",
+                    color: "#000", // Change text color to black
+                  },
+                }}
+              />
+            </div>
+            <div className="self-stretch flex flex-row flex-wrap items-center justify-center pt-0 px-0 pb-1.5 box-border gap-[43px] max-w-full mq750:gap-[21px]">
+              <FormControl
+                className="h-[57px] flex-1 font-roboto-flex text-3xl text-black min-w-[343px] max-w-full w-auto mq750:min-w-full"
+                variant="standard"
+                sx={{
+                  borderColor: "#a8a8a8",
+                  borderStyle: "SOLID",
+                  borderTopWidth: "1px",
+                  borderRightWidth: "1px",
+                  borderBottomWidth: "1px",
+                  borderLeftWidth: "1px",
+                  borderRadius: "6px",
+                  width: "48.043676069153776%",
+                  height: "57px",
+                  m: 0,
+                  p: 0,
+                  "& .MuiInputBase-root": {
+                    m: 0,
+                    p: 0,
+                    minHeight: "57px",
+                    justifyContent: "center",
+                    display: "inline-flex",
+                  },
+                  "& .MuiInputLabel-root": {
+                    m: 0,
+                    p: 0,
+                    minHeight: "57px",
+                    display: "inline-flex",
+                  },
+                  "& .MuiMenuItem-root": {
+                    m: 0,
+                    p: 0,
+                    height: "57px",
+                    display: "inline-flex",
+                  },
+                  "& .MuiSelect-select": {
+                    m: 0,
+                    p: 0,
+                    height: "57px",
+                    alignItems: "center",
+                    display: "inline-flex",
+                  },
+                  "& .MuiInput-input": { m: 0, p: 0 },
+                  "& .MuiInputBase-input": {
+                    color: "#000",
+                    fontSize: 22,
+                    fontWeight: "Regular",
+                    fontFamily: "MADE TOMMY",
+                    textAlign: "left",
+                    p: "0 !important",
+                    marginLeft: "30px",
+                  },
+                }}
+              >
+                <InputLabel color="primary">Country</InputLabel>
+                <Select
+  color="primary"
+  disableUnderline
+  displayEmpty
+  value={selectedCountry}
+  onChange={handleCountryChange}
+  IconComponent={() => (
+    <img
+      width="12px"
+      height="7px"
+      src="/selection-icons.svg"
+      style={{ marginRight: "46px" }}
+    />
+  )}
+>
+  <MenuItem value="">Select Country</MenuItem>
+  <MenuItem value="India">India</MenuItem>
+  <MenuItem value="United States">United States</MenuItem>
+  <MenuItem value="Yemen">Yemen</MenuItem>
+  {/* Add more countries as MenuItem */}
+</Select>
+
+                <FormHelperText />
+              </FormControl>
+              <FormControl
+                className="h-[57px] flex-1 font-roboto-flex text-3xl text-black min-w-[343px] max-w-full w-auto mq750:min-w-full"
+                variant="standard"
+                sx={{
+                  borderColor: "#a8a8a8",
+                  borderStyle: "SOLID",
+                  borderTopWidth: "1px",
+                  borderRightWidth: "1px",
+                  borderBottomWidth: "1px",
+                  borderLeftWidth: "1px",
+                  borderRadius: "6px",
+                  width: "48.043676069153776%",
+                  height: "57px",
+                  m: 0,
+                  p: 0,
+                  "& .MuiInputBase-root": {
+                    m: 0,
+                    p: 0,
+                    minHeight: "57px",
+                    justifyContent: "center",
+                    display: "inline-flex",
+                  },
+                  "& .MuiInputLabel-root": {
+                    m: 0,
+                    p: 0,
+                    minHeight: "57px",
+                    display: "inline-flex",
+                  },
+                  "& .MuiMenuItem-root": {
+                    m: 0,
+                    p: 0,
+                    height: "57px",
+                    display: "inline-flex",
+                  },
+                  "& .MuiSelect-select": {
+                    m: 0,
+                    p: 0,
+                    height: "57px",
+                    alignItems: "center",
+                    display: "inline-flex",
+                  },
+                  "& .MuiInput-input": { m: 0, p: 0 },
+                  "& .MuiInputBase-input": {
+                    color: "#000",
+                    fontSize: 22,
+                    fontWeight: "Regular",
+                    fontFamily: "MADE TOMMY",
+                    textAlign: "left",
+                    p: "0 !important",
+                    marginLeft: "30px",
+                  },
+                }}
+              >
+                <InputLabel color="primary">State</InputLabel>
+                <Select
+                  color="primary"
+                  disableUnderline
+                  displayEmpty
+                  value={selectedState}
+                  onChange={handleStateChange}
+                  IconComponent={() => (
+                    <img
+                      width="12px"
+                      height="7px"
+                      src="/locatin.png"
+                      style={{ marginRight: "46px" }}
+                    />
+                  )}
+                >
+                  <MenuItem value="">Select State</MenuItem>
+                  <MenuItem value="Madhya Pradesh">Madhya Pradesh</MenuItem>
+                  <MenuItem value="Uttar Pradesh">Uttar Pradesh</MenuItem>
+                  <MenuItem value="Uttar Pradesh">Himachal Pradesh</MenuItem>
+                  <MenuItem value="Uttar Pradesh">Andhra Pradesh</MenuItem>
+                </Select>
+                <FormHelperText />
+              </FormControl>
+            </div>
+            <div className="self-stretch flex flex-col items-start justify-start gap-[44px] max-w-full mq750:gap-[22px]">
+              <div className="self-stretch h-[57px] rounded-md box-border flex flex-row items-start justify-start pt-4 px-[11px] pb-[13px] gap-[13px] border-[1px] border-solid border-darkgray">
+                <div className="relative inline-block min-w-[36px] whitespace-nowrap mq450:text-lg">
+                  <b>+91</b>
+                </div>
+                <div className="mt-[-16.199999999999818px] h-[57.5px] flex flex-col items-start justify-start py-0 pr-[7px] pl-0 box-border">
+                  <img
+                    className="w-px flex-1 relative max-h-full"
+                    alt=""
+                    src="/vector-59.svg"
+                  />
+                </div>
+                <input
+                  className="w-[167px] [border:none] [outline:none] bg-[transparent] h-7 flex flex-col items-start justify-start pt-px px-0 pb-0 box-border font-roboto-flex text-3xl text-darkgray"
+                  placeholder="Phone Number *"
+                  type="text"
+                  style={{fontSize:"20px"}}
+                />
+              </div>
+              <div className="flex flex-row items-start justify-center py-0 px-0.5 box-border max-w-full text-darkslategray">
+                <div className="flex flex-row items-start justify-start gap-[15px] max-w-full">
+                  <input className="m-0 h-[23px] w-5" type="checkbox" />
+                  <div className="relative mq450:text-lg">
+                    Make this my default address
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div className="w-[493px] flex flex-row items-start justify-center py-0 px-[79px] box-border max-w-full mq750:pl-[39px] mq750:pr-[39px] mq750:box-border">
+          <div className="flex-1 flex flex-row flex-wrap items-start justify-center gap-[54px] max-w-full mq450:gap-[27px]">
+            <Button
+              className="h-[50px] flex-1 min-w-[101px] cursor-pointer"
+              disableElevation={true}
+              variant="outlined"
+              sx={{
+                textTransform: "none",
+                color: "#444",
+                fontSize: "24",
+                borderColor: "#000",
+                borderRadius: "6px",
+                "&:hover": { borderColor: "#000" },
+                height: 50,
+              }}
+              onClick={onButtonLabelsClick}
+            >
+              CANCEL
+            </Button>
+            <Button
+              className="h-[50px] w-[125px]"
+              disableElevation={true}
+              variant="contained"
+              sx={{
+                textTransform: "none",
+                color: "#fff",
+                fontSize: "24",
+                background: "#ff6868",
+                borderRadius: "6px",
+                "&:hover": { background: "#ff6868" },
+                width: 125,
+                height: 50,
+              }}
+            >
+              SAVE
+            </Button>
+          </div>
         </div>
-        <div className="flex justify-between">
-          <label>
-            Postal Code:
-            <input type="text" name="postalCode" value={formData.postalCode} onChange={handleChange} />
-          </label>
-          <label>
-            City/District:
-            <input type="text" name="city" value={formData.city} onChange={handleChange} />
-          </label>
-        </div>
-        <div className="flex justify-between">
-          <label>
-            Country:
-            <input type="text" name="country" value={formData.country} onChange={handleChange} />
-          </label>
-          <label>
-            State:
-            <input type="text" name="state" value={formData.state} onChange={handleChange} />
-          </label>
-        </div>
-        <label>
-          Mobile No.:
-          <input type="text" name="mobileNo" value={formData.mobileNo} onChange={handleChange} />
-        </label>
-        <label>
-          Make this my default address:
-          <input type="checkbox" name="makeDefaultAddress" checked={formData.makeDefaultAddress} onChange={handleChange} />
-        </label>
-        <hr />
-        <button type="submit">Save</button>
-        <button type="button">Cancel</button>
-      </form>
+      </main>
     </div>
   );
 };
 
-export default Frame;
+export default ADDRESSPOPUP;
