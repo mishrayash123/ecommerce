@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5";
 import FrameComponent4 from "../components/FrameComponent4";
@@ -9,6 +10,14 @@ import FrameComponent1 from "../components/FrameComponent1";
 import ListboxComponent from "../components/ListboxComponent";
 
 const ReadymadeTshirtMENPage = () => {
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setShowDropdown(false);
+  };
+
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-600 font-poppins">
       <img
@@ -17,27 +26,22 @@ const ReadymadeTshirtMENPage = () => {
         src="/image-1@2x.png"
       />
       <MainHeader solarbagOutline="/solarbagoutline1.svg" prop="2" />
-      <div className="absolute top-[89px] left-[1301px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-b-11xl bg-salmon-100 flex flex-row items-start justify-start gap-[10px] text-9xl text-white font-made-tommy">
-        <div className="rounded-t-none rounded-br-none rounded-bl-11xl bg-sandybrown flex flex-row items-center justify-center py-2.5 px-[15px]">
-          <div className="relative font-medium">MEN</div>
-        </div>
-        <div className="flex flex-row items-center justify-center py-2.5 px-[15px]">
-          <div className="relative font-medium">WOMEN</div>
-        </div>
-        <div className="flex flex-row items-center justify-center py-2.5 px-[15px]">
-          <div className="relative font-medium">KIDS</div>
-        </div>
-      </div>
-      <div className="absolute top-[700px] left-[calc(50%_-_95px)] rounded-2xl bg-darkgray-900 h-[23px] flex flex-row items-start justify-start pt-1.5 px-3 pb-[7px] box-border gap-[28px]">
-        <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
-        <div className="w-[15px] relative rounded-[50%] box-border h-[15px] border-[3px] border-solid border-gray-900" />
-        <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
-        <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
-        <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
-      </div>
-      <div className="absolute top-[749px] left-[946px] rounded-8xs bg-whitesmoke-200 flex flex-row items-center justify-center py-2.5 px-3.5 gap-[49px] text-xl text-black font-made-tommy border-[1px] border-solid border-gray-500">
-        <div className="relative">Select Sorting Options</div>
-        <img className="w-6 relative h-6" alt="" src="/group.svg" />
+      <div 
+        className="absolute top-[749px] left-[946px] rounded-8xs bg-whitesmoke-200 flex flex-row items-center justify-center py-2.5 px-3.5 gap-[49px] text-xl text-black font-made-tommy border-[1px] border-solid border-gray-500"
+        onClick={() => setShowDropdown(!showDropdown)}
+      >
+        <div className="relative">{selectedOption}</div>
+        {showDropdown && (
+          <div className="absolute top-full left-0 w-full bg-white shadow-md rounded-b-md z-10">
+            <div className="py-2">
+              <div className="cursor-pointer hover:bg-gray-100 px-4 py-2" onClick={() => handleOptionClick("Select Sorting Options")}>Select Sorting Options-</div>
+              <div className="cursor-pointer hover:bg-gray-100 px-4 py-2" onClick={() => handleOptionClick("Price- Low to High")}>Price- Low to High</div>
+              <div className="cursor-pointer hover:bg-gray-100 px-4 py-2" onClick={() => handleOptionClick("Price- High to Low")}>Price- High to Low</div>
+              <div className="cursor-pointer hover:bg-gray-100 px-4 py-2" onClick={() => handleOptionClick("Newest")}>Newest</div>
+              <div className="cursor-pointer hover:bg-gray-100 px-4 py-2" onClick={() => handleOptionClick("Popularity")}>Popularity</div>
+            </div>
+          </div>
+        )}
       </div>
       <div className="absolute top-[833px] left-[490px] text-xl text-black">
         Men T-Shirt
