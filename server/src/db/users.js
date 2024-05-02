@@ -11,6 +11,7 @@ const UserSchema = new mongoose.Schema({
   houseno: { type: String },
   street: { type: String },
   landmark: { type: String },
+  country: { type: String },
   gender: { type: String },
   dob: { type: String },
   defaultaddress: { type: String },
