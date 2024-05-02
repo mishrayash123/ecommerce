@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { Link } from 'react-router-dom';
 
 const Header = ({
   solarbagOutline,
@@ -121,10 +122,14 @@ const Header = ({
         style={frameDiv3Style}
       >
         <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start">
+        <Link to="/undergarments-men-women" style={{ textDecoration: 'none', color: 'inherit' }}>
           <b className="relative">Undergarments</b>
+          </Link>
         </div>
         <div className="absolute top-[30px] left-[155px] flex flex-row items-start justify-start gap-[5px] text-center">
+        <Link to="/readymade-tshirt-men-page" style={{ textDecoration: 'none', color: 'inherit' }}>
           <b className="relative">Readymade</b>
+          </Link>
           <img
             className="w-6 relative h-6 overflow-hidden shrink-0"
             alt=""
@@ -132,10 +137,14 @@ const Header = ({
           />
         </div>
         <div className="absolute top-[30px] left-[571px] flex flex-row items-start justify-start">
-          <b className="relative">Thermal</b>
+        <Link to="/thermal-men" style={{ textDecoration: 'none', color: 'inherit' }}>
+    <b className="relative">Thermal</b>
+  </Link>
         </div>
         <div className="absolute top-[30px] left-[705px] flex flex-row items-center justify-start gap-[5px] text-center">
+        <Link to="/accessories-hanky" style={{ textDecoration: 'none', color: 'inherit' }}>
           <b className="relative">Accessories</b>
+          </Link>
           <img
             className="w-6 relative h-6 overflow-hidden shrink-0"
             alt=""
