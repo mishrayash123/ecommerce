@@ -41,7 +41,10 @@ const FrameComponent16 = () => {
           alt=""
           src="/vector-29q.svg"
         />
-        <div className="relative font-medium">Add Product</div>
+      <div className="relative font-medium">
+  <a href="/dashboard5" style={{ textDecoration: 'none' }}>Add Product</a>
+</div>
+
       </div>
       <div className="absolute top-[484px] left-[71px] text-5xl font-medium">
         Product List

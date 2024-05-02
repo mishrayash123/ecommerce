@@ -4,17 +4,17 @@ const FrameComponent20 = ({ dashboard }) => {
       <div className="absolute top-[calc(50%_-_22.5px)] left-[64px]">
         {dashboard}
       </div>
-      <div className="absolute top-[24px] left-[895px] rounded-4xs bg-salmon w-40 h-[45px] flex flex-row items-center justify-center p-2.5 box-border gap-[15px] text-base text-white">
-        <img
-          className="w-[25px] absolute !m-[0] top-[10px] left-[16.5px] rounded-45xl h-[25px] overflow-hidden shrink-0 z-[0]"
-          alt=""
-          src="/codiconaccount2q.svg"
-        />
-        <div className="w-[87px] absolute !m-[0] top-[12.5px] left-[56.5px] font-medium inline-block z-[1]">
-          Gurusankar
-        </div>
-      </div>
-    </div>
+      <button className="absolute top-[24px] left-[895px] rounded-4xs bg-blue-500 w-50 h-[45px] flex flex-row items-center justify-center p-2.5 box-border gap-[15px] text-base text-white font-roboto font-bold">
+  <img
+    className="w-[25px] rounded-45xl h-[25px] overflow-hidden shrink-0 z-[0]"
+    alt=""
+    src="/codiconaccount2q.svg"
+  />
+  Gurusankar
+</button>
+</div>
+
+    
   );
 };
 
