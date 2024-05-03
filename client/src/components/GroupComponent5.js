@@ -46,9 +46,9 @@ const GroupComponent5 = ({
           src={image9}
           style={image9IconStyle}
         />
-        <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
+        {/* <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
           {chinos}
-        </div>
+        </div> */}
         <div className="absolute top-[469px] left-[15px]">{dontCareClub}</div>
         <img
           className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"

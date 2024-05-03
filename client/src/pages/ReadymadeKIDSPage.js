@@ -5,8 +5,44 @@ import FrameComponent4 from "../components/FrameComponent4";
 import GroupComponent5 from "../components/GroupComponent5";
 import GroupComponent6 from "../components/GroupComponent6";
 import FrameComponent1 from "../components/FrameComponent1";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const ReadymadeKIDSPage = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
+
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-xl text-white font-made-tommy">
       <img
@@ -122,11 +158,13 @@ const ReadymadeKIDSPage = () => {
           SIZE
         </div>
       </div>
-      <GroupComponent5
-        image9="/image-23@2x.png"
+      {
+          products.filter((e)=>(e.category==="ReadymadeKIDS")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
         chinos="POLOS"
-        dontCareClub="Princess Aurora"
-        prop="₹699"
+        dontCareClub={products.title}
+        prop={products.price}
         solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"
         propLeft="503px"
@@ -134,63 +172,8 @@ const ReadymadeKIDSPage = () => {
         propHeight="429px"
         propLeft1="calc(50% - 174px)"
         propWidth="348px"
-      />
-      <GroupComponent6
-        image11="/image-26@2x.png"
-        kungFuPandaTShirt="Teddy"
-        propLeft="calc(50% - 179px)"
-        propWidth="353px"
-      />
-      <GroupComponent5
-        image9="/image-24@2x.png"
-        chinos="Chinos"
-        dontCareClub="Don't Care Club"
-        prop="₹899"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="946px"
-        propLeft="898px"
-        propTop1="-15px"
-        propHeight="405px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-27@2x.png"
-        chinos="Chinos"
-        dontCareClub="Parakeet"
-        prop="₹999"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="1576px"
-        propLeft="898px"
-        propTop1="-22px"
-        propHeight="429px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-25@2x.png"
-        chinos="Chinos"
-        dontCareClub="Cheshire Soft Women’s Tshirt"
-        prop="₹799"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="946px"
-        propLeft="1293px"
-        propTop1="-12px"
-        propHeight="402px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      />
+      /> 
+          ))}
       <div className="absolute top-[88px] left-[211px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-b-xl flex flex-row items-start justify-start">
         <div className="rounded-t-none rounded-br-none rounded-bl-xl bg-salmon-100 flex flex-row items-center justify-center p-2.5">
           <div className="relative font-medium">GIRLS</div>

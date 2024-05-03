@@ -4,6 +4,7 @@ import FrameComponent4 from "../components/FrameComponent4q";
 import FrameComponent3 from "../components/FrameComponent3q";
 
 const AFTERADDRESSPAGE = () => {
+  
   return (
     <div className="w-full relative bg-white h-[1445px] overflow-hidden text-left text-base text-white font-inter">
       <Header />

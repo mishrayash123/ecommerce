@@ -4,8 +4,43 @@ import FrameComponent6 from "../components/FrameComponent6";
 import FrameComponent4 from "../components/FrameComponent4";
 import GroupComponent5 from "../components/GroupComponent5";
 import FrameComponent1 from "../components/FrameComponent1";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const UndergarmentsMenWomen1 = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-white font-made-tommy">
       <img
@@ -76,100 +111,24 @@ const UndergarmentsMenWomen1 = () => {
         girlsCottonPoloDresses="Briefs Underwear"
       />
       <FrameComponent4 propTop="1646px" propHeight="371px" />
-      <div className="absolute top-[1286px] left-[25px] shadow-[1px_2px_15.4px_rgba(0,_0,_0,_0.25)] rounded-6xs bg-white box-border w-[412px] h-[297px] overflow-hidden text-lg text-dimgray-700 border-[0.7px] border-solid border-darkgray-500">
-        <div className="absolute top-[78px] left-[calc(50%_-_179px)] rounded-6xs bg-whitesmoke-200 box-border w-[359px] h-10 flex flex-row items-center justify-center p-2.5 text-darkgray-400 border-[0.7px] border-solid border-silver">
-          <div className="w-[123px] absolute !m-[0] top-[calc(50%_-_11px)] left-[20.5px] inline-block z-[0]">
-            Search for Size
-          </div>
-        </div>
-        <div className="absolute top-[145px] left-[38px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[47px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_23px)] inline-block z-[0]">
-            50cm
-          </div>
-        </div>
-        <div className="absolute top-[200px] left-[38px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[46px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_23px)] inline-block z-[0]">
-            70cm
-          </div>
-        </div>
-        <div className="absolute top-[145px] left-[128px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[46px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_23px)] inline-block z-[0]">
-            55cm
-          </div>
-        </div>
-        <div className="absolute top-[200px] left-[128px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[45px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_22px)] inline-block z-[0]">
-            75cm
-          </div>
-        </div>
-        <div className="absolute top-[145px] left-[218px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[47px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_23px)] inline-block z-[0]">
-            60cm
-          </div>
-        </div>
-        <div className="absolute top-[200px] left-[218px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-12 absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_24px)] inline-block z-[0]">
-            80cm
-          </div>
-        </div>
-        <div className="absolute top-[145px] left-[308px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 border-[2px] border-solid border-black">
-          <div className="w-[46px] absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_23px)] inline-block z-[0]">
-            65cm
-          </div>
-        </div>
-        <div className="absolute top-[28px] left-[27px] text-7xl tracking-[0.02em] font-medium font-poppins text-black">
-          SIZE
-        </div>
-      </div>
-      <div className="absolute top-[946px] left-[503px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[0px] left-[calc(50%_-_195px)] w-[390px] h-[390px] object-cover"
-            alt=""
-            src="/image-30@2x.png"
-          />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            POLOS
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            BABY PRINT DRAWER
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹100
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        />
-      </div>
-      <GroupComponent5
-        image9="/image-31@2x.png"
-        chinos="Chinos"
-        dontCareClub="Eggcellent"
-        prop="₹299"
-        solarbagOutline="/solarbagoutline.svg"
+       
+       
+      {
+          products.filter((e)=>(e.category==="UndergarmentsMenWomen1")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
+        chinos="POLOS"
+        dontCareClub={products.title}
+        prop={products.price}
+        solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"
-        propLeft="898px"
-        propTop1="-44px"
-        propHeight="434px"
-        propLeft1="calc(50% - 217px)"
-        propWidth="434px"
-      />
+        propLeft="503px"
+        propTop1="-39px"
+        propHeight="429px"
+        propLeft1="calc(50% - 174px)"
+        propWidth="348px"
+      /> 
+          ))}
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

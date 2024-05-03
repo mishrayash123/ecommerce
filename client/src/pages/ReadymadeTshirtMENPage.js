@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5";
 import FrameComponent4 from "../components/FrameComponent4";
@@ -9,9 +10,43 @@ import FrameComponent2 from "../components/FrameComponent2";
 import FrameComponent1 from "../components/FrameComponent1";
 import ListboxComponent from "../components/ListboxComponent";
 
+
 const ReadymadeTshirtMENPage = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
 
   const handleOptionClick = (option) => {
     setSelectedOption(option);
@@ -65,7 +100,10 @@ const ReadymadeTshirtMENPage = () => {
       />
       <FrameComponent4 />
       <FrameComponent3 />
-      <div className="absolute top-[946px] left-[503px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
+      <div className='absolute top-[946px] left-[503px] flex flex-row'>
+      {
+          products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(
+      <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
         <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
           <img
             className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
@@ -75,13 +113,13 @@ const ReadymadeTshirtMENPage = () => {
           <img
             className="absolute top-[-1px] left-[calc(50%_-_146px)] w-[293px] h-[391px] object-cover"
             alt=""
-            src="/image-47@2x.png"
+            src={products.image1}
           />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
+          {/* <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
             POLOS
-          </div>
+          </div> */}
           <div className="absolute top-[469px] left-[15px]">
-            Looney Tunes: The Daffy Sketch
+            {products.title}
           </div>
           <img
             className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
@@ -89,7 +127,7 @@ const ReadymadeTshirtMENPage = () => {
             src="/vector-13.svg"
           />
           <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹599
+            ₹{products.price}
           </div>
           <div className="absolute top-[528px] left-[16px] text-2xs">
             MRP incl. of all taxes
@@ -103,97 +141,7 @@ const ReadymadeTshirtMENPage = () => {
           src="/solarbagoutline6.svg"
         />
       </div>
-      <GroupComponent4
-        image5="/image-5@2x.png"
-        grapeWineMenTShirt="Grape Wine Men T-Shirt"
-      />
-      <GroupComponent3
-        image3="/image-3@2x.png"
-        musicRoundedMenTshirt="Music Rounded Men Tshirt"
-        prop="₹899"
-        solarbagOutline="/solarbagoutline6.svg"
-      />
-      <div className="absolute top-[1576px] left-[898px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <FrameComponent2 />
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[946px] left-[1293px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[0px] left-[calc(50%_-_192px)] w-[383px] h-[407px] object-cover"
-            alt=""
-            src="/image-4@2x.png"
-          />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            Purple Soft Men’s Tshirt
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹299
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[1576px] left-[1293px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[0px] left-[calc(50%_-_153px)] w-[305px] h-[407px] object-cover"
-            alt=""
-            src="/image-6@2x.png"
-          />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            One Piece - White T-shirt
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹999
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[0px] left-[294px] bg-whitesmoke-100 w-[54px] h-[407px]" />
-          <div className="absolute top-[0px] left-[-6px] bg-whitesmoke-100 w-[54px] h-[407px]" />
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
+          ))}
       </div>
       <FrameComponent1
         frame10="/frame-10.svg"

@@ -5,3 +5,4 @@ export default (router) => {
   router.get('/getproducts', getproductsfull);
   router.delete('/deleteproducts/:id', deletproducts);
 };
+

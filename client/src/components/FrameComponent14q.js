@@ -1,6 +1,9 @@
 import React from 'react';
 
 const FrameComponent14 = () => {
+
+
+  
   return (
     <div className="absolute top-[88px] left-[78px] box-border w-[957px] h-[846px] overflow-hidden text-left text-xl text-royalblue-100 font-made-tommy border-[1px] border-solid border-black">
       <table className="w-full border-collapse border border-black">
