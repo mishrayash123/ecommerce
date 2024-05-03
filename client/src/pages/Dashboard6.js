@@ -9,7 +9,7 @@ const Dashboard6 = () => {
       <FrameComponent20 dashboard="Dashboard" />
       <FrameComponent7 />
       <FrameComponent12
-        todaysSales="Nwe Clients"
+        todaysSales="New Clients"
         prop="+4%"
         thanLastWeek=" than last Month"
         prop1="100"

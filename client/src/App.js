@@ -138,6 +138,10 @@ function App() {
         title = "";
         metaDescription = "";
         break;
+        case "/payment-page":
+          title = "";
+          metaDescription = "";
+          break;
       case "/after-address-page":
         title = "";
         metaDescription = "";
