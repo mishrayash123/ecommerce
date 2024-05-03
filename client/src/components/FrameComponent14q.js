@@ -1,6 +1,65 @@
-import React from 'react';
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const FrameComponent14 = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
+
+
+
+  const remove = async (id) => {
+    try {
+    const response = await fetch(
+      `http://localhost:8080/deleteproducts/${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      alert("Removed");
+      fetchData()
+    } else {
+      alert("something went wrong");
+    }
+  } catch (error) {
+    console.error("Error during login:", error);
+  }
+}
 
 
   
@@ -16,9 +75,11 @@ const FrameComponent14 = () => {
           </tr>
         </thead>
         <tbody>
+        {
+          products.map(products =>(
           <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">T-Shirt</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
+            <td className="px-4 py-2 border border-black">{products.category}</td>
+            <td className="px-4 py-2 border border-black">{products.title}</td>
             <td className="px-4 py-2 border border-black">
               <div className="flex flex-row items-center justify-center gap-[10px]">
                 <img
@@ -36,252 +97,11 @@ const FrameComponent14 = () => {
                   alt=""
                   src="/mdideleteq.svg"
                 />
-                <div>Delete</div>
+                <div className="cursor-pointer" onClick={(e) => remove(products._id)}>Delete</div>
               </div>
             </td>
           </tr>
-          {/* Repeat the above row structure for each product */}
-
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Lower</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Hanky</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Accessories</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Undergarments</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Thermal</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">T-Shirt</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Thermal</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Accessories</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">Undergarments</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">T-Shirt</td>
-            <td className="px-4 py-2 border border-black">Your Product</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/mdideleteq.svg"
-                />
-                <div>Delete</div>
-              </div>
-            </td>
-          </tr>
+          ))}
         </tbody>
       </table>
     </div>
