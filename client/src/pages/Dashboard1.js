@@ -185,34 +185,16 @@ const Dashboard1 = () => {
         </div>
         <div className="absolute top-[500px] left-[50px]">
           <label htmlFor="availableSize" className="text-black text-xl font-bold mr-14">Choose Available Size</label>
-          <div className="flex flex-wrap">
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">XXS</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">XS</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">S</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">M</span>
-            </div>
-          </div>
-          <div className="flex flex-wrap">
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">L</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">XL</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">XXL</span>
-            </div>
-            <div className="w-10 h-10 bg-white border border-solid border-red-500 flex items-center justify-center mr-2 mb-2 rounded cursor-pointer hover:border-black">
-              <span className="text-red-500 font-medium text-sm">XXXL</span>
-            </div>
-          </div>
+          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl">
+            <option value="XXS">XXS</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+          </select>
         </div>
         <div className="absolute top-[700px] left-[50px]">
   <label className="text-black text-xl font-bold mr-14 mb-8">Product Description</label>
@@ -234,15 +216,11 @@ const Dashboard1 = () => {
           value={details}
           />
         </div>
-
         <div className="absolute bottom-[50px] left-[500px]">
           <button onClick={handleInsertProduct} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded cursor-pointer">
             Insert Product
           </button>
-          </div>
-
-        
-      
+        </div>
       </div>
     </div>
   );

@@ -42,7 +42,7 @@ const FrameComponent16 = () => {
           src="/vector-29q.svg"
         />
       <div className="relative font-medium">
-  <a href="/dashboard5" style={{ textDecoration: 'none' }}>Add Product</a>
+  <a href="/" style={{ textDecoration: 'none' }}>Add Product</a>
 </div>
 
       </div>
