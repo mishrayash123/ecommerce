@@ -121,6 +121,7 @@ const ThermalWOMEN = () => {
         image9={products.image1}
         chinos="POLOS"
         dontCareClub={products.title}
+        id={products._id}
         prop={products.price}
         solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"

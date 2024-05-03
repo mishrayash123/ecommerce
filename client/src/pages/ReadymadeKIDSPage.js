@@ -163,6 +163,7 @@ const ReadymadeKIDSPage = () => {
  <GroupComponent5
         image9={products.image1}
         chinos="POLOS"
+        id={products._id}
         dontCareClub={products.title}
         prop={products.price}
         solarbagOutline="/solarbagoutline6.svg"

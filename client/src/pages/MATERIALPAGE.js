@@ -1,8 +1,39 @@
 import Header from "../components/Header";
 import FrameComponent1 from "../components/FrameComponent1";
 import Property1Frame2 from "../components/Property1Frame2";
+import { useLocation } from 'react-router-dom'
+import { useState,useEffect } from "react";
 
 const MATERIALPAGE = () => {
+  const location = useLocation();
+  const [products, setproducts] = useState([]);
+
+  const fetchData = async () => {
+    try {
+        const response = await fetch(
+          "http://localhost:8080/getproducts",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setproducts(data)
+        } else {
+          alert("Something went wrong please login again");
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+      }
+}
+
+useEffect(() => {
+  fetchData();
+}, []);
+
   return (
     <div className="w-full relative bg-white h-[2065px] overflow-hidden text-left text-lg text-gray-600 font-made-tommy">
       <Header
@@ -32,6 +63,9 @@ const MATERIALPAGE = () => {
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
       />
+      {
+                    products.filter((e) => (e._id == location.state.id)).map(products => (
+      <div>
       <img
         className="absolute top-[877px] left-[808px] rounded-14xl w-[50px] h-[50px] overflow-hidden"
         alt=""
@@ -55,18 +89,18 @@ const MATERIALPAGE = () => {
       <img
         className="absolute top-[756px] left-[65px] w-[420px] h-[560px] object-cover"
         alt=""
-        src="/image-47@2x.png"
+        src={products.image1}
       />
       <img
         className="absolute top-[179px] left-[65px] w-[420px] h-[560px] object-cover"
         alt=""
-        src="/image-48@2x.png"
+        src={products.image2}
       />
       <b className="absolute top-[179px] left-[621px] text-29xl font-inter text-black">
-        Looney Tunes: The Daffy Sketch
+        {products.title}
       </b>
       <div className="absolute top-[242px] left-[621px] text-base font-poppins text-dimgray-300">
-        Home / Readymade / T-Shirt
+        {products.category}
       </div>
       <img
         className="absolute top-[295.5px] left-[621.5px] max-h-full w-[864px]"
@@ -74,7 +108,7 @@ const MATERIALPAGE = () => {
         src="/vector-8.svg"
       />
       <b className="absolute top-[325px] left-[621px] text-17xl font-inter text-gray-800">
-        ₹599
+        {products.price}
       </b>
       <div className="absolute top-[382px] left-[622px] text-xl font-inter">
         MRP incl. of all taxes
@@ -174,7 +208,10 @@ const MATERIALPAGE = () => {
         <div className="relative font-medium">ADD TO WISHLIST</div>
       </div>
       <Property1Frame2 frameDivTop="961px" frameDivLeft="622px" />
+      </div>
+                    ))}
     </div>
+
   );
 };
 

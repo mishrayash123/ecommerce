@@ -122,6 +122,7 @@ const ThermalMEN = () => {
         chinos="POLOS"
         dontCareClub={products.title}
         prop={products.price}
+        id={products._id}
         solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"
         propLeft="503px"

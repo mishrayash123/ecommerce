@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const GroupComponent5 = ({
   image9,
@@ -12,6 +13,7 @@ const GroupComponent5 = ({
   propHeight,
   propLeft1,
   propWidth,
+  id
 }) => {
   const groupDiv3Style = useMemo(() => {
     return {
@@ -29,11 +31,18 @@ const GroupComponent5 = ({
     };
   }, [propTop1, propHeight, propLeft1, propWidth]);
 
+  const nav = useNavigate();
+
   return (
     <div
       className="absolute top-[946px] left-[898px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] text-left text-base text-dimgray-600 font-inter"
       style={groupDiv3Style}
     >
+      <a href='' onClick={
+              (e) => {
+                nav('/material-page', { state: { id:id} });
+              }
+          }>
       <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
         <img
           className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
@@ -67,6 +76,7 @@ const GroupComponent5 = ({
         alt=""
         src={solarbagOutline}
       />
+      </a>
     </div>
   );
 };

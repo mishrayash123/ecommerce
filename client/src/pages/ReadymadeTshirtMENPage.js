@@ -103,6 +103,11 @@ const ReadymadeTshirtMENPage = () => {
       <div className='absolute top-[946px] left-[503px] flex flex-row'>
       {
           products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(
+            <a href='' onClick={
+              (e) => {
+                nav('/material-page', { state: { id: products._id} });
+              }
+          }>
       <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
         <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
           <img
@@ -115,9 +120,7 @@ const ReadymadeTshirtMENPage = () => {
             alt=""
             src={products.image1}
           />
-          {/* <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            POLOS
-          </div> */}
+          
           <div className="absolute top-[469px] left-[15px]">
             {products.title}
           </div>
@@ -141,6 +144,7 @@ const ReadymadeTshirtMENPage = () => {
           src="/solarbagoutline6.svg"
         />
       </div>
+      </a>
           ))}
       </div>
       <FrameComponent1
