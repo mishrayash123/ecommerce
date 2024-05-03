@@ -7,8 +7,44 @@ import FrameComponent12 from "../components/FrameComponent12";
 import FrameComponent11 from "../components/FrameComponent11";
 import FrameComponent10 from "../components/FrameComponent10";
 import FrameComponent1 from "../components/FrameComponent1";
+import GroupComponent5 from "../components/GroupComponent5";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const AccessoriesArmSleeves = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-600 font-inter">
       <img
@@ -73,136 +109,23 @@ const AccessoriesArmSleeves = () => {
       />
       <FrameComponent4 propTop="946px" propHeight="371px" />
       <FrameComponent8 showFrameDiv={false} />
-      <div className="absolute top-[946px] left-[503px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            POLOS
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            Bamboo Arm Sleeve
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹245
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[-2px] left-[260px] bg-white w-24 h-[392px]" />
-          <div className="absolute top-[390px] left-[0px] bg-white w-[499px] h-[76px] [transform:_rotate(-90deg)] [transform-origin:0_0]" />
-          <img
-            className="absolute top-[0px] left-[calc(50%_-_101px)] w-[203px] h-[390px] object-cover"
-            alt=""
-            src="/image-41@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        />
-      </div>
-      <div className="absolute top-[1596px] left-[503px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            POLOS
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            AUTOSITE Nylon Arm Sleeve
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹245
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[-6px] left-[-4px] bg-white w-[352px] h-[76px]" />
-          <div className="absolute top-[311px] left-[0px] bg-white w-[352px] h-[76px]" />
-          <img
-            className="absolute top-[50px] left-[calc(50%_-_174px)] w-[349px] h-[308px] object-cover"
-            alt=""
-            src="/image-44@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        />
-      </div>
-      <div className="absolute top-[946px] left-[898px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <FrameComponent12 />
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[1596px] left-[898px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <FrameComponent11 />
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[946px] left-[1298px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[calc(50%_-_276px)] left-[calc(50%_-_134px)] w-[284px] h-[391px] object-cover"
-            alt=""
-            src="/image-43@2x.png"
-          />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            LA OTTER Cotton Arm Sleeve
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹749
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[320px] left-[0px] bg-white w-[348px] h-[70px] hidden" />
-          <div className="absolute top-[0px] left-[0px] bg-white w-[348px] h-14 hidden" />
-          <div className="absolute top-[390px] left-[-5px] bg-white w-[390px] h-[45px] [transform:_rotate(-90deg)] [transform-origin:0_0]" />
-          <div className="absolute top-[390px] left-[324px] bg-white w-[390px] h-6 [transform:_rotate(-90deg)] [transform-origin:0_0]" />
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[1596px] left-[1298px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px]">
-        <FrameComponent10 />
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
+      {
+          products.filter((e)=>(e.category==="ThermalMEN")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
+        chinos="POLOS"
+        dontCareClub={products.title}
+        prop={products.price}
+        solarbagOutline="/solarbagoutline6.svg"
+        propTop="946px"
+        propLeft="503px"
+        propTop1="-39px"
+        propHeight="429px"
+        propLeft1="calc(50% - 174px)"
+        propWidth="348px"
+      /> 
+          ))}
+      
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

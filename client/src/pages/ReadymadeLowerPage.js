@@ -6,8 +6,44 @@ import FrameComponent7 from "../components/FrameComponent7";
 import GroupComponent5 from "../components/GroupComponent5";
 import GroupComponent4 from "../components/GroupComponent4";
 import FrameComponent1 from "../components/FrameComponent1";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const ReadymadeLowerPage = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
+
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-300 font-poppins">
       <img
@@ -91,76 +127,23 @@ const ReadymadeLowerPage = () => {
         prop6="34"
         prop7="42"
       />
-      <GroupComponent5
-        image9="/image-16@2x.png"
+      {
+          products.filter((e)=>(e.category==="ReadymadeLower")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
         chinos="POLOS"
-        dontCareClub="Black Panther"
-        prop="₹1999"
+        dontCareClub={products.title}
+        prop={products.price}
         solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"
         propLeft="503px"
-        propTop1="-19px"
-        propHeight="409px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="346px"
-      />
-      <GroupComponent4
-        image5="/image-19@2x.png"
-        grapeWineMenTShirt="Light Olive (Straight Fit)"
-        propTop="-57px"
-      />
-      <GroupComponent5
-        image9="/image-17@2x.png"
-        chinos="Chinos"
-        dontCareClub="Classic Emblem"
-        prop="₹2399"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="946px"
-        propLeft="898px"
-        propTop1="-44px"
-        propHeight="434px"
+        propTop1="-39px"
+        propHeight="429px"
         propLeft1="calc(50% - 174px)"
         propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-20@2x.png"
-        chinos="Chinos"
-        dontCareClub="Unsupervised T-Shirt"
-        prop="₹999"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="1576px"
-        propLeft="898px"
-        propTop1="-30px"
-        propHeight="437px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-18@2x.png"
-        chinos="Chinos"
-        dontCareClub="Parachute Pants: Dusky Blue"
-        prop="₹1399"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="946px"
-        propLeft="1293px"
-        propTop1="-20px"
-        propHeight="410px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-21@2x.png"
-        chinos="Chinos"
-        dontCareClub=" Spaced Out Black T-shirt"
-        prop="₹999"
-        solarbagOutline="/solarbagoutline.svg"
-        propTop="1576px"
-        propLeft="1293px"
-        propTop1="-58px"
-        propHeight="465px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      />
+      /> 
+          ))}
+   
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

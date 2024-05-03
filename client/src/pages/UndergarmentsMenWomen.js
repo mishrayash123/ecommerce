@@ -6,8 +6,43 @@ import FrameComponent7 from "../components/FrameComponent7";
 import GroupComponent7 from "../components/GroupComponent7";
 import GroupComponent5 from "../components/GroupComponent5";
 import FrameComponent1 from "../components/FrameComponent1";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const UndergarmentsMenWomen = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-300 font-poppins">
       <img
@@ -105,26 +140,23 @@ const UndergarmentsMenWomen = () => {
         propWidth7="52px"
         propLeft7="calc(50% - 26px)"
       />
-      <GroupComponent7
-        image8="/image-28@2x.png"
-        winnieThePooh="Salior Stripes"
-        prop="₹199"
-        propLeft="calc(50% - 174px)"
-        propWidth="348px"
-      />
-      <GroupComponent5
-        image9="/image-17@2x.png"
-        chinos="Chinos"
-        dontCareClub="Eggcellent"
-        prop="₹299"
-        solarbagOutline="/solarbagoutline.svg"
+      {
+          products.filter((e)=>(e.category==="UndergarmentsMenWomen")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
+        chinos="POLOS"
+        dontCareClub={products.title}
+        prop={products.price}
+        solarbagOutline="/solarbagoutline6.svg"
         propTop="946px"
-        propLeft="898px"
-        propTop1="-44px"
-        propHeight="434px"
+        propLeft="503px"
+        propTop1="-39px"
+        propHeight="429px"
         propLeft1="calc(50% - 174px)"
         propWidth="348px"
-      />
+      /> 
+          ))}
+      
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

@@ -5,8 +5,44 @@ import FrameComponent4 from "../components/FrameComponent4";
 import FrameComponent8 from "../components/FrameComponent8";
 import GroupComponent8 from "../components/GroupComponent8";
 import FrameComponent1 from "../components/FrameComponent1";
+import GroupComponent5 from "../components/GroupComponent5";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const ThermalWOMEN = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-300 font-poppins">
       <img
@@ -79,61 +115,23 @@ const ThermalWOMEN = () => {
       />
       <FrameComponent4 propTop="1626px" propHeight="371px" />
       <FrameComponent8 showFrameDiv />
-      <div className="absolute top-[946px] left-[503px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[0px] left-[calc(50%_-_60px)] w-[145px] h-[390px] object-cover"
-            alt=""
-            src="/image-34@2x.png"
-          />
-          <div className="absolute top-[430px] left-[15px] text-5xl font-semibold text-black">
-            POLOS
-          </div>
-          <div className="absolute top-[469px] left-[15px]">
-            Lux Cott's Wool
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[498px] left-[15px] font-semibold">
-            ₹799
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[-2px] left-[259px] bg-white w-24 h-[392px]" />
-          <div className="absolute top-[-2px] left-[-1px] bg-white w-[115px] h-[392px]" />
-        </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        />
-      </div>
-      <GroupComponent8
-        image35="/image-35@2x.png"
-        jairyShopThermal="Jairy Shop - Thermal"
-        prop="₹899"
-      />
-      <GroupComponent8
-        image35="/image-36@2x.png"
-        jairyShopThermal="Wearslim - Thermal"
-        prop="₹749"
-        propLeft="1298px"
-        propLeft1="calc(50% - 61px)"
-        propWidth="121px"
-        propLeft2="234px"
-        propWidth1="121px"
-        propLeft3="110px"
-        propWidth2="116px"
-      />
+      {
+          products.filter((e)=>(e.category==="ThermalMEN")).map(products =>(
+ <GroupComponent5
+        image9={products.image1}
+        chinos="POLOS"
+        dontCareClub={products.title}
+        prop={products.price}
+        solarbagOutline="/solarbagoutline6.svg"
+        propTop="946px"
+        propLeft="503px"
+        propTop1="-39px"
+        propHeight="429px"
+        propLeft1="calc(50% - 174px)"
+        propWidth="348px"
+      /> 
+          ))}
+      
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"
