@@ -1,4 +1,6 @@
 const FrameComponent20 = ({ dashboard }) => {
+  const email = localStorage.getItem("email");
+
   return (
     <div className="absolute top-[50px] left-[calc(50%_-_330px)] shadow-[0px_286px_80px_rgba(0,_0,_0,_0),_0px_183px_73px_rgba(0,_0,_0,_0.01),_0px_103px_62px_rgba(0,_0,_0,_0.05),_0px_46px_46px_rgba(0,_0,_0,_0.09),_0px_11px_25px_rgba(0,_0,_0,_0.1)] rounded-7xl bg-white w-[1119px] h-[93px] overflow-hidden text-left text-17xl text-black font-made-tommy">
       <div className="absolute top-[calc(50%_-_22.5px)] left-[64px]">
@@ -10,7 +12,7 @@ const FrameComponent20 = ({ dashboard }) => {
     alt=""
     src="/codiconaccount2q.svg"
   />
-  Gurusankar
+  {email}
 </button>
 </div>
 
