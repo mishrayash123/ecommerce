@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import Frame from "../components/Frameq";
 import PortalPopup from "../components/PortalPopupq";
-import Header from "../components/Headerq";
+import MainHeader from "../components/MainHeader";
 
 import FrameComponent5 from "../components/FrameComponent5q";
 import FrameComponent3 from "../components/FrameComponent3q";
@@ -22,7 +22,7 @@ const PaymentPage1 = () => {
   return (
     <>
       <div className="w-full relative bg-white h-[1776px] overflow-hidden text-left text-base text-white font-inter">
-        <Header />
+      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
         <FrameComponent5 />
         <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon flex flex-row items-center justify-center py-2.5 px-8">
           <div className="relative font-semibold">MY BAG</div>

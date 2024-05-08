@@ -77,16 +77,20 @@ const Header = ({
       className="absolute top-[0px] left-[calc(50%_-_864px)] bg-sandybrown w-[1728px] h-[89px] overflow-hidden text-left text-xl text-black font-made-tommy"
       style={frameDiv1Style}
     >
-      <img
+       <Link to="/wishlist-page" style={{ textDecoration: 'none', color: 'inherit' }}>
+       <img
         className="absolute top-[27px] left-[1566px] w-[35px] h-[35px] overflow-hidden"
         alt=""
         src={solarbagOutline}
       />
-      <img
+          </Link>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <img
         className="absolute top-[27px] left-[1506px] w-[35px] h-[35px] overflow-hidden"
         alt=""
         src={basilnotificationOutline}
       />
+          </Link>
       <img
         className="absolute top-[27px] left-[1626px] rounded-45xl w-[35px] h-[35px] overflow-hidden"
         alt=""
@@ -112,13 +116,17 @@ const Header = ({
         className="absolute top-[30px] left-[1246px]"
         style={trackOrderStyle}
       >
-        Track Order
+        <Link to="/trackorder" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">Track Order</b>
+          </Link>
       </div>
       <div className="absolute top-[30px] left-[1379px]" style={contactUsStyle}>
-        Contact Us
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">Contact Us</b>
+          </Link>
       </div>
       <div
-        className="absolute top-[-1px] left-[-95px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-br-51xl rounded-bl-none bg-salmon-100 w-[909px] h-[89px] overflow-hidden text-5xl text-white"
+        className="absolute top-[-1px] left-[0px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-br-51xl rounded-bl-none bg-salmon-100 w-[870px] h-[89px] overflow-hidden text-5xl text-white"
         style={frameDiv3Style}
       >
         <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start">

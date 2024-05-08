@@ -1,11 +1,11 @@
-import HeaderTop from "../components/HeaderTop";
+import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
 import Component from "../components/Component";
 
 const WISHLISTPAGE = () => {
   return (
     <div className="w-full relative bg-white h-[1588px] overflow-hidden text-left text-9xl text-black font-inter">
-      <HeaderTop />
+                                         <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <b className="absolute top-[767px] left-[calc(50%_-_289px)]">
         Your wishlist is lonely and looking for love.
       </b>

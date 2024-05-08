@@ -1,6 +1,6 @@
 import FrameComponent from "../components/FrameComponent";
 import GroupComponent from "../components/GroupComponent";
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 
 const MenHomePage = () => {
   return (
@@ -463,12 +463,7 @@ const MenHomePage = () => {
         </div>
       </div>
       <div className="absolute top-[5215px] left-[1459px] bg-salmon-100 w-[269px] h-[67px]" />
-      <Header
-        solarbagOutline="/solarbagoutline1.svg"
-        basilnotificationOutline="/basilnotificationoutline.svg"
-        codiconaccount="/codiconaccount.svg"
-        ionsearch="/ionsearch.svg"
-      />
+      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
     </div>
   );
 };

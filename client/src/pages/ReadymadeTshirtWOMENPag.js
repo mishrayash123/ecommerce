@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import ListboxComponent from "../components/ListboxComponent";
 import FrameComponent5 from "../components/FrameComponent5";
 import FrameComponent4 from "../components/FrameComponent4";
@@ -46,26 +46,11 @@ const ReadymadeTshirtWOMENPag = () => {
   }, []);
   return (
     <div className="w-full relative bg-white h-[2873px] overflow-hidden text-left text-base text-dimgray-300 font-poppins">
-      <img
+      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
+       <img
         className="absolute top-[89px] left-[-80px] w-[2295px] h-[588px] object-cover"
         alt=""
         src="/image-7@2x.png"
-      />
-      <Header
-        solarbagOutline="/solarbagoutline1.svg"
-        basilnotificationOutline="/phheart.svg"
-        codiconaccount="/codiconaccount.svg"
-        ionsearch="/ionsearch.svg"
-        propLeft="0px"
-        propBackgroundColor="#ffbb64"
-        propBackgroundColor1="#ffeaa7"
-        propColor="#8a8a8a"
-        propColor1="#000"
-        propColor2="#000"
-        propBackgroundColor2="#ff6868"
-        propTop="calc(50% - 22.5px)"
-        propTop1="calc(50% - 22.5px)"
-        propTop2="calc(50% - 22.5px)"
       />
       <div className="absolute top-[89px] left-[1301px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-b-11xl bg-salmon-100 flex flex-row items-start justify-start gap-[10px] text-9xl text-white font-made-tommy">
         <div className="rounded-t-none rounded-br-none rounded-bl-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[15px]">

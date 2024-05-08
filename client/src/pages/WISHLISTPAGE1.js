@@ -1,4 +1,4 @@
-import HeaderTop from "../components/HeaderTop";
+import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
 import FrameComponent13 from "../components/FrameComponent13";
 import FrameComponent12 from "../components/FrameComponent12";
@@ -6,7 +6,7 @@ import FrameComponent12 from "../components/FrameComponent12";
 const WISHLISTPAGE1 = () => {
   return (
     <div className="w-full relative bg-white h-[1588px] overflow-hidden text-left text-9xl text-black font-inter">
-      <HeaderTop />
+                                             <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <div className="absolute top-[147px] left-[calc(50%_-_755px)]">
         <span className="font-semibold">My Wishlist</span>
         <b> </b>

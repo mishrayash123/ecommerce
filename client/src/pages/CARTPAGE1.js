@@ -5,16 +5,7 @@ import DiscountFormContainer from "../components/DiscountFormContainer";
 const CARTPAGE1 = () => {
   return (
     <div className="w-full relative bg-white h-[1625px] overflow-hidden text-left text-base text-white font-inter">
-      <MainHeader
-        solarbagOutline="/solarbagoutline7.svg"
-        prop="1"
-        vectorIconTop="calc(50% - 23px)"
-        frameDivTop="calc(50% - 23px)"
-        divTop="calc(50% - 23px)"
-        propLeft="1588px"
-        propTop="calc(50% - 7px)"
-        propLeft1="calc(50% - 3px)"
-      />
+                       <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

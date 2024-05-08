@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
 import Property1Frame2 from "../components/Property1Frame2";
 import { useLocation } from 'react-router-dom'
@@ -36,22 +36,7 @@ useEffect(() => {
 
   return (
     <div className="w-full relative bg-white h-[2065px] overflow-hidden text-left text-lg text-gray-600 font-made-tommy">
-      <Header
-        solarbagOutline="/solarbagoutline1.svg"
-        basilnotificationOutline="/phheart.svg"
-        codiconaccount="/codiconaccount.svg"
-        ionsearch="/ionsearch.svg"
-        propLeft="0px"
-        propBackgroundColor="#ffbb64"
-        propBackgroundColor1="#ffeaa7"
-        propColor="#8a8a8a"
-        propColor1="#000"
-        propColor2="#000"
-        propBackgroundColor2="#ff6868"
-        propTop="calc(50% - 23px)"
-        propTop1="calc(50% - 23px)"
-        propTop2="calc(50% - 23px)"
-      />
+                              <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

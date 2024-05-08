@@ -60,7 +60,7 @@ const ReadymadeTshirtMENPage = () => {
         alt=""
         src="/image-1@2x.png"
       />
-      <MainHeader solarbagOutline="/solarbagoutline1.svg" prop="2" />
+      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <div 
         className="absolute top-[749px] left-[946px] rounded-8xs bg-whitesmoke-200 flex flex-row items-center justify-center py-2.5 px-3.5 gap-[49px] text-xl text-black font-made-tommy border-[1px] border-solid border-gray-500"
         onClick={() => setShowDropdown(!showDropdown)}
@@ -100,6 +100,7 @@ const ReadymadeTshirtMENPage = () => {
       />
       <FrameComponent4 />
       <FrameComponent3 />
+      
       <div className='absolute top-[946px] left-[503px] flex flex-row'>
       {
           products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(

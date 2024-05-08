@@ -1,4 +1,4 @@
-import MainHeader from "../components/MainHeaderq";
+import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5q";
 import FrameComponent1 from "../components/FrameComponent1q";
 import FrameComponent from "../components/FrameComponentq";
@@ -11,7 +11,7 @@ const TRACKORDER = () => {
 
   return (
     <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
-      <MainHeader />
+                                          <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <FrameComponent5 />
       <div className="absolute top-[176px] left-[169px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
         <div className="absolute top-[22px] left-[22px] font-semibold">

@@ -1,5 +1,5 @@
 import LoginFormWrapper from "../components/LoginFormWrapper";
-import Header from "../components/Header";
+import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
 
 const LOGIN = () => {
@@ -31,22 +31,7 @@ const LOGIN = () => {
         alt=""
         src="/vector-24.svg"
       />
-      <Header
-        solarbagOutline="/solarbagoutline1.svg"
-        basilnotificationOutline="/phheart.svg"
-        codiconaccount="/codiconaccount.svg"
-        ionsearch="/ionsearch.svg"
-        propLeft="0px"
-        propBackgroundColor="#ffbb64"
-        propBackgroundColor1="#ffeaa7"
-        propColor="#8a8a8a"
-        propColor1="#000"
-        propColor2="#000"
-        propBackgroundColor2="#ff6868"
-        propTop="calc(50% - 22.5px)"
-        propTop1="calc(50% - 22.5px)"
-        propTop2="calc(50% - 22.5px)"
-      />
+                        <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"
