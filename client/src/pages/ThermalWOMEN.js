@@ -69,7 +69,7 @@ const ThermalWOMEN = () => {
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
       </div>
-      <ListboxComponent
+      {/* <ListboxComponent
         chevron="/chevron.svg"
         propTop="816px"
         propLeft="1333px"
@@ -79,7 +79,7 @@ const ThermalWOMEN = () => {
         propBackgroundColor1="#fff"
         propBackgroundColor2="#fff"
         propBackgroundColor3="#fff"
-      />
+      /> */}
       <div className="absolute top-[833px] left-[500px] text-xl text-black">
         Women T-Shirt
       </div>
@@ -96,10 +96,10 @@ const ThermalWOMEN = () => {
         menBaseLayer="Women Base Layer"
         menActivewear="Women Activewear"
         frame39="/frame-39.svg"
-        showFrameDiv
+        showFrameDiv={true}
       />
       <FrameComponent4 propTop="1626px" propHeight="371px" />
-      <FrameComponent8 showFrameDiv />
+      <FrameComponent8 showFrameDiv={true} />
       <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
           products.filter((e)=>(e.category==="ThermalWOMEN")).map(products =>(

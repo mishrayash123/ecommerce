@@ -21,6 +21,7 @@ const Dashboard6 = () => {
         showItem
         showDiv1={false}
       />
+      
       <FrameComponent8
         prop="250"
         prop1="200"

@@ -98,6 +98,7 @@ const ReadymadeTshirtMENPage = () => {
         dropCutTShirts="Drop Cut T-shirts"
         easyFitFullSleeveTShirt="Easy Fit Full Sleeve T-shirt"
       />
+      
       <FrameComponent4 />
       <FrameComponent3 />
       
@@ -162,7 +163,7 @@ const ReadymadeTshirtMENPage = () => {
       <div className="absolute top-[778px] left-[490px] text-dimgray-300">
         Home / Readymade
       </div>
-      <ListboxComponent chevron="/chevron.svg" />
+      {/* <ListboxComponent chevron="/chevron.svg" /> */}
     </div>
   );
 };

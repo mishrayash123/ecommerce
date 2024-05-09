@@ -69,7 +69,7 @@ const ReadymadeKIDSPage = () => {
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
       </div>
-      <ListboxComponent
+      {/* <ListboxComponent
         chevron="/chevron.svg"
         propTop="816px"
         propLeft="1333px"
@@ -79,7 +79,7 @@ const ReadymadeKIDSPage = () => {
         propBackgroundColor1="#fff"
         propBackgroundColor2="#fff"
         propBackgroundColor3="#fff"
-      />
+      /> */}
       <div className="absolute top-[833px] left-[490px] font-poppins text-black">
         Girls Cotton Dresses
       </div>

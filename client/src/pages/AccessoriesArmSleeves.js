@@ -68,7 +68,7 @@ const AccessoriesArmSleeves = () => {
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
         <div className="w-2.5 relative rounded-[50%] bg-gray-900 h-2.5" />
       </div>
-      <ListboxComponent
+      {/* <ListboxComponent
         chevron="/chevron.svg"
         propTop="816px"
         propLeft="1333px"
@@ -78,7 +78,7 @@ const AccessoriesArmSleeves = () => {
         propBackgroundColor1="#fff"
         propBackgroundColor2="#fff"
         propBackgroundColor3="#fff"
-      />
+      /> */}
       <div className="absolute top-[833px] left-[499px] text-xl font-poppins text-black">
         Arm Sleeves
       </div>
@@ -87,10 +87,10 @@ const AccessoriesArmSleeves = () => {
         menBaseLayer="Socks"
         menActivewear="Women Activewear"
         frame39="/frame-391.svg"
-        showFrameDiv={false}
+        showFrameDiv={true}
       />
       <FrameComponent4 propTop="946px" propHeight="371px" />
-      <FrameComponent8 showFrameDiv={false} />
+      <FrameComponent8 showFrameDiv={true} />
           <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
           products.filter((e)=>(e.category==="AccessoriesArmSleeves")).map(products =>(

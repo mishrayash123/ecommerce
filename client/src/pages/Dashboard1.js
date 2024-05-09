@@ -119,18 +119,18 @@ const Dashboard1 = () => {
   };
 
   return (
-    <div className="w-full relative bg-gainsboro-200 h-[2271px] overflow-hidden text-left text-5xl text-darkslategray-400 font-roboto">
+    <div className="w-full relative bg-gainsboro-200 h-[1200px] overflow-hidden text-left text-5xl text-darkslategray-400 font-roboto">
       <FrameComponent20 dashboard="Insert Product" />
       <FrameComponent16 />
       <img
-        className="absolute top-[213px] left-[558px] rounded-12xs w-[11.5px] h-4 object-contain"
+        className="absolute top-[213px] left-[485px] rounded-12xs w-[11.5px] h-4 object-contain"
         alt=""
         src="/vector-28q.svg"
       />
-      <div className="absolute top-[206px] left-[583.5px] font-medium">
+      <div className="absolute top-[206px] left-[500.5px] font-medium">
         Add Product
       </div>
-      <div className="absolute top-[253px] left-[544px] rounded-4xl bg-white box-border w-[1099px] h-[1826px] overflow-hidden text-xl text-black border-[1px] border-solid border-lightgray">
+      <div className="absolute top-[253px] left-[485px] rounded-4xl bg-white box-border  w-[1000px] h-[1826px] overflow-hidden text-xl text-black border-[1px] border-solid border-lightgray">
         <div className="absolute top-[42px] left-[50px] flex items-center">
           <label htmlFor="productTitle" className="text-black text-xl font-bold mr-8">Product Tittle</label>
           <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Tittle" 
@@ -140,12 +140,21 @@ const Dashboard1 = () => {
         </div>
         <div className="absolute top-[110px] left-[50px]">
           <label htmlFor="productCategory" className="text-black text-xl font-bold mr-20">Product Category</label>
-          <input type="text" id="productCategory" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Enter Product Category" 
-          onChange={(e) => setcategory(e.target.value)}
-          value={category}
-          />
+          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setcategory(e.target.value)}>
+            <option value="AccessoriesArmSleeves">AccessoriesArmSleeves</option>
+            <option value="AccessoriesHanky">AccessoriesHanky</option>
+            <option value="AccessoriesSocks">AccessoriesSocks</option>
+            <option value="ReadymadeKIDS">ReadymadeKIDS</option>
+            <option value="ReadymadeLower">ReadymadeLower</option>
+            <option value="ReadymadeTshirtMEN">ReadymadeTshirtMEN</option>
+            <option value="ReadymadeTshirtWOMEN">ReadymadeTshirtWOMEN</option>
+            <option value="ThermalMEN">ThermalMEN</option>
+            <option value="ThermalWOMEN">ThermalWOMEN</option>
+            <option value="UndergarmentsMenWomen">UndergarmentsMenWomen</option>
+            <option value="UndergarmentsMenWomen">UndergarmentsMenWomen</option>
+          </select>
         </div>
-        <div className="absolute top-[770px] left-[50px]">
+        <div className="absolute top-[660px] left-[50px]">
           <label htmlFor="productCategory" className="text-black text-xl font-bold mr-20">Product Gender</label>
           <input type="text" id="productCategory" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Enter Product Gender" 
           onChange={(e) => setgender(e.target.value)}
@@ -185,7 +194,7 @@ const Dashboard1 = () => {
         </div>
         <div className="absolute top-[500px] left-[50px]">
           <label htmlFor="availableSize" className="text-black text-xl font-bold mr-14">Choose Available Size</label>
-          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl">
+          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setsize(e.target.value)}>
             <option value="XXS">XXS</option>
             <option value="XS">XS</option>
             <option value="S">S</option>
@@ -196,27 +205,21 @@ const Dashboard1 = () => {
             <option value="XXXL">XXXL</option>
           </select>
         </div>
-        <div className="absolute top-[700px] left-[50px]">
+        <div className="absolute top-[550px] left-[50px]">
   <label className="text-black text-xl font-bold mr-14 mb-8">Product Description</label>
-  {/* <DescriptionEditor  onChange={(e) => setdescription(e.target.value)}
-          value={description}/> */}
           <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Description" 
           onChange={(e) => setdescription(e.target.value)}
           value={description}
           />
 </div>
- <div className="absolute top-[1200px] left-[50px]">
+ <div className="absolute top-[600px] left-[50px]">
           <label htmlFor="productDetails" className="text-black text-xl font-bold mr-14 mb-8">Product Details</label>
-          {/* <ProductDetailsEditor  onChange={(e) => {setdetails(e.target.value)
-          console.log("kjkjk")}
-        }
-          value={details}/> */}
           <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Details" 
           onChange={(e) => setdetails(e.target.value)}
           value={details}
           />
         </div>
-        <div className="absolute bottom-[50px] left-[500px]">
+        <div className="absolute top-[800px] left-[500px]">
           <button onClick={()=>{
             handleInsertProduct()}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded cursor-pointer">
             Insert Product

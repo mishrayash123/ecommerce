@@ -33,7 +33,7 @@ const LoginContainer = () => {
   };
 
   return (
-    <div className="absolute top-[calc(50%_-_601px)] left-[calc(50%_-_56px)] shadow-[0px_0px_33.8px_-4px_rgba(0,_0,_0,_0.25)] rounded-lgi bg-white w-[812px] h-[655px] overflow-hidden text-left text-17xl text-dimgray-800 font-poppins">
+    <div className="absolute top-[calc(50%_-_601px)] left-[calc(50%_-_100px)] shadow-[0px_0px_33.8px_-4px_rgba(0,_0,_0,_0.25)] rounded-lgi bg-white w-[812px] h-[655px] overflow-hidden text-left text-17xl text-dimgray-800 font-poppins">
       <div className="absolute top-[27px] left-[154px] text-black" >
         <a href="/login" style={{ textDecoration: 'none' }} >Login</a>
       </div>

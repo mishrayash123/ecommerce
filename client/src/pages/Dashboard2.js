@@ -8,14 +8,14 @@ const Dashboard2 = () => {
       <FrameComponent20 dashboard="Insert Product" />
       <FrameComponent15 />
       <img
-        className="absolute top-[214px] left-[555px] rounded-12xs w-[11.5px] h-4 object-contain"
+        className="absolute top-[214px] left-[485px] rounded-12xs w-[11.5px] h-4 object-contain"
         alt=""
         src="/vector-28q.svg"
       />
-      <div className="absolute top-[207px] left-[580.5px] font-medium">
+      <div className="absolute top-[207px] left-[500.5px] font-medium">
         Product List
       </div>
-      <div className="absolute top-[253px] left-[551px] rounded-4xl bg-white box-border w-[1099px] h-[970px] overflow-hidden border-[1px] border-solid border-lightgray">
+      <div className="absolute top-[253px] left-[500px] rounded-4xl bg-white box-border w-[1000px] h-[970px] overflow-hidden border-[1px] border-solid border-lightgray">
         <FrameComponent14 />
       </div>
     </div>

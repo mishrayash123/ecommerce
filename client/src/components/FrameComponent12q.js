@@ -22,7 +22,7 @@ const FrameComponent12 = ({
   }, [propColor]);
 
   return (
-    <div className="absolute top-[227px] left-[541px] shadow-[0px_11px_25px_rgba(0,_0,_0,_0.1)] rounded-7xl bg-white w-[1106px] h-[97px] overflow-hidden text-left text-base text-black font-made-tommy">
+    <div className="absolute top-[227px] left-[480px] shadow-[0px_11px_25px_rgba(0,_0,_0,_0.1)] rounded-7xl bg-white w-[1000px] h-[97px] overflow-hidden text-left text-base text-black font-made-tommy">
       <div className="absolute top-[14px] left-[110px] text-lg font-light">
         {todaysSales}
       </div>
@@ -40,7 +40,7 @@ const FrameComponent12 = ({
         alt=""
         src={frame92}
       />
-      <Property1Variant
+      {/* <Property1Variant
         prop="Last Week"
         showListBoxTitle={false}
         showDiv={false}
@@ -49,8 +49,8 @@ const FrameComponent12 = ({
         property1Variant4Left="505px"
         showDiv1={false}
         showItem
-      />
-      <div className="absolute top-[42px] left-[833px]">Or</div>
+      /> */}
+      {/* <div className="absolute top-[42px] left-[833px]">Or</div>
       <div className="absolute top-[34px] left-[889px] shadow-[0px_4px_14px_rgba(0,_0,_0,_0.1)] rounded-lg bg-white flex flex-row items-center justify-center py-1.5 px-2.5 gap-[10px] text-dimgray-200 font-montserrat">
         <img
           className="w-6 relative h-6 overflow-hidden shrink-0"
@@ -58,7 +58,7 @@ const FrameComponent12 = ({
           src="/simplelineiconscalenderq.svg"
         />
         <div className="relative">Select Date</div>
-      </div>
+      </div> */}
     </div>
   );
 };

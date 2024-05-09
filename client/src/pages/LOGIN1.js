@@ -6,28 +6,28 @@ const LOGIN1 = () => {
   return (
     <div className="w-full relative bg-white h-[1612px] overflow-hidden text-left text-xl text-dimgray-200 font-poppins">
       <LoginContainer />
-      <div className="absolute top-[228px] left-[98px] text-13xl font-semibold text-black">
+      <div className="absolute top-[228px] left-[20px] text-13xl font-semibold text-black">
         Sign up today and you will be able to :
       </div>
-      <div className="absolute top-[288px] left-[98px]">
+      <div className="absolute top-[288px] left-[20px]">
         <p className="m-0">
           Lorem ipsum dolor sit amet consectetur. Et lobortis justo
         </p>
         <p className="m-0">augue lobortis dictumst fermentum nibh mattis.</p>
       </div>
-      <div className="absolute top-[378px] left-[153px]">
+      <div className="absolute top-[378px] left-[50px]">
         Speed your way through checkout
       </div>
-      <div className="absolute top-[415px] left-[153px]">
+      <div className="absolute top-[415px] left-[50px]">
         Track your orders easily
       </div>
       <img
-        className="absolute top-[383px] left-[108px] w-[23.1px] h-[17px]"
+        className="absolute top-[383px] left-[20px] w-[23.1px] h-[17px]"
         alt=""
         src="/vector-24.svg"
       />
       <img
-        className="absolute top-[420px] left-[108px] w-[23.1px] h-[17px]"
+        className="absolute top-[420px] left-[20px] w-[23.1px] h-[17px]"
         alt=""
         src="/vector-24.svg"
       />

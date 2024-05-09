@@ -9,7 +9,7 @@ const FrameComponent11 = ({ k, k1, k2, k3, k4, propBackgroundColor }) => {
 
   return (
     <div
-      className="absolute top-[389px] left-[572px] rounded-4xl bg-limegreen-300 w-[1043px] h-[457px] overflow-hidden text-left text-xl text-white font-made-tommy"
+      className="absolute top-[389px] left-[485px] rounded-4xl bg-limegreen-300 w-[1043px] h-[457px] overflow-hidden text-left text-xl text-white font-made-tommy"
       style={frameDiv5Style}
     >
       <div className="absolute top-[263px] left-[162px] rounded-t-3xs rounded-b-none bg-white w-5 h-[124px] overflow-hidden" />

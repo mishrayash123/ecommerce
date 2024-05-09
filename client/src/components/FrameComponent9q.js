@@ -2,7 +2,7 @@ import FrameComponent18 from "./FrameComponent18q";
 
 const FrameComponent9 = () => {
   return (
-    <div className="absolute top-[50px] left-[70px] shadow-[0px_286px_80px_rgba(0,_0,_0,_0),_0px_183px_73px_rgba(0,_0,_0,_0.01),_0px_103px_62px_rgba(0,_0,_0,_0.05),_0px_46px_46px_rgba(0,_0,_0,_0.09),_0px_11px_25px_rgba(0,_0,_0,_0.1)] rounded-7xl bg-darkslategray-400 w-[406px] h-[739px] overflow-hidden text-left text-5xl text-white font-made-tommy">
+    <div className="absolute top-[50px] left-[20px] shadow-[0px_286px_80px_rgba(0,_0,_0,_0),_0px_183px_73px_rgba(0,_0,_0,_0.01),_0px_103px_62px_rgba(0,_0,_0,_0.05),_0px_46px_46px_rgba(0,_0,_0,_0.09),_0px_11px_25px_rgba(0,_0,_0,_0.1)] rounded-7xl bg-darkslategray-400 w-[406px] h-[739px] overflow-hidden text-left text-5xl text-white font-made-tommy">
       <div className="absolute top-[109px] left-[calc(50%_-_186px)] rounded-2xs bg-salmon w-[372px] h-11 flex flex-row items-center justify-center py-2.5 px-20 box-border gap-[10px] text-base">
         <img
           className="w-6 absolute !m-[0] top-[calc(50%_-_12px)] left-[20px] h-6 overflow-hidden shrink-0 z-[0]"
