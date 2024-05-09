@@ -38,13 +38,13 @@ const CARTPAGE = () => {
         src="/vector-14.svg"
       />
       <FrameComponent14 />
-      <div className="absolute top-[389px] left-[1115px] text-xl text-gray-400">
+      <div className="absolute top-[389px] left-[1050px] text-xl text-gray-400">
         BILLING DETAILS
       </div>
-      <div className="absolute top-[311px] left-[1115px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy">
+      <div className="absolute top-[311px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy">
         <b className="relative">PLACE ORDER</b>
       </div>
-      <div className="absolute top-[768px] left-[1115px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy">
+      <div className="absolute top-[768px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy">
         <b className="relative">PLACE ORDER</b>
       </div>
       <DiscountFormContainer />

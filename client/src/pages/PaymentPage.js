@@ -10,13 +10,13 @@ const PaymentPage = () => {
     <div className="w-full relative bg-white h-[1776px] overflow-hidden text-left text-base text-white font-inter">
                                     <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       {/* <FrameComponent5 /> */}
-      <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon flex flex-row items-center justify-center py-2.5 px-8">
+      <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-8">
         <div className="relative font-semibold">MY BAG</div>
       </div>
-      <div className="absolute top-[161px] left-[826px] rounded-11xl bg-salmon flex flex-row items-center justify-center py-2.5 px-8">
+      <div className="absolute top-[161px] left-[826px] rounded-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-8">
         <div className="relative font-semibold">ADDRESS</div>
       </div>
-      <div className="absolute top-[161px] left-[1100px] rounded-11xl bg-salmon flex flex-row items-center justify-center py-2.5 px-8">
+      <div className="absolute top-[161px] left-[1100px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 border-[1.5px] border-solid bg-salmon-100">
         <div className="relative font-semibold">PAYMENT</div>
       </div>
       <img

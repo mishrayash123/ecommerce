@@ -46,13 +46,13 @@ const CARTPAGE1 = () => {
           ADD NEW ADDRESS
         </div>
       </div>
-      <div className="absolute top-[309px] left-[1115px] text-xl text-gray-400">
+      <div className="absolute top-[309px] left-[1050px] text-xl text-gray-400">
         BILLING DETAILS
       </div>
       <div className="absolute top-[309px] left-[87px] text-xl font-semibold text-darkslategray-500">
         Delivery To
       </div>
-      <div className="absolute top-[668px] left-[1115px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[127.5px] text-5xl font-made-tommy">
+      <div className="absolute top-[668px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[127.5px] text-5xl font-made-tommy">
         <b className="relative">CONTINUE TO PAYMENT</b>
       </div>
       <DiscountFormContainer propTop="371px" />

@@ -25,7 +25,7 @@ const TRACKORDER = () => {
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
       />
-      <div className="absolute top-[176px] left-[169px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
+      <div className="absolute top-[176px] left-[20px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
         <div className="absolute top-[22px] left-[22px] font-semibold">
           Email
         </div>
@@ -36,29 +36,29 @@ const TRACKORDER = () => {
       <div className="absolute top-[176px] left-[596px] font-made-tommy text-darkslategray-100">
         TRACKING ORDER
       </div>
-      <div className="absolute top-[318px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
+      <div className="absolute top-[318px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
         <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light" style={{ fontFamily: 'Roboto', fontWeight:"bold" }}>
           Profile
         </div>
       </div>
-      <div className="absolute top-[357px] left-[169px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
+      <div className="absolute top-[357px] left-[20px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
         <div className="absolute top-[calc(50%_-_9px)] left-[27px]">
           Track Order
         </div>
       </div>
-      <div className="absolute top-[396px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
+      <div className="absolute top-[396px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
         <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
           FAQ
         </div>
       </div>
          {/*+ Logout Button */}
-         <div className="absolute top-[480px] left-[169px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
+         <div className="absolute top-[480px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
         <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white cursor-pointer" style={{ fontFamily: 'Roboto' }} onClick={logout}>
           Logout
         </button>
       </div>
       <FrameComponent2 />
-      <div className="absolute top-[953px] left-[calc(50%_-_268px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
+      <div className="absolute top-[953px] left-[calc(50%_-_468px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
         <img
           className="absolute top-[124px] left-[1px] max-h-full w-[961px]"
           alt=""
@@ -101,7 +101,7 @@ const TRACKORDER = () => {
       <div className="absolute top-[1278px] left-[596px] text-xl text-gray-400">
         DELIVERY
       </div>
-      <div className="absolute top-[1326px] left-[596px] rounded-10xs bg-white box-border w-[962px] h-[202px] overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600">
+      <div className="absolute top-[1326px] left-[296px] rounded-10xs bg-white box-border w-[962px] h-[202px] overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600">
         <div className="absolute top-[56px] left-[22px] font-semibold">
           Minisha Manoj
         </div>

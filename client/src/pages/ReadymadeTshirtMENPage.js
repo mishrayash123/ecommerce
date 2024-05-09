@@ -100,7 +100,7 @@ const ReadymadeTshirtMENPage = () => {
       />
       <FrameComponent4 />
       <FrameComponent3 />
-
+      
       <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
           products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(

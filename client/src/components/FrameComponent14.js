@@ -1,6 +1,6 @@
 const FrameComponent14 = () => {
   return (
-    <div className="absolute top-[311px] left-[87px] box-border w-[946px] h-[507px] overflow-hidden text-left text-base text-darkslategray-200 font-inter border-[1px] border-solid border-darkgray-400">
+    <div className="absolute top-[311px] left-[20px] box-border w-[946px] h-[507px] overflow-hidden text-left text-base text-darkslategray-200 font-inter border-[1px] border-solid border-darkgray-400">
       <img
         className="absolute top-[97px] left-[25px] w-[244px] h-[325px] object-cover"
         alt=""

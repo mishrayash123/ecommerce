@@ -192,7 +192,8 @@ useEffect(() => {
       <div className="absolute top-[788px] left-[1018px] rounded-md bg-white flex flex-row items-center justify-center py-2.5 px-[76.5px] text-center text-5xl text-salmon-100 border-[2px] border-solid border-salmon-100">
         <div className="relative font-medium">ADD TO WISHLIST</div>
       </div>
-      <Property1Frame2 frameDivTop="961px" frameDivLeft="622px" />
+      <Property1Frame2 frameDivTop="961px" description={products.description}  details={products.details} frameDivLeft="622px" />
+
       </div>
                     ))}
     </div>
