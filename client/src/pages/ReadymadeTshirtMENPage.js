@@ -100,8 +100,8 @@ const ReadymadeTshirtMENPage = () => {
       />
       <FrameComponent4 />
       <FrameComponent3 />
-      
-      <div className='absolute top-[946px] left-[503px] flex flex-row'>
+
+      <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
           products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(
             <a href='' onClick={
@@ -110,9 +110,9 @@ const ReadymadeTshirtMENPage = () => {
               }
           }>
       <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
+        <div className="relative top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
           <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
+            className="relative top-[229px] left-[179px] w-6 h-6 overflow-hidden"
             alt=""
             src="/mingcuteupfill.svg"
           />

@@ -1,6 +1,7 @@
 import FrameComponent from "../components/FrameComponent";
 import GroupComponent from "../components/GroupComponent";
 import MainHeader from "../components/MainHeader";
+import FrameComponent1 from "../components/FrameComponent1";
 
 const MenHomePage = () => {
   return (
@@ -19,7 +20,7 @@ const MenHomePage = () => {
         <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
         <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
       </div>
-      <div className="absolute top-[1495px] left-[77px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
+      <div className="absolute top-[1495px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[0px] w-[480px] h-[480px] object-cover"
           alt=""
@@ -29,7 +30,7 @@ const MenHomePage = () => {
           OVERSIZED T-SHIRT
         </b>
       </div>
-      <div className="absolute top-[2575px] left-[77px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
+      <div className="absolute top-[2575px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-220px] left-[0px] w-[480px] h-[720px] object-cover"
           alt=""
@@ -39,7 +40,7 @@ const MenHomePage = () => {
           SOCKS
         </b>
       </div>
-      <div className="absolute top-[2035px] left-[77px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
+      <div className="absolute top-[2035px] left-[20px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[0px] w-[754px] h-[503px] object-cover"
           alt=""
@@ -49,9 +50,9 @@ const MenHomePage = () => {
           HANKY
         </b>
       </div>
-      <div className="absolute top-[2035px] left-[901px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
+      <div className="absolute top-[2035px] left-[850px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
         <img
-          className="absolute top-[0px] left-[4px] w-[750px] h-[499px] object-cover"
+          className="absolute top-[0px] left-[4px] w-[650px] h-[499px] object-cover"
           alt=""
           src="/frontviewstacktowelphysiotherapyoffice-232148789867-1@2x.png"
         />
@@ -79,7 +80,7 @@ const MenHomePage = () => {
           ARM SLEEVES
         </b>
       </div>
-      <div className="absolute top-[1495px] left-[calc(50%_+_311px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
+      <div className="absolute top-[1495px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-185px] left-[0px] w-[480px] h-[720px] object-cover"
           alt=""
@@ -89,7 +90,7 @@ const MenHomePage = () => {
           SHIRTS
         </b>
       </div>
-      <div className="absolute top-[2575px] left-[calc(50%_+_311px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
+      <div className="absolute top-[2575px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-36px] left-[calc(50%_-_260px)] w-[516px] h-[516px] object-cover"
           alt=""
@@ -380,89 +381,17 @@ const MenHomePage = () => {
       <b className="absolute top-[3357px] left-[calc(50%_-_123px)] text-21xl text-gray-700">
         TOP SELLING
       </b>
-      <div className="absolute top-[5152px] left-[0px] bg-salmon-100 w-[1039px] h-[489px] overflow-hidden text-base font-red-hat-display">
-        <div className="absolute top-[415px] left-[29.5px] text-lg leading-[30.6px]">
-          © Copyright 2023. All Rights Reserved
-        </div>
-        <div className="absolute top-[415.6px] left-[464px] w-[396px] flex flex-row items-start justify-end py-0 pr-0 pl-[247.9px] box-border text-lg">
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10">
-            <div className="relative leading-[27px]">Privacy Policy</div>
-          </div>
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10 ml-[-0.4px]">
-            <div className="relative leading-[27px]">Term of Service</div>
-          </div>
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10 ml-[-0.4px]">
-            <div className="relative leading-[27px]">Legal Info</div>
-          </div>
-        </div>
-        <div className="absolute top-[49px] left-[174px] text-5xl leading-[30.6px] font-extrabold">
-          NEED HELP
-        </div>
-        <div className="absolute top-[49px] left-[384px] text-5xl leading-[30.6px] font-extrabold">
-          COMPANY
-        </div>
-        <div className="absolute top-[99px] left-[174px] leading-[30.6px] font-medium">
-          Contact Us
-        </div>
-        <div className="absolute top-[99px] left-[384px] leading-[30.6px] font-medium">
-          About Us
-        </div>
-        <div className="absolute top-[129px] left-[174px] leading-[30.6px] font-medium">
-          Track Order
-        </div>
-        <div className="absolute top-[129px] left-[384px] leading-[30.6px] font-medium">
-          Careers
-        </div>
-        <div className="absolute top-[159px] left-[174px] leading-[30.6px] font-medium">
-          FAQs
-        </div>
-        <div className="absolute top-[159px] left-[384px] leading-[30.6px] font-medium">
-          Privacy Policy
-        </div>
-        <div className="absolute top-[189px] left-[174px] leading-[30.6px] font-medium">
-          My Account
-        </div>
-      </div>
-      <div className="absolute top-[5257px] left-[903px] bg-whitesmoke-400 w-[825px] h-96 overflow-hidden text-29xl text-black font-vujahday-script">
-        <img
-          className="absolute top-[90.9px] left-[368.9px] w-[70.7px] h-[70.7px] overflow-hidden object-contain"
-          alt=""
-          src="/teenyiconsarrowsolid@2x.png"
-        />
-        <img
-          className="absolute top-[59px] left-[517px] rounded-14xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src="/frame-10.svg"
-        />
-        <img
-          className="absolute top-[131px] left-[517px] rounded-11xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src="/frame-11.svg"
-        />
-        <img
-          className="absolute top-[59px] left-[579px] rounded-19xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src="/frame-12.svg"
-        />
-        <img
-          className="absolute top-[131px] left-[579px] rounded-27xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src="/frame-14.svg"
-        />
-        <div className="absolute top-[106px] left-[54px] leading-[30.6px]">
-          Get The Latest
-        </div>
-        <img
-          className="absolute top-[148.5px] left-[60px] max-h-full w-[380px]"
-          alt=""
-          src="/vector-6.svg"
-        />
-        <div className="absolute top-[178px] left-[67px] text-mini leading-[21px] font-lato flex items-center w-[402px]">
-          Lorem ipsum dolor sit amet consectetur. Eu ut orci amet egestas id in
-          facilisis eget.
-        </div>
-      </div>
-      <div className="absolute top-[5215px] left-[1459px] bg-salmon-100 w-[269px] h-[67px]" />
+      <FrameComponent1
+        frame10="/frame-10.svg"
+        frame11="/frame-11.svg"
+        frame12="/frame-12.svg"
+        frame14="/frame-14.svg"
+        propTop="unset"
+        propBottom="0px"
+        propBackgroundColor="#ff6868"
+        propBackgroundColor1="#ebebeb"
+        propBackgroundColor2="#ff6868"
+      />
       <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
     </div>
   );

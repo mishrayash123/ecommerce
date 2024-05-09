@@ -233,6 +233,7 @@ function App() {
         path="/accessories-arm-sleeves"
         element={<AccessoriesArmSleeves />}
       />
+      
       <Route path="/wishlist-page" element={<WISHLISTPAGE />} />
       <Route path="/wishlist-page1" element={<WISHLISTPAGE1 />} />
       <Route path="/material-page" element={<MATERIALPAGE />} />
@@ -242,6 +243,7 @@ function App() {
       <Route path="/login1" element={<LOGIN1 />} />
       <Route path="/frame-80" element={<Frame />} />
       <Route path="/trackorder" element={<TRACKORDER />} />
+      <Route path="/trackorder1" element={<TRACKORDER1 />} />
       <Route path="/payment-page1" element={<PaymentPage />} />
       <Route path="/after-address-page" element={<AFTERADDRESSPAGE />} />
       <Route path="/profile" element={<PROFILE />} />

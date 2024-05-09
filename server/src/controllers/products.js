@@ -4,16 +4,16 @@ import {createproducts ,getproductsById,getproducts,deleteproductsById, getprodu
 
 export const addtoproducts = async (req, res) => {
     try {
-      const {title,details,color,gender,size,price,image1,image2,image3,image4,description,userid,category,subcategory,subcategory1,} = req.body;
+      const {title,details,color,gender,size,price,image1,image2,image3,image4,description,userid,category,subcategory,subcategory1} = req.body;
       if (!title) {
         return res.sendStatus(400);
       }
 
-      const existingcart = await getproductsByuserid(title);
+    //   const existingcart = await getproductsByuserid(title);
   
-    if (existingcart) {
-      return res.sendStatus(400);
-    }
+    // if (existingcart) {
+    //   return res.sendStatus(400);
+    // }
 
       const user  = await createproducts({
         title,

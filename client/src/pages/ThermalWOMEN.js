@@ -100,24 +100,53 @@ const ThermalWOMEN = () => {
       />
       <FrameComponent4 propTop="1626px" propHeight="371px" />
       <FrameComponent8 showFrameDiv />
+      <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
-          products.filter((e)=>(e.category==="ThermalMEN")).map(products =>(
- <GroupComponent5
-        image9={products.image1}
-        chinos="POLOS"
-        dontCareClub={products.title}
-        id={products._id}
-        prop={products.price}
-        solarbagOutline="/solarbagoutline6.svg"
-        propTop="946px"
-        propLeft="503px"
-        propTop1="-39px"
-        propHeight="429px"
-        propLeft1="calc(50% - 174px)"
-        propWidth="348px"
-      /> 
+          products.filter((e)=>(e.category==="ThermalWOMEN")).map(products =>(
+            <a href='' onClick={
+              (e) => {
+                nav('/material-page', { state: { id: products._id} });
+              }
+          }>
+      <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
+        <div className="relative top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
+          <img
+            className="relative top-[229px] left-[179px] w-6 h-6 overflow-hidden"
+            alt=""
+            src="/mingcuteupfill.svg"
+          />
+          <img
+            className="absolute top-[-1px] left-[calc(50%_-_146px)] w-[293px] h-[391px] object-cover"
+            alt=""
+            src={products.image1}
+          />
+          
+          <div className="absolute top-[469px] left-[15px]">
+            {products.title}
+          </div>
+          <img
+            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
+            alt=""
+            src="/vector-13.svg"
+          />
+          <div className="absolute top-[498px] left-[15px] font-semibold">
+            ₹{products.price}
+          </div>
+          <div className="absolute top-[528px] left-[16px] text-2xs">
+            MRP incl. of all taxes
+          </div>
+          <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
+          <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
+        </div>
+        <img
+          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
+          alt=""
+          src="/solarbagoutline6.svg"
+        />
+      </div>
+      </a>
           ))}
-      
+      </div>
       <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"

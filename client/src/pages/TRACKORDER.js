@@ -1,7 +1,8 @@
 import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5q";
-import FrameComponent1 from "../components/FrameComponent1q";
+import FrameComponent2 from "../components/FrameComponent1q";
 import FrameComponent from "../components/FrameComponentq";
+import FrameComponent1 from "../components/FrameComponent1";
 import { useAuth } from "../AuthContext";
 
 const TRACKORDER = () => {
@@ -13,6 +14,17 @@ const TRACKORDER = () => {
     <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
                                           <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       <FrameComponent5 />
+      <FrameComponent1
+        frame10="/frame-10.svg"
+        frame11="/frame-11.svg"
+        frame12="/frame-12.svg"
+        frame14="/frame-14.svg"
+        propTop="unset"
+        propBottom="0px"
+        propBackgroundColor="#ff6868"
+        propBackgroundColor1="#ebebeb"
+        propBackgroundColor2="#ff6868"
+      />
       <div className="absolute top-[176px] left-[169px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
         <div className="absolute top-[22px] left-[22px] font-semibold">
           Email
@@ -45,7 +57,7 @@ const TRACKORDER = () => {
           Logout
         </button>
       </div>
-      <FrameComponent1 />
+      <FrameComponent2 />
       <div className="absolute top-[953px] left-[calc(50%_-_268px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
         <img
           className="absolute top-[124px] left-[1px] max-h-full w-[961px]"

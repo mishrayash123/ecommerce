@@ -217,7 +217,8 @@ const Dashboard1 = () => {
           />
         </div>
         <div className="absolute bottom-[50px] left-[500px]">
-          <button onClick={handleInsertProduct} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded cursor-pointer">
+          <button onClick={()=>{
+            handleInsertProduct()}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded cursor-pointer">
             Insert Product
           </button>
         </div>

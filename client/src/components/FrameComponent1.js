@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 
+
 const FrameComponent1 = ({
   frame10,
   frame11,
@@ -48,7 +49,7 @@ const FrameComponent1 = ({
         <div className="absolute top-[415px] left-[29.5px] text-lg leading-[30.6px]">
           © Copyright 2023. All Rights Reserved
         </div>
-        <div className="absolute top-[415.6px] left-[464px] w-[396px] flex flex-row items-start justify-end py-0 pr-0 pl-[247.9px] box-border text-lg">
+        <div className="absolute top-[390.6px] left-[400px] w-[396px] flex flex-row items-start justify-end py-0 pr-0 pl-[247.9px] box-border text-lg">
           <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10">
             <div className="relative leading-[27px]">Privacy Policy</div>
           </div>
@@ -88,7 +89,7 @@ const FrameComponent1 = ({
         </div>
       </div>
       <div
-        className="absolute top-[105px] left-[903px] bg-whitesmoke-400 w-[825px] h-96 overflow-hidden text-29xl text-black font-vujahday-script"
+        className="absolute top-[105px] left-[853px] bg-whitesmoke-400 w-[825px] h-96 overflow-hidden text-29xl text-black font-vujahday-script"
         style={frameDiv6Style}
       >
         <img

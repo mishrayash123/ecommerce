@@ -2,6 +2,7 @@ import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5q";
 import FrameComponent6 from "../components/FrameComponent6q";
 import { useAuth } from "../AuthContext";
+import FrameComponent1 from "../components/FrameComponent1";
 
 const PROFILE = () => {
   const email = localStorage.getItem("email");
@@ -9,7 +10,17 @@ const PROFILE = () => {
   return (
     <div className="w-full relative bg-white h-[1625px] overflow-hidden text-left text-mini text-black font-made-tommy">
                                           <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
-      <FrameComponent5 />
+                                          <FrameComponent1
+        frame10="/frame-10.svg"
+        frame11="/frame-11.svg"
+        frame12="/frame-12.svg"
+        frame14="/frame-14.svg"
+        propTop="unset"
+        propBottom="0px"
+        propBackgroundColor="#ff6868"
+        propBackgroundColor1="#ebebeb"
+        propBackgroundColor2="#ff6868"
+      />
       <div className="absolute top-[176px] left-[169px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm font-inter">
         <div className="absolute top-[22px] left-[22px] font-semibold">
           Email
