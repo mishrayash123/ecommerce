@@ -101,10 +101,11 @@ const ReadymadeTshirtMENPage = () => {
       
       <FrameComponent4 />
       <FrameComponent3 />
+      {/* .filter((e)=>(e.category==="ReadymadeTshirtMEN")) */}
       
       <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
-          products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(
+          products.map(products =>(
             <a href='' onClick={
               (e) => {
                 nav('/material-page', { state: { id: products._id} });
@@ -140,11 +141,11 @@ const ReadymadeTshirtMENPage = () => {
           <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
           <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
         </div>
-        <img
-          className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
+        {/* <img
+          className="relative top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
           alt=""
           src="/solarbagoutline6.svg"
-        />
+        /> */}
       </div>
       </a>
           ))}

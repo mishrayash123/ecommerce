@@ -8,12 +8,16 @@ const UserSchema = new mongoose.Schema({
   gender: { type: String, required: true },
   size: { type: String, required: true },
   price: { type: Number, required: true },
-  image: { type: String, required: true },
+  image1: { type: String, required: true },
+  image2: { type: String, required: true },
+  image3: { type: String, required: true },
+  image4: { type: String, required: true },
   description: { type: String, required: true },
   userid: { type: String, required: true },
   category: { type: String, required: true },
   subcategory: { type: String, required: true },
   subcategory1: { type: String, required: true },
+  details: { type: String, required: true },
 });
 
  export const UserModel = mongoose.model('Cart', UserSchema);

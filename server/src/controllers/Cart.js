@@ -2,9 +2,25 @@ import express from 'express';
 
 import { createCart ,getcart,getcartByuserid,deleteCartById} from '../db/Cart.js';
 
+
 export const addtocart = async (req, res) => {
     try {
-      const { productid,title,color,gender,size,price,image,description,userid,category,subcategory,subcategory1,} = req.body;
+      const { productid,
+        title,
+        color,
+        gender,
+        size,
+        price,
+        image1,
+        image2,
+        image3,
+        image4,
+        description,
+        userid,
+        category,
+        subcategory,
+        subcategory1,
+        details,} = req.body;
       if (!productid || !userid) {
         return res.sendStatus(400);
       }
@@ -17,17 +33,21 @@ export const addtocart = async (req, res) => {
 
       const user  = await createCart({
         productid,
-        title,
-color,
-gender,
-size,
-price,
-image,
-description,
-userid,
-category,
-subcategory,
-subcategory1,
+  title,
+  color,
+  gender,
+  size,
+  price,
+  image1,
+  image2,
+  image3,
+  image4,
+  description,
+  userid,
+  category,
+  subcategory,
+  subcategory1,
+  details,
       });
       return res.status(200).json(user).end();
     } catch (error) {

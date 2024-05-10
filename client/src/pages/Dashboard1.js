@@ -97,7 +97,6 @@ const Dashboard1 = () => {
   }
 
   const handleInsertProduct = async() => {
-    console.log(userid,title,color,gender,size,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4)
     try {
       const response = await fetch("http://localhost:8080/addtoproducts", {
         method: "POST",

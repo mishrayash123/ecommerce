@@ -151,11 +151,11 @@ const ReadymadeLowerPage = () => {
           <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
           <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
         </div>
-        <img
+        {/* <img
           className="absolute top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
           alt=""
           src="/solarbagoutline6.svg"
-        />
+        /> */}
       </div>
       </a>
           ))}

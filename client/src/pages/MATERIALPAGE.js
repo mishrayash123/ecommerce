@@ -7,6 +7,7 @@ import { useState,useEffect } from "react";
 const MATERIALPAGE = () => {
   const location = useLocation();
   const [products, setproducts] = useState([]);
+  const userid = localStorage.getItem("paricollectionuserId");
 
   const fetchData = async () => {
     try {
@@ -33,6 +34,28 @@ const MATERIALPAGE = () => {
 useEffect(() => {
   fetchData();
 }, []);
+
+
+const handleaddtowishlist = async(productid,title,color,gender,size,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4) => {
+  try {
+    const response = await fetch("http://localhost:8080/addtocart", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({userid,productid,title,color,gender,size,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4
+      }),
+    });
+
+    if (response.ok) {
+      alert("Added to wishlist");
+    }else {
+      alert("something went wrong...please check credential");
+    }
+  } catch (error) {
+    console.error("Error during registration:", error);
+  }
+};
 
   return (
     <div className="w-full relative bg-white h-[2065px] overflow-hidden text-left text-lg text-gray-600 font-made-tommy">
@@ -186,10 +209,12 @@ useEffect(() => {
         alt=""
         src="/vector-10.svg"
       />
-      <div className="absolute top-[788px] left-[624px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[99px] text-5xl text-white">
-        <div className="relative font-medium">ADD TO CART</div>
+      <div className="absolute top-[788px] left-[624px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[99px] text-5xl text-white cursor-pointer" >
+        <div className="relative font-medium" >ADD TO CART</div>
       </div>
-      <div className="absolute top-[788px] left-[1018px] rounded-md bg-white flex flex-row items-center justify-center py-2.5 px-[76.5px] text-center text-5xl text-salmon-100 border-[2px] border-solid border-salmon-100">
+      <div className="absolute top-[788px] left-[1018px] rounded-md bg-white flex flex-row items-center justify-center py-2.5 px-[76.5px] text-center text-5xl text-salmon-100 border-[2px] border-solid border-salmon-100 cursor-pointer" onClick={()=>{
+        handleaddtowishlist(products._id,products.title,products.color,products.gender,products.size,products.price,products.description,products.details,products.category,products.subcategory,products.subcategory1,products.image1,products.image2,products.image3,products.image4);
+      }}>
         <div className="relative font-medium">ADD TO WISHLIST</div>
       </div>
       <Property1Frame2 frameDivTop="961px" description={products.description}  details={products.details} frameDivLeft="622px" />
