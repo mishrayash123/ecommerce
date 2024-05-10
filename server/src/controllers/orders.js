@@ -5,7 +5,7 @@ import {UserModel} from "../db/orders.js"
 
 export const addtoorders = async (req, res) => {
     try {
-      const { productid, userid,date,orderid,quantity,cod} = req.body;
+      const { productid, userid,date,orderid,quantity,size} = req.body;
       if (!productid || !userid) {
         return res.sendStatus(400);
       }
@@ -22,7 +22,7 @@ export const addtoorders = async (req, res) => {
         date,
         orderid,
         quantity,
-        cod
+        size
       });
       return res.status(200).json(user).end();
     } catch (error) {

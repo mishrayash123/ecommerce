@@ -54,7 +54,7 @@ const ADDRESSPOPUP = () => {
     <div>
                               <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
 
-    <div className="shadow-[0px_0px_5.4px_rgba(0,_0,_0,_0.25)] bg-white w-full overflow-x-auto flex flex-col items-start justify-start pt-[43px] px-[18px] pb-[78px] box-border gap-[45.5px] leading-[normal] tracking-[normal] mq750:gap-[23px] mt-20">
+    <div className=" bg-white w-3/4 overflow-hidden flex flex-col items-start justify-start pt-[43px] px-[18px] pb-[78px] gap-[45.5px] leading-[normal] tracking-[normal] mq750:gap-[23px] mt-20">
       <header className="w-[1225px] flex flex-col items-start justify-start gap-[29.5px] max-w-full text-left text-[40px] text-black font-roboto-flex">
         <div className="self-stretch flex flex-row items-start justify-start py-0 pr-[43px] pl-[42px] box-border max-w-full lg:pl-[21px] lg:pr-[21px] lg:box-border">
           <div className="flex-1 flex flex-row items-start justify-between max-w-full gap-[20px]">
@@ -409,12 +409,12 @@ const ADDRESSPOPUP = () => {
                 />
               </div>
               <div className="flex flex-row items-start justify-center py-0 px-0.5 box-border max-w-full text-darkslategray">
-                <div className="flex flex-row items-start justify-start gap-[15px] max-w-full">
+                {/* <div className="flex flex-row items-start justify-start gap-[15px] max-w-full">
                   <input className="m-0 h-[23px] w-5" type="checkbox" />
                   <div className="relative mq450:text-lg">
                     Make this my default address
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

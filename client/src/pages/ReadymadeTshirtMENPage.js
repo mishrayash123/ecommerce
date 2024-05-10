@@ -101,11 +101,9 @@ const ReadymadeTshirtMENPage = () => {
       
       <FrameComponent4 />
       <FrameComponent3 />
-      {/* .filter((e)=>(e.category==="ReadymadeTshirtMEN")) */}
-      
       <div className='absolute top-[946px] left-[503px] flex flex-row gap-8'>
       {
-          products.map(products =>(
+          products.filter((e)=>(e.category==="ReadymadeTshirtMEN")).map(products =>(
             <a href='' onClick={
               (e) => {
                 nav('/material-page', { state: { id: products._id} });

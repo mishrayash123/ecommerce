@@ -11,7 +11,7 @@ const UserSchema = new mongoose.Schema({
   ontheway: { type: Boolean},
   delivered: { type: Boolean},
   quantity: { type: Number, required: true },
-  cod:{type:Boolean, required:true}
+  size:{type:String, required:true}
 });
 
  export const UserModel = mongoose.model('orders', UserSchema);

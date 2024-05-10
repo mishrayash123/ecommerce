@@ -3,11 +3,13 @@ import FrameComponent1 from "../components/FrameComponent1";
 import Property1Frame2 from "../components/Property1Frame2";
 import { useLocation } from 'react-router-dom'
 import { useState,useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const MATERIALPAGE = () => {
   const location = useLocation();
   const [products, setproducts] = useState([]);
   const userid = localStorage.getItem("paricollectionuserId");
+  const nav = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -50,12 +52,15 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
     if (response.ok) {
       alert("Added to wishlist");
     }else {
-      alert("something went wrong...please check credential");
+      alert("Already in wishlist");
     }
   } catch (error) {
     console.error("Error during registration:", error);
   }
 };
+
+
+
 
   return (
     <div className="w-full relative bg-white h-[2065px] overflow-hidden text-left text-lg text-gray-600 font-made-tommy">
@@ -209,7 +214,9 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
         alt=""
         src="/vector-10.svg"
       />
-      <div className="absolute top-[788px] left-[624px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[99px] text-5xl text-white cursor-pointer" >
+      <div className="absolute top-[788px] left-[624px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[99px] text-5xl text-white cursor-pointer" onClick={()=>{
+        nav('/cart-page', { state: { id: products._id} });
+      }} >
         <div className="relative font-medium" >ADD TO CART</div>
       </div>
       <div className="absolute top-[788px] left-[1018px] rounded-md bg-white flex flex-row items-center justify-center py-2.5 px-[76.5px] text-center text-5xl text-salmon-100 border-[2px] border-solid border-salmon-100 cursor-pointer" onClick={()=>{

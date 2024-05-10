@@ -7,10 +7,18 @@ import FrameComponent5 from "../components/FrameComponent5q";
 import FrameComponent3 from "../components/FrameComponent3q";
 import FrameComponent2 from "../components/FrameComponent2q";
 import Component from "../components/Componentq";
+import { useLocation } from 'react-router-dom'
+import {useEffect } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const PaymentPage1 = () => {
   const [isFrameOpen, setFrameOpen] = useState(false);
-
+  const [ordered, setordered] = useState(false);
+  const userid = localStorage.getItem("paricollectionuserId");
+  const [orders, setorders] = useState([]);
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+  const location = useLocation();
   const openFrame = useCallback(() => {
     setFrameOpen(true);
   }, []);
@@ -18,6 +26,125 @@ const PaymentPage1 = () => {
   const closeFrame = useCallback(() => {
     setFrameOpen(false);
   }, []);
+
+
+  const fetchData1 = async () => {
+    try {
+        const response = await fetch(
+          "http://localhost:8080/getorders",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setorders(data)
+        } else {
+          alert("Something went wrong please login again");
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+      }
+  }
+  
+  useEffect(() => {
+    fetchData1();
+   fetchData();
+   console.log(location.state.id)
+  }, []);
+
+
+  const placeorder =async(idx)=>{
+    try {
+      const response = await fetch(`http://localhost:8080/updateorder/${idx}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ordered}),
+      });
+
+      if (response.ok) {
+        alert("Congratulations your order placed");
+        nav('/')
+      }else {
+        alert("something went wrong...please check credential");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+
+  }
+
+  const fetchData = async () => {
+    try {
+        const response = await fetch(
+          "http://localhost:8080/getproducts",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+        if (response.ok) {
+          const data = await response.json();
+          setproducts(data)
+        } else {
+          alert("Something went wrong please login again");
+        }
+      } catch (error) {
+        console.error("Error during login:", error);
+      }
+}
+
+  const loadScript = (src) => {
+    return new Promise( (resovle) => {
+    const script = document. createElement('script');
+    script.src = src;
+    script.onload = () => {
+    resovle(true)
+    }
+    script.onerror = () => {
+    resovle (false)
+    }
+    document.body.appendChild(script)
+    });
+}
+
+  const razorPay = async (amountx,orderidx) =>{
+    const res = await loadScript("https://checkout.razorpay.com/v1/checkout.js")
+     if (!res) {
+        alert('You are offline... Failed to load Razorpay SDK');
+        return;
+     }
+    
+     const options = {
+        key:"rzp_test_dTl39yx1h7zSnl",
+        currency:"INR",
+        amount:amountx*100,
+        name: "Pari Collection", 
+        description: "Ordering 1 thumbnail", 
+        image: 'xyz',
+
+        handler: function (response) {
+        alert ("Payment Successfully");
+        setordered(true)
+        placeorder(orderidx);
+        }, 
+        prefill: {
+        name:
+        "Pari Collection"
+        }
+        };
+
+        const paymentObject = new window.Razorpay(options);
+        paymentObject.open()
+ }
+
 
   return (
     <>
@@ -43,9 +170,19 @@ const PaymentPage1 = () => {
       <div className="absolute top-[161px] left-[1100px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 border-[1.5px] border-solid bg-salmon-100">
         <div className="relative font-semibold">PAYMENT</div>
       </div>
-      <div className="absolute top-[261px] left-[726px] rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer">
+      {
+                    products.filter((e) => (e._id == location.state.productid)).map(products => (
+                      <div>
+                         {
+                    orders.filter((e) => (e.userid ==userid)).filter((e) => (e.orderid ==location.state.id)).map(orders => (
+      <div className="absolute top-[261px] left-[726px] rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
+        razorPay(products.price*location.state.quantity,orders._id);
+      }}>
         <div className="relative font-semibold">Continue To Payment</div>
       </div>
+      ))}
+      </div>
+                    ))}
         <img
           className="absolute top-[180.5px] left-[704.5px] max-h-full w-[109px]"
           alt=""
