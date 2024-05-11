@@ -125,7 +125,7 @@ const Header = ({
       </div>
       <div className="absolute top-[30px] left-[1379px]" style={contactUsStyle}>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Contact Us</b>
+          <b className="relative">Home</b>
           </Link>
       </div>
       <div

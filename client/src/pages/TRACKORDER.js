@@ -4,11 +4,12 @@ import FrameComponent2 from "../components/FrameComponent1q";
 import FrameComponent from "../components/FrameComponentq";
 import FrameComponent1 from "../components/FrameComponent1";
 import { useAuth } from "../AuthContext";
+import {useNavigate} from 'react-router-dom'
 
 const TRACKORDER = () => {
   const email = localStorage.getItem("email");
   const {logout} = useAuth();
-
+  const nav = useNavigate();
 
   return (
     <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
@@ -41,14 +42,23 @@ const TRACKORDER = () => {
           Profile
         </div>
       </div>
-      <div className="absolute top-[357px] left-[20px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
+      <div className="absolute top-[357px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer" onClick={()=>{
+        nav('/frame-80');
+      }}>
+        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light text-sm">
+          Edit Address
+        </div>
+      </div>
+      {/* <div className="absolute top-[357px] left-[20px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
         <div className="absolute top-[calc(50%_-_9px)] left-[27px]">
           Track Order
         </div>
-      </div>
-      <div className="absolute top-[396px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
+      </div> */}
+      <div className="absolute top-[396px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300 cursor-pointer"  onClick={()=>{
+        nav('/wishlist-page');
+      }}>
         <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
-          FAQ
+          Your Orders
         </div>
       </div>
          {/*+ Logout Button */}

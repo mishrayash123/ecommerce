@@ -10,7 +10,7 @@ const WISHLISTPAGE = () => {
         Your wishlist is lonely and looking for love.
       </b>
       <div className="absolute top-[147px] left-[calc(50%_-_755px)]">
-        <span className="font-semibold">My Wishlist</span>
+        <span className="font-semibold">My Orders</span>
         <b> </b>
         <span>(0 items)</span>
       </div>
