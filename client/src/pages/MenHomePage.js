@@ -2,8 +2,45 @@ import FrameComponent from "../components/FrameComponent";
 import GroupComponent from "../components/GroupComponent";
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
+import React, { useState,useEffect } from 'react';
+import {useNavigate} from 'react-router-dom'
 
 const MenHomePage = () => {
+  const [products, setproducts] = useState([]);
+  const nav = useNavigate();
+
+
+  
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost:8080/getproducts",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data)
+        console.log(data)
+      } else {
+        alert("Something went wrong please login again");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
+  useEffect(() => {
+    
+    fetchData();
+  }, []);
+
+
   return (
     <div className="w-full relative bg-white h-[5641px] overflow-hidden text-left text-13xl text-white font-made-tommy">
       <FrameComponent />
@@ -103,271 +140,56 @@ const MenHomePage = () => {
       <b className="absolute top-[1397px] left-[calc(50%_-_106px)] text-21xl text-gray-700">
         CATEGORY
       </b>
-      <GroupComponent
-        mingcuteupFill="/mingcuteupfill.svg"
-        vector1="/vector-1.svg"
-        solarbagOutline="/solarbagoutline.svg"
-      />
-      <div className="absolute top-[4181px] left-[28px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
+     
+
+     <div className="absolute top-[3471px] left-[28px] flex flex-row gap-8">
+     {
+          products.map(products =>(
+            <a href='' onClick={
+              (e) => {
+                nav('/material-page', { state: { id: products._id} });
+              }
+          }>
+      <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
+        <div className="relative top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
           <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
+            className="relative top-[229px] left-[179px] w-6 h-6 overflow-hidden"
             alt=""
             src="/mingcuteupfill.svg"
           />
           <img
-            className="absolute top-[-36px] left-[39px] w-[304px] h-[443px] object-cover"
+            className="absolute top-[-1px] left-[calc(50%_-_146px)] w-[293px] h-[391px] object-cover"
             alt=""
-            src="/indianmansimplewhiteteestudioportrait-53876102833-1@2x.png"
+            src={products.image1}
           />
-          <div className="absolute top-[430px] left-[15px] font-semibold text-black">
-            POLOS
-          </div>
-          <div className="absolute top-[479px] left-[15px] text-base">
-            Looney Tunes: The Daffy Sketch
+          
+          <div className="absolute top-[449px] left-[15px]">
+            {products.title}
           </div>
           <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
+            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
             alt=""
-            src="/vector-1.svg"
+            src="/vector-13.svg"
           />
-          <div className="absolute top-[508px] left-[15px] text-xl font-semibold">
-            ₹599
+          <div className="absolute top-[480px] left-[15px] font-semibold">
+            ₹{products.price}
           </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
+          <div className="absolute top-[528px] left-[16px] text-2xs">
             MRP incl. of all taxes
           </div>
-          <div className="absolute top-[0px] left-[333px] bg-gainsboro-100 w-[54px] h-[407px]" />
-          <div className="absolute top-[0px] left-[0px] bg-gainsboro-100 w-[54px] h-[407px]" />
+          <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
+          <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
         </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
+        {/* <img
+          className="relative top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
           alt=""
-          src="/solarbagoutline.svg"
-        />
+          src="/solarbagoutline6.svg"
+        /> */}
       </div>
-      <div className="absolute top-[3471px] left-[458px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px]">Men Jeans</div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹899
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-166px] left-[-1px] w-[383px] h-[574px] object-cover"
-            alt=""
-            src="/mannavyjacketjeansstreetwear-53876108579-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[4181px] left-[458px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px]">Men Jeans</div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹899
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-166px] left-[-1px] w-[383px] h-[574px] object-cover"
-            alt=""
-            src="/mannavyjacketjeansstreetwear-53876108579-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[3471px] left-[888px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px]">
-            Winter Soft Socks
-          </div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹299
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-167px] left-[-1px] w-[383px] h-[575px] object-cover"
-            alt=""
-            src="/personrelaxingwinterwithcozyclothing-232149188017-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[4181px] left-[888px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px]">
-            Winter Soft Socks
-          </div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹299
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-167px] left-[-1px] w-[383px] h-[575px] object-cover"
-            alt=""
-            src="/personrelaxingwinterwithcozyclothing-232149188017-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[3471px] left-[1318px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px] inline-block w-[171px]">
-            Soft White Towels
-          </div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹399
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-75px] left-[-1px] w-[383px] h-[483px] object-cover"
-            alt=""
-            src="/whitetowelbeddecorationbedroominterior-13397141-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <div className="absolute top-[4181px] left-[1318px] shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[382px] h-[606px] text-xl text-dimgray-600 font-inter">
-        <div className="absolute top-[0px] left-[0px] rounded-t-8xl rounded-br-139xl rounded-bl-8xl bg-bisque w-[382px] h-[606px] overflow-hidden">
-          <img
-            className="absolute top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <div className="absolute top-[430px] left-[15px] text-13xl font-semibold text-black">
-            Chinos
-          </div>
-          <div className="absolute top-[479px] left-[15px] inline-block w-[171px]">
-            Soft White Towels
-          </div>
-          <img
-            className="absolute top-[569.3px] left-[calc(50%_-_176px)] max-h-full w-[333px]"
-            alt=""
-            src="/vector-1.svg"
-          />
-          <div className="absolute top-[508px] left-[15px] font-semibold">
-            ₹399
-          </div>
-          <div className="absolute top-[580px] left-[15px] text-sm">
-            MRP incl. of all taxes
-          </div>
-          <img
-            className="absolute top-[-75px] left-[-1px] w-[383px] h-[483px] object-cover"
-            alt=""
-            src="/whitetowelbeddecorationbedroominterior-13397141-1@2x.png"
-          />
-        </div>
-        <img
-          className="absolute top-[516px] left-[292px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline.svg"
-        />
-      </div>
-      <img
-        className="absolute top-[3721px] left-[48px] w-[57px] h-[57px] object-contain"
-        alt=""
-        src="/group-5@2x.png"
-      />
-      <img
-        className="absolute top-[4431px] left-[48px] w-[57px] h-[57px] object-contain"
-        alt=""
-        src="/group-11@2x.png"
-      />
+      </a>
+          ))}
+     </div>
+      
       <img
         className="absolute top-[3721px] left-[1628px] w-[57px] h-[57px]"
         alt=""

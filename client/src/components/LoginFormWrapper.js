@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useAuth } from "../AuthContext";
+import { useNavigate } from 'react-router-dom';
 
 const LoginFormWrapper = () => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const {login, setUser } = useAuth();
+  const nav = useNavigate();
 
   const handleUsernameChange = (event) => {
     setemail(event.target.value);
@@ -39,7 +41,7 @@ const LoginFormWrapper = () => {
          localStorage.setItem("username", data.username);
           localStorage.setItem("email", data.email);
         alert("Logged in successfully");
-        navigate("/");
+        nav("/");
       } else { 
         alert("something went wrong...please check credential");
       }

@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { Link } from 'react-router-dom';
+import { useAuth } from "../AuthContext";
 
 const Header = ({
   solarbagOutline,
@@ -71,6 +72,8 @@ const Header = ({
       top: propTop2,
     };
   }, [propTop2]);
+  const {isLoggedIn} = useAuth();
+
 
   return (
     <div
@@ -84,13 +87,18 @@ const Header = ({
         src={solarbagOutline}
       />
           </Link>
-          <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <img
-        className="absolute top-[27px] left-[1500px] rounded-45xl w-[35px] h-[35px] overflow-hidden"
-        alt=""
-        src="/codiconaccount2.svg"
-      />
+          {
+            isLoggedIn ? <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <img
+          className="absolute top-[27px] left-[1500px] rounded-45xl w-[35px] h-[35px] overflow-hidden"
+          alt=""
+          src="/codiconaccount2.svg"
+        />
+            </Link> : <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="absolute top-[29px] left-[1500px] overflow-hidden">Sign in</b>
           </Link>
+          }
+          
       <div
         className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_6px)] rounded-3xl bg-palegoldenrod w-[334px] h-[51px] overflow-hidden text-base text-gray-300 font-inter"
         style={frameDiv2Style}
