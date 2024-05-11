@@ -11,7 +11,7 @@ const FrameComponent14 = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/getproducts",
+        "https://ecommercebackend-32ve.onrender.com/getproducts",
         {
           method: "GET",
           headers: {
@@ -40,7 +40,7 @@ const FrameComponent14 = () => {
   const remove = async (id) => {
     try {
     const response = await fetch(
-      `http://localhost:8080/deleteproducts/${id}`,
+      `https://ecommercebackend-32ve.onrender.com/deleteproducts/${id}`,
       {
         method: "DELETE",
         headers: {

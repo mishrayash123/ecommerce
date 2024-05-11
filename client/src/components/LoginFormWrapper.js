@@ -20,7 +20,7 @@ const LoginFormWrapper = () => {
     e.preventDefault();
     try {
       const response = await fetch( 
-        "http://localhost:8080/auth/login", 
+        "https://ecommercebackend-32ve.onrender.com/auth/login", 
         {
           method: "POST", 
           headers: {

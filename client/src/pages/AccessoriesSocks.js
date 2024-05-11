@@ -21,7 +21,7 @@ const AccessoriesSocks = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8080/getproducts",
+        "https://ecommercebackend-32ve.onrender.com/getproducts",
         {
           method: "GET",
           headers: {

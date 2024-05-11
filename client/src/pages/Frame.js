@@ -29,7 +29,7 @@ const ADDRESSPOPUP = () => {
       const id = localStorage.getItem("paricollectionuserId");
       e.preventDefault();
       try {
-          const response = await fetch(`http://localhost:8080/updateusers/${id}`, {
+          const response = await fetch(`https://ecommercebackend-32ve.onrender.com/updateusers/${id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",

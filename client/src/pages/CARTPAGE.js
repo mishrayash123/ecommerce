@@ -27,7 +27,7 @@ const CARTPAGE = ({ propTop }) => {
   const fetchData = async () => {
     try {
         const response = await fetch(
-          "http://localhost:8080/getproducts",
+          "https://ecommercebackend-32ve.onrender.com/getproducts",
           {
             method: "GET",
             headers: {
@@ -52,7 +52,7 @@ useEffect(() => {
 
 const handlesubmit = async()=>{
   try {
-    const response = await fetch("http://localhost:8080/addtoorders", {
+    const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtoorders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -31,7 +31,7 @@ const PaymentPage1 = () => {
   const fetchData1 = async () => {
     try {
         const response = await fetch(
-          "http://localhost:8080/getorders",
+          "https://ecommercebackend-32ve.onrender.com/getorders",
           {
             method: "GET",
             headers: {
@@ -53,13 +53,12 @@ const PaymentPage1 = () => {
   useEffect(() => {
     fetchData1();
    fetchData();
-   console.log(location.state.id)
   }, []);
 
 
   const placeorder =async(idx)=>{
     try {
-      const response = await fetch(`http://localhost:8080/updateorder/${idx}`, {
+      const response = await fetch(`https://ecommercebackend-32ve.onrender.com/updateorder/${idx}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -82,7 +81,7 @@ const PaymentPage1 = () => {
   const fetchData = async () => {
     try {
         const response = await fetch(
-          "http://localhost:8080/getproducts",
+          "https://ecommercebackend-32ve.onrender.com/getproducts",
           {
             method: "GET",
             headers: {

@@ -14,7 +14,7 @@ const MATERIALPAGE = () => {
   const fetchData = async () => {
     try {
         const response = await fetch(
-          "http://localhost:8080/getproducts",
+          "https://ecommercebackend-32ve.onrender.com/getproducts",
           {
             method: "GET",
             headers: {
@@ -40,7 +40,7 @@ useEffect(() => {
 
 const handleaddtowishlist = async(productid,title,color,gender,size,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4) => {
   try {
-    const response = await fetch("http://localhost:8080/addtocart", {
+    const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtocart", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
