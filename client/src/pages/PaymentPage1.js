@@ -13,7 +13,6 @@ import {useNavigate} from 'react-router-dom'
 
 const PaymentPage1 = () => {
   const [isFrameOpen, setFrameOpen] = useState(false);
-  const [ordered, setordered] = useState(false);
   const userid = localStorage.getItem("paricollectionuserId");
   const [orders, setorders] = useState([]);
   const [products, setproducts] = useState([]);
@@ -56,7 +55,7 @@ const PaymentPage1 = () => {
   }, []);
 
 
-  const placeorder =async(idx)=>{
+  const placeorder =async(idx,ordered)=>{
     try {
       const response = await fetch(`https://ecommercebackend-32ve.onrender.com/updateorder/${idx}`, {
         method: "PATCH",
@@ -131,8 +130,7 @@ const PaymentPage1 = () => {
 
         handler: function (response) {
         alert ("Payment Successfully");
-        setordered(true)
-        placeorder(orderidx);
+        placeorder(orderidx,true);
         }, 
         prefill: {
         name:

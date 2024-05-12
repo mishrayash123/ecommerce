@@ -40,6 +40,7 @@ const CARTPAGE1 = ({ propTop }) => {
       }
 }
 
+
 const fetchData1 = async () => {
   try {
       const response = await fetch(

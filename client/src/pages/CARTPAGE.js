@@ -135,15 +135,6 @@ const handlesubmit = async()=>{
       <div className="absolute top-[137px] left-[302px] text-mini">
         {products.category}
       </div>
-      {/* <div className="absolute top-[257px] left-[302px] text-mini text-gray-1000">
-        <span>
-          <span>Estimated Delivery by</span>
-          <span className="text-darkslategray-200"> </span>
-        </span>
-        <span className="text-darkslategray-200">
-          <b>30 Apr</b>
-        </span>
-      </div> */}
       <b className="absolute top-[24px] left-[867px] text-xl [text-decoration:underline] text-salmon-100">
         ADD
       </b>
@@ -160,12 +151,6 @@ const handlesubmit = async()=>{
       <div className="absolute top-[137px] left-[763px] text-mini font-semibold text-gray-600">
         MRP incl. of all taxes
       </div>
-      {/* <div className="absolute top-[447px] left-[475px] rounded-8xs flex flex-row items-center justify-center py-2.5 px-[55px] text-smi text-gray-100 border-[1px] border-solid border-gray-100">
-        <div className="relative font-semibold">REMOVE</div>
-      </div>
-      <div className="absolute top-[447px] left-[675px] rounded-8xs flex flex-row items-center justify-center py-2.5 px-[55px] text-smi text-gray-100 border-[1px] border-solid border-gray-100">
-        <div className="relative font-semibold">MOVE TO WISHLIST</div>
-      </div> */}
       <div className="absolute top-[207px] left-[302px] rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center py-2.5 px-[21px] gap-[10px]">
       <label htmlFor="availableSize" className="text-black text-base font-bold ">Size</label>
           <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setsize(e.target.value)}>

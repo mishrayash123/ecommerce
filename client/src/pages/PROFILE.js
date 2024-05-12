@@ -5,11 +5,11 @@ import { useAuth } from "../AuthContext";
 import FrameComponent1 from "../components/FrameComponent1";
 import {useNavigate} from 'react-router-dom'
 
-
 const PROFILE = () => {
   const email = localStorage.getItem("email");
   const nav = useNavigate();
   const {logout} = useAuth();
+
   return (
     <div className="w-full relative bg-white h-[1625px] overflow-hidden text-left text-mini text-black font-made-tommy">
                                           <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
@@ -65,6 +65,10 @@ const PROFILE = () => {
       </div>
 
       <FrameComponent6 />
+
+     
+
+
     </div>
   );
 };

@@ -119,8 +119,8 @@ const Header = ({
         className="absolute top-[30px] left-[1246px]"
         style={trackOrderStyle}
       >
-        <Link to="/trackorder" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Track Order</b>
+        <Link to="/wishlist-page" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">My Orders</b>
           </Link>
       </div>
       <div className="absolute top-[30px] left-[1379px]" style={contactUsStyle}>
