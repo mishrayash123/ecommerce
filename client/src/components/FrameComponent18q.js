@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import {useNavigate} from 'react-router-dom'
 
 const FrameComponent18 = ({
   addProduct,
@@ -39,13 +40,18 @@ const FrameComponent18 = ({
     };
   }, [propRight1]);
 
+  const nav = useNavigate();
+
+
   return (
     <div
       className="absolute top-[441px] left-[45.5px] flex flex-col items-start justify-start gap-[13px] text-left text-5xl text-white font-made-tommy"
       style={frameDiv6Style}
     >
       <div className="w-[167.5px] relative h-[30px]" style={groupDivStyle}>
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav('/dashboard5')
+        }}>
           {addProduct}
         </div>
         <img
@@ -56,7 +62,9 @@ const FrameComponent18 = ({
         />
       </div>
       <div className="w-[159.5px] relative h-[30px]" style={groupDiv1Style}>
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav('/dashboard4')
+        }}>
           {productList}
         </div>
         <img

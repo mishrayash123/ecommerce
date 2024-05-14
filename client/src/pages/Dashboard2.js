@@ -5,7 +5,7 @@ import FrameComponent14 from "../components/FrameComponent14q";
 const Dashboard2 = () => {
   return (
     <div className="w-full relative bg-gainsboro-200 h-[1172px] overflow-hidden text-left text-5xl text-darkslategray-400 font-made-tommy">
-      <FrameComponent20 dashboard="Insert Product" />
+      <FrameComponent20 dashboard="Product list" />
       <FrameComponent15 />
       <img
         className="absolute top-[214px] left-[485px] rounded-12xs w-[11.5px] h-4 object-contain"

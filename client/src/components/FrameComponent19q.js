@@ -1,8 +1,15 @@
+import {useNavigate} from 'react-router-dom'
+
+
 const FrameComponent19 = () => {
+  const nav = useNavigate();
+
   return (
     <div className="absolute top-[171px] left-[45.5px] flex flex-col items-start justify-start gap-[13px] text-left text-5xl text-white font-made-tommy">
       <div className="w-[175.5px] relative h-[30px]">
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav("/dashboard3")
+        }}>
           Today’s Sales
         </div>
         <img
@@ -12,7 +19,9 @@ const FrameComponent19 = () => {
         />
       </div>
       <div className="w-[183.5px] relative h-[30px]">
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav("/dashboard2")
+        }}>
           Today’s Order
         </div>
         <img
@@ -22,7 +31,9 @@ const FrameComponent19 = () => {
         />
       </div>
       <div className="w-[200.5px] relative h-[30px]">
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav("/dashboard1")
+        }}>
           Today’s Visitors
         </div>
         <img
@@ -32,7 +43,9 @@ const FrameComponent19 = () => {
         />
       </div>
       <div className="w-[193.5px] relative h-[30px]">
-        <div className="absolute top-[0px] left-[25.5px] font-medium">
+        <div className="absolute top-[0px] left-[25.5px] font-medium cursor-pointer" onClick={()=>{
+          nav("/dashboard")
+        }}>
           Today’s Clients
         </div>
         <img
