@@ -57,6 +57,7 @@ const MenHomePage = () => {
         <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
         <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
       </div>
+      <a href="/readymade-tshirt-men-page">
       <div className="absolute top-[1495px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[0px] w-[480px] h-[480px] object-cover"
@@ -67,6 +68,8 @@ const MenHomePage = () => {
           OVERSIZED T-SHIRT
         </b>
       </div>
+      </a>
+      <a href="/accessories-socks">
       <div className="absolute top-[2575px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-220px] left-[0px] w-[480px] h-[720px] object-cover"
@@ -77,6 +80,8 @@ const MenHomePage = () => {
           SOCKS
         </b>
       </div>
+      </a>
+      <a href="/accessories-hanky">
       <div className="absolute top-[2035px] left-[20px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[0px] w-[754px] h-[503px] object-cover"
@@ -87,6 +92,8 @@ const MenHomePage = () => {
           HANKY
         </b>
       </div>
+      </a>
+      <a href="/">
       <div className="absolute top-[2035px] left-[850px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[4px] w-[650px] h-[499px] object-cover"
@@ -97,6 +104,8 @@ const MenHomePage = () => {
           TOWELS
         </b>
       </div>
+      </a>
+      <a href="/readymade-lower-page">
       <div className="absolute top-[1495px] left-[calc(50%_-_238px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-193px] left-[0px] w-[480px] h-[718px] object-cover"
@@ -107,6 +116,8 @@ const MenHomePage = () => {
           LOWER
         </b>
       </div>
+      </a>
+      <a href="/accessories-arm-sleeves">
       <div className="absolute top-[2575px] left-[calc(50%_-_238px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[0px] left-[calc(50%_-_353px)] w-[722px] h-[480px] object-cover"
@@ -117,6 +128,8 @@ const MenHomePage = () => {
           ARM SLEEVES
         </b>
       </div>
+      </a>
+      <a href="/readymade-tshirt-women-page">
       <div className="absolute top-[1495px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-185px] left-[0px] w-[480px] h-[720px] object-cover"
@@ -127,6 +140,8 @@ const MenHomePage = () => {
           SHIRTS
         </b>
       </div>
+      </a>
+      <a href="/accessories-socks">
       <div className="absolute top-[2575px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
         <img
           className="absolute top-[-36px] left-[calc(50%_-_260px)] w-[516px] h-[516px] object-cover"
@@ -137,6 +152,7 @@ const MenHomePage = () => {
           STOKING SCOKS
         </b>
       </div>
+      </a>
       <b className="absolute top-[1397px] left-[calc(50%_-_106px)] text-21xl text-gray-700">
         CATEGORY
       </b>

@@ -80,7 +80,7 @@ const Header = ({
       className="absolute top-[0px] left-[calc(50%_-_864px)] bg-sandybrown w-[1728px] h-[89px] overflow-hidden text-left text-xl text-black font-made-tommy"
       style={frameDiv1Style}
     >
-       <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }}>
+       <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
        <img
         className="absolute top-[27px] left-[1566px] w-[35px] h-[35px] overflow-hidden"
         alt=""
@@ -100,7 +100,7 @@ const Header = ({
           }
           
       <div
-        className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_6px)] rounded-3xl bg-palegoldenrod w-[334px] h-[51px] overflow-hidden text-base text-gray-300 font-inter"
+        className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_106px)] rounded-3xl bg-palegoldenrod w-[334px] h-[51px] overflow-hidden text-base text-gray-300 font-inter"
         style={frameDiv2Style}
       >
         <img
@@ -116,14 +116,14 @@ const Header = ({
         </div>
       </div>
       <div
-        className="absolute top-[30px] left-[1246px]"
+        className="absolute top-[30px] left-[1379px]"
         style={trackOrderStyle}
       >
-        <Link to="/wishlist-page" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">My Orders</b>
+        <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">Your wishlist</b>
           </Link>
       </div>
-      <div className="absolute top-[30px] left-[1379px]" style={contactUsStyle}>
+      <div className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_6px)] mx-2 mt-3" style={contactUsStyle}>
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
           <b className="relative">Home</b>
           </Link>

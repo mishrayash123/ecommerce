@@ -37,6 +37,7 @@ import TRACKORDER1 from "./pages/TRACKORDER1";
 import Dashboard2 from "./pages/Dashboard2";
 import Dashboard1 from "./pages/Dashboard1";
 import PaymentPage1 from "./pages/PaymentPage1";
+import Cart from "./pages/Cart"
 
 function App() {
  
@@ -80,6 +81,7 @@ function App() {
       <Route path="/cart-page1" element={<CARTPAGE1 />} />
       <Route path="/login" element={<LOGIN />} />
       <Route path="/login1" element={<LOGIN1 />} />
+      <Route path="/cart" element={<Cart />} />
       <Route path="/frame-80" element={<Frame />} />
       <Route path="/trackorder" element={<TRACKORDER />} />
       <Route path="/trackorder1" element={<TRACKORDER1 />} />
