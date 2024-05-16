@@ -12,6 +12,7 @@ const CARTPAGE1 = ({ propTop }) => {
   const userid = localStorage.getItem("paricollectionuserId");
   const nav = useNavigate();
   const location = useLocation();
+  const [price,setprice]=useState()
   const frameDiv12Style = useMemo(() => {
     return {
       top: propTop,
@@ -20,24 +21,28 @@ const CARTPAGE1 = ({ propTop }) => {
 
   const fetchData = async () => {
     try {
-        const response = await fetch(
-          "https://ecommercebackend-32ve.onrender.com/getproducts",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setproducts(data)
-        } else {
-          alert("Something went wrong please login again");
+      const response = await fetch(
+        "https://ecommercebackend-32ve.onrender.com/getCartfororders",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-      } catch (error) {
-        console.error("Error during login:", error);
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data.filter((e)=>(e.userid===userid)))
+        const price = data.filter((e)=>(e.userid===userid)).reduce((accumulator, currentItem) => {
+          return accumulator + currentItem.price*currentItem.quantity;
+      }, 0);
+      setprice(price)
+      } else {
+        alert("Something went wrong please login again");
       }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
 }
 
 
@@ -137,12 +142,10 @@ useEffect(() => {
         Delivery To
       </div> */}
       <div className="absolute top-[668px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[127.5px] text-5xl font-made-tommy cursor-pointer" onClick={()=>{
-         nav('/payment-page', { state: { id: location.state.id, productid:location.state.productid,quantity:location.state.quantity} });
+         nav('/payment-page', { state: { id: location.state.id} });
       }}>
         <b className="relative">CONTINUE TO PAYMENT</b>
       </div>
-      {
-                    products.filter((e) => (e._id == location.state.productid)).map(products => (
                       <div
                       className="absolute top-[400px] left-[1050px] box-border w-[459px] h-[244px] overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400"
                       style={frameDiv12Style}
@@ -166,7 +169,7 @@ useEffect(() => {
                       <div className="absolute top-[202px] left-[23px] font-semibold">
                         TOTAL AMOUNT
                       </div>
-                      <b className="absolute top-[205px] left-[363px] text-base">₹ {location.state.quantity*products.price}</b>
+                      <b className="absolute top-[205px] left-[363px] text-base">₹ {price}</b>
                       <div className="absolute top-[145px] left-[384px] text-base">₹0</div>
                       <img
                         className="absolute top-[63.5px] left-[0.5px] max-h-full w-[528px]"
@@ -176,13 +179,12 @@ useEffect(() => {
                       <div className="absolute top-[85px] left-[360px] text-base text-salmon-100">
                         -₹100
                       </div>
-                      <div className="absolute top-[30px] left-[365px] text-base">₹ {location.state.quantity*products.price+100}</div>
+                      <div className="absolute top-[30px] left-[365px] text-base">₹ {price+100}</div>
                       <div className="absolute top-[22px] left-[23px] text-black">
                         <span>Cart Total </span>
                         <span className="text-base">(Excl. of all taxes)</span>
                       </div>
                     </div>
-                    ))}
     </div>
   );
 };

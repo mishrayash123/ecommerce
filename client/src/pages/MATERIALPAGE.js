@@ -10,6 +10,8 @@ const MATERIALPAGE = () => {
   const [products, setproducts] = useState([]);
   const userid = localStorage.getItem("paricollectionuserId");
   const nav = useNavigate();
+  const [size, setsize] = useState("x");
+  const [quantity, setquantity] = useState(1);
 
   const fetchData = async () => {
     try {
@@ -59,6 +61,27 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
   }
 };
 
+
+const handleaddtocart = async(productid,title,color,gender,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4) => {
+  try {
+    const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtocartfororders", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({userid,productid,title,color,gender,size,quantity,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4
+      }),
+    });
+
+    if (response.ok) {
+      alert("Added to cart");
+    }else {
+      alert("Already in cart");
+    }
+  } catch (error) {
+    console.error("Error during registration:", error);
+  }
+};
 
 
 
@@ -126,8 +149,25 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
       <div className="absolute top-[382px] left-[622px] text-xl font-inter">
         MRP incl. of all taxes
       </div>
-      <div className="absolute top-[681px] left-[622px] text-xl font-inter">
-        Quantity
+      <div className="absolute top-[681px] left-[622px] text-xl font-inter flex flex-row">
+      <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
+      <label htmlFor="availableSize" className="text-black text-base font-bold ">Size</label>
+          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setsize(e.target.value)}>
+            <option value="XXS">XXS</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+          </select>
+      </div>
+      <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
+      <label htmlFor="productPrice" className="text-black text-base font-bold ">Quantity</label>
+          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[100px] text-xl" placeholder="Enter Product Price"  onChange={(e) => setquantity(e.target.value)}
+          value={quantity}/>
+      </div>
       </div>
       <div className="absolute top-[891px] left-[622px] text-xl font-inter">
         Share
@@ -169,16 +209,7 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
           S
         </div>
       </div>
-      <div className="absolute top-[675px] left-[728px] rounded-[14px] box-border w-[72px] h-9 flex flex-row items-center justify-center py-[7px] px-4 gap-[10px] text-black border-[1px] border-solid border-black">
-        <div className="w-5 absolute !m-[0] top-[calc(50%_-_11px)] left-[10px] inline-block z-[0]">
-          01
-        </div>
-        <img
-          className="w-[13px] absolute !m-[0] top-[15px] left-[45px] h-1.5 z-[1]"
-          alt=""
-          src="/vector-131.svg"
-        />
-      </div>
+      
       <div className="absolute top-[519px] left-[1209px] rounded-6xs box-border w-[68px] h-[41px] flex flex-row items-center justify-center py-[7px] px-4 text-darkgray-200 border-[2px] border-solid border-darkgray-200">
         <div className="w-8 absolute !m-[0] top-[calc(50%_-_10.5px)] left-[calc(50%_-_16px)] inline-block z-[0]">
           XXL
@@ -215,7 +246,8 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
         src="/vector-10.svg"
       />
       <div className="absolute top-[788px] left-[624px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[99px] text-5xl text-white cursor-pointer" onClick={()=>{
-        nav('/cart-page', { state: { id: products._id} });
+        
+        handleaddtocart(products._id,products.title,products.color,products.gender,products.price,products.description,products.details,products.category,products.subcategory,products.subcategory1,products.image1,products.image2,products.image3,products.image4);
       }} >
         <div className="relative font-medium" >ADD TO CART</div>
       </div>

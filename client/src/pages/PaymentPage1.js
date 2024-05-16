@@ -17,6 +17,7 @@ const PaymentPage1 = () => {
   const [orders, setorders] = useState([]);
   const [products, setproducts] = useState([]);
   const nav = useNavigate();
+  const [price,setprice]=useState()
   const location = useLocation();
   const openFrame = useCallback(() => {
     setFrameOpen(true);
@@ -67,6 +68,7 @@ const PaymentPage1 = () => {
 
       if (response.ok) {
         alert("Congratulations your order placed");
+        removecart();
         nav('/')
       }else {
         alert("something went wrong...please check credential");
@@ -77,26 +79,52 @@ const PaymentPage1 = () => {
 
   }
 
+  const  removecart =async ()=>{
+    try {
+      const response = await fetch(
+        `https://ecommercebackend-32ve.onrender.com/deleteCart`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+  
+      if (response.ok) {
+        const data = await response.json();
+      } else {
+        alert("something went wrong");
+      }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
+  }
+
   const fetchData = async () => {
     try {
-        const response = await fetch(
-          "https://ecommercebackend-32ve.onrender.com/getproducts",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setproducts(data)
-        } else {
-          alert("Something went wrong please login again");
+      const response = await fetch(
+        "https://ecommercebackend-32ve.onrender.com/getCartfororders",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
-      } catch (error) {
-        console.error("Error during login:", error);
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setproducts(data.filter((e)=>(e.userid===userid)))
+        const price = data.filter((e)=>(e.userid===userid)).reduce((accumulator, currentItem) => {
+          return accumulator + currentItem.price*currentItem.quantity;
+      }, 0);
+      setprice(price)
+      } else {
+        alert("Something went wrong please login again");
       }
+    } catch (error) {
+      console.error("Error during login:", error);
+    }
 }
 
   const loadScript = (src) => {
@@ -167,19 +195,16 @@ const PaymentPage1 = () => {
       <div className="absolute top-[161px] left-[1100px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 border-[1.5px] border-solid bg-salmon-100">
         <div className="relative font-semibold">PAYMENT</div>
       </div>
-      {
-                    products.filter((e) => (e._id == location.state.productid)).map(products => (
                       <div>
                          {
                     orders.filter((e) => (e.userid ==userid)).filter((e) => (e.orderid ==location.state.id)).map(orders => (
       <div className="absolute top-[261px] left-[726px] rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
-        razorPay(products.price*location.state.quantity,orders._id);
+        razorPay(price,orders._id);
       }}>
         <div className="relative font-semibold">Continue To Payment</div>
       </div>
       ))}
       </div>
-                    ))}
         <img
           className="absolute top-[180.5px] left-[704.5px] max-h-full w-[109px]"
           alt=""

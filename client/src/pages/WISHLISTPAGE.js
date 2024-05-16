@@ -24,7 +24,6 @@ const WISHLISTPAGE = () => {
   if (response.ok) {
     const data = await response.json();
     setorderdata(data)
-    console.log(data)
   } else {
     alert("Something went wrong please login again");
   }

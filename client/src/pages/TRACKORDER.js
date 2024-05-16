@@ -10,35 +10,15 @@ import React, { useEffect, useState } from "react";
 
 const TRACKORDER = () => {
   const email = localStorage.getItem("email");
-  const [products, setproducts] = useState([]);
   const location = useLocation();
   const [orderdata,setorderdata] = useState([])
+  const [orderdata1,setorderdata1] = useState([])
+  const [price,setprice]=useState()
   const userid = localStorage.getItem("paricollectionuserId");
   const {logout} = useAuth();
   const [users, setusers] = useState([]);
   const nav = useNavigate();
 
-  const fetchData2 = async () => {
-    try {
-        const response = await fetch(
-          "https://ecommercebackend-32ve.onrender.com/getproducts",
-          {
-            method: "GET",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-        if (response.ok) {
-          const data = await response.json();
-          setproducts(data)
-        } else {
-          alert("Something went wrong please login again");
-        }
-      } catch (error) {
-        console.error("Error during login:", error);
-      }
-}
 
   const fetchData1 = async () => {
     try {
@@ -76,6 +56,11 @@ const TRACKORDER = () => {
   if (response.ok) {
     const data = await response.json();
     setorderdata(data)
+    setorderdata1(data.filter((e)=>(e.orderid === location.state.orderid))[0].products)
+    const price = data.filter((e)=>(e.orderid === location.state.orderid))[0].products.reduce((accumulator, currentItem) => {
+      return accumulator + currentItem.price*currentItem.quantity;
+  }, 0);
+  setprice(price)
   } else {
     alert("Something went wrong please login again");
   }
@@ -88,7 +73,6 @@ const TRACKORDER = () => {
   useEffect(() => {
     fetchData();
     fetchData1();
-    fetchData2();
   }, []);
 
   return (
@@ -150,7 +134,7 @@ const TRACKORDER = () => {
     
       <div className="absolute top-[237px] left-[496px] bg-white box-border w-[962px] h-[199px] overflow-hidden text-left text-xl text-gray-300 font-made-tommy border-[1px] border-solid border-silver-300">
       {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
+          orderdata.filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
             <>
             {
               orders.ordered ? <img
@@ -229,10 +213,7 @@ const TRACKORDER = () => {
       </div>
         ))}
     </div>
-
-      {
-                    products.filter((e) => (e._id == location.state.id)).map(products => (
-      <div className="absolute top-[953px] left-[calc(50%_-_468px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
+      <div className="absolute top-[1100px] left-[calc(50%_-_468px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
         <img
           className="absolute top-[124px] left-[1px] max-h-full w-[961px]"
           alt=""
@@ -252,10 +233,8 @@ const TRACKORDER = () => {
         <div className="absolute top-[202px] left-[23px] font-semibold">
           TOTAL AMOUNT
         </div>
-        {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-        <b className="absolute top-[205px] left-[886px] text-base">₹ {orders.quantity*products.price}</b>
-          ))}
+        
+        <b className="absolute top-[205px] left-[886px] text-base">₹ {price}</b>
         <div className="absolute top-[145px] left-[908px] text-base">₹0</div>
         <img
           className="absolute top-[64px] left-[1px] max-h-full w-[961px]"
@@ -265,91 +244,85 @@ const TRACKORDER = () => {
         <div className="absolute top-[85px] left-[883px] text-base text-salmon">
           -₹100
         </div>
-        {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-        <div className="absolute top-[30px] left-[888px] text-base">₹ {orders.quantity*products.price+100}</div>
-          ))}
+        <div className="absolute top-[30px] left-[888px] text-base">₹ {price+100}</div>
         <div className="absolute top-[22px] left-[23px] text-black">
           <span>Cart Total </span>
           <span className="text-base">(Excl. of all taxes)</span>
         </div>
       </div>
-                    ))}
-    
+      <div className="absolute top-[523px] left-[496px] flex flex-col gap-8">
     {
-                    products.filter((e) => (e._id == location.state.id)).map(products => (
-    <div className="absolute top-[523px] left-[496px] box-border w-[962px] h-[318px] overflow-hidden text-left text-base text-gray-500 font-inter border-[1px] border-solid border-darkgray-600">
-      <img
-        className="absolute top-[43px] left-[27px] w-[174px] h-[232px] object-cover"
+                    orderdata1.map(products => (
+     <div className="box-border m-2 w-3/4  overflow-hidden text-left text-base text-darkslategray-200 font-inter border-[1px] border-solid border-darkgray-400">
+      <div className="flex justify-between ">
+        <div></div>
+      <b className="m-2 text-xl [text-decoration:underline] text-salmon-100">
+        ADD
+      </b>
+        </div>
+        <div className="mx-2 text-sm">
+        Please select address
+      </div>
+        <img
+        className=" max-h-full w-[1001px]"
+        alt=""
+        src="/vector-16.svg"
+      />
+      <div className="flex justify-between">
+        <div></div>
+        <div></div>
+<div className="flex flex-col"><b className=" text-black">
+        {products.title}
+      </b>
+      <div className=" text-mini">
+        {products.category}
+      </div></div>
+<div className=" m-2"><b className="line-through">{products.quantity*products.price+100}</b>
+      <b className=" text-gray-800  mx-2">{products.quantity*products.price}</b>
+      <div className=" text-smi text-red">
+        ₹100 OFF
+      </div>
+      <div className=" text-mini font-semibold text-gray-600">
+        MRP incl. of all taxes
+      </div>
+  </div>
+</div>
+        <div className="flex flex-row gap-4">
+        <img
+        className=" w-[244px] h-[325px] object-cover"
         alt=""
         src={products.image1}
       />
-      <b className="absolute top-[47px] left-[221px] text-black">
-      {products.title}
-      </b>
-      <div className="absolute top-[75px] left-[221px] text-mini text-darkslategray-300">
-      {products.category}
+      <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
+      <label htmlFor="availableSize" className="text-black text-base font-bold ">Size</label>
+          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl">
+            <option selected >{products.size}</option>
+          </select>
       </div>
-      {/* <div className="absolute top-[235px] left-[221px] text-mini text-gray-700">
-        <span>
-          <span>Estimated Delivery by</span>
-          <span className="text-darkslategray-300"> </span>
-        </span>
-        <span className="text-darkslategray-300">
-          <b>30 Apr</b>
-        </span>
-      </div> */}
-      <b className="absolute top-[47px] left-[890px] text-darkslategray-300">
-        ₹ {products.price+100}
-      </b>
-      <b className="absolute top-[47px] left-[830px] text-gray-600">₹ {products.price}</b>
-      <div className="absolute top-[104px] left-[872px] text-smi text-red">
-        ₹100 OFF
+      <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
+      <label htmlFor="productPrice" className="text-black text-base font-bold ">Quantity</label>
+          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[100px] text-xl" placeholder="Enter Product Price"
+          value={products.quantity}/>
       </div>
-      <img
-        className="absolute top-[51.7px] left-[889.1px] w-[41.9px] h-[9.7px] object-contain"
+        </div>
+        <img
+        className="my-4 max-h-full w-[610px]"
         alt=""
-        src="/vector-17q.svg"
+        src="/vector-18.svg"
       />
-      <div className="absolute top-[75px] left-[782px] text-mini font-semibold">
-        MRP incl. of all taxes
-      </div>
-      <div className="absolute top-[185px] left-[221px] rounded-lg box-border w-[114px] h-[35px] flex flex-row items-center justify-center py-2.5 px-[21px] gap-[10px] text-xs border-[1px] border-solid border-darkgray-900">
-        <img
-          className="w-2.5 absolute !m-[0] top-[calc(50%_-_1.5px)] left-[91px] h-[5px] z-[0]"
-          alt=""
-          src="/vector-14q.svg"
-        />
-        <div className="w-[42px] absolute !m-[0] top-[10px] left-[10px] font-semibold inline-block z-[1]">
-          Size: {products.size}
-        </div>
-      </div>
-      <div className="absolute top-[185px] left-[345px] rounded-lg box-border w-[114px] h-[35px] flex flex-row items-center justify-center py-2.5 px-[21px] gap-[10px] text-xs border-[1px] border-solid border-darkgray-900">
-        <img
-          className="w-2.5 absolute !m-[0] top-[calc(50%_-_2.5px)] left-[91px] h-[5px] z-[0]"
-          alt=""
-          src="/vector-14q.svg"
-        />
-        {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-        <div className="w-[34px] absolute !m-[0] top-[10px] left-[10px] font-semibold inline-block z-[1]">
-          Qut: {orders.quantity}
-        </div>
-          ))}
-      </div>
     </div>
                     ))}
+</div>
 
-
-      <div className="absolute top-[918px] left-[596px] text-xl text-gray-400">
+      <div className="absolute top-[1050px] left-[596px] text-xl text-gray-400">
         BILLING DETAILS
       </div>
-      <div className="absolute top-[1278px] left-[596px] text-xl text-gray-400">
+      <div className="absolute top-[1378px] left-[596px] text-xl text-gray-400">
         DELIVERY
       </div>
       {
                     users.filter((e) => (e._id == userid)).map(products => (
-      <div className="absolute top-[1326px] left-[296px] rounded-10xs bg-white box-border w-[962px] h-[202px] overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600">
+      <div className="absolute top-[1426px] left-[296px] rounded-10xs bg-white box-border w-[962px] h-[202px] overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600">
         <div className="absolute top-[56px] left-[22px] font-semibold">
         {products.fname} {products.lname}
         </div>
