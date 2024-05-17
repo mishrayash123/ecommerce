@@ -141,6 +141,7 @@ const Dashboard1 = () => {
           <label htmlFor="productCategory" className="text-black text-xl font-bold mr-20">Product Category</label>
           <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setcategory(e.target.value)}>
             <option value="AccessoriesArmSleeves">AccessoriesArmSleeves</option>
+            <option value="Top seller">Top seller</option>
             <option value="AccessoriesHanky">AccessoriesHanky</option>
             <option value="AccessoriesSocks">AccessoriesSocks</option>
             <option value="ReadymadeKIDS">ReadymadeKIDS</option>
