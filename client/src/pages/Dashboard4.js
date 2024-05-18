@@ -2,13 +2,15 @@ import FrameComponent20 from "../components/FrameComponent20q";
 import FrameComponent10 from "../components/FrameComponent10q";
 import FrameComponent12 from "../components/FrameComponent12q";
 import FrameComponent11 from "../components/FrameComponent11q";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard4 = () => {
   return (
     <div className="w-full relative bg-gainsboro-200 h-[976px] overflow-hidden">
-      <FrameComponent20 dashboard="Dashboard" />
-      <FrameComponent10 />
-      <FrameComponent12
+      <FrameComponent20 dashboard="Today’s Order" />
+      {/* <FrameComponent7 /> */}
+      <Sidebar />
+      {/* <FrameComponent12
         todaysSales="Today’s Order"
         prop="+20%"
         thanLastWeek=" than last week"
@@ -28,7 +30,7 @@ const Dashboard4 = () => {
         k3="400"
         k4="200"
         propBackgroundColor="#9000c2"
-      />
+      /> */}
     </div>
   );
 };
