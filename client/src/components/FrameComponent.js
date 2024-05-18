@@ -2,57 +2,67 @@ import { Link } from 'react-router-dom';
 
 const FrameComponent = () => {
   return (
-    <div className="absolute top-[198px] left-[calc(50%_-_752px)] rounded-7xl bg-bisque w-[1504px] h-[388px] overflow-hidden text-left text-5xl text-white font-made-tommy">
-      <img
-        className="absolute top-[63px] left-[821px] rounded-31xl w-[219px] h-[262px] object-cover"
-        alt=""
-        src="/2148456279-1@2x.png"
-      />
-      <img
-        className="absolute top-[63px] left-[1178px] rounded-31xl w-[219px] h-[262px] object-contain"
-        alt=""
-        src="/2148634166-1@2x.png"
-      />
-      <img
-        className="absolute top-[63px] left-[107px] rounded-31xl w-[219px] h-[262px] object-cover"
-        alt=""
-        src="/2150871198-1@2x.png"
-      />
-      <img
-        className="absolute top-[63px] left-[464px] rounded-31xl w-[219px] h-[262px] object-cover"
-        alt=""
-        src="/2150151066-1@2x.png"
-      />
-      <div className="absolute top-[255px] left-[485px] flex flex-row items-start justify-start">
-      <Link to="/undergarments-men-women1" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Undergarments</b>
-          </Link>
+    <div className='flex justify-center '>
+    <div className='bg-gradient-to-b from-white to-bisque  rounded-3xl pt-5 mt-7 mb-6 md:pb-8 pb-5 w-full md:w-[95%] font-made-tommy'>
+      <div className="p-2 flex flex-col md:flex-row  md:flex-wrap justify-between pl-8 pr-8">
+
+        <div className='flex flex-col relative w-full md:w-auto mb-4 md:mb-0 rounded-lg'>
+          <img
+            className="w-full md:w-[219px] h-[262px] object-cover rounded-lg"
+            alt=""
+            src="/2150871198-1@2x.png" />
+          <span className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <img
+              className="w-6 relative h-6 mt-2 overflow-hidden shrink-0"
+              alt=""
+              src="/mingcutedownfill.svg" />
+            <Link className='mt-6' to="/readymade-tshirt-women-page" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b className="text-white text-xl relative">Readymade</b>
+            </Link>
+          </span>
+        </div>
+
+        <div className='flex flex-col relative w-full md:w-auto mb-4  md:mt-20 md:mb-0 rounded-lg'>
+          <img
+            className="w-full md:w-[219px] h-[262px] object-cover rounded-lg"
+            alt=""
+            src="/2150151066-1@2x.png" />
+          <span className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <Link className='mt-6' to="/undergarments-men-women1" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b className="text-white text-xl relative">Undergarments</b>
+            </Link>
+          </span>
+        </div>
+
+        <div className='flex flex-col relative w-full md:w-auto mb-4 md:mb-0 rounded-lg'>
+          <img
+            className="w-full md:w-[219px] h-[262px] object-cover rounded-lg"
+            alt=""
+            src="/2148456279-1@2x.png" />
+          <span className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <Link className='mt-6' to="/thermal-women" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b className="text-white text-xl relative">Thermal</b>
+            </Link>
+          </span>
+        </div>
+
+        <div className='flex flex-col relative w-full md:mt-20 md:w-auto rounded-lg'>
+          <img
+            className="w-full md:w-[219px] h-[262px] object-cover rounded-lg"
+            alt=""
+            src="/2148634166-1@2x.png" />
+          <span className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
+            <img
+              className="w-6 relative h-6 mt-2 overflow-hidden shrink-0"
+              alt=""
+              src="/mingcutedownfill.svg" />
+            <Link className='mt-6' to="/accessories-arm-sleeves" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b className="text-white text-xl relative">Accessories</b>
+            </Link>
+          </span>
+        </div>
       </div>
-      <div className="absolute top-[255px] left-[135px] flex flex-row items-start justify-start gap-[5px] text-center">
-      <Link to="/readymade-tshirt-women-page" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Readymade</b>
-          </Link>
-        <img
-          className="w-6 relative h-6 overflow-hidden shrink-0"
-          alt=""
-          src="/mingcutedownfill.svg"
-        />
-      </div>
-      <div className="absolute top-[255px] left-[885px] flex flex-row items-start justify-start">
-      <Link to="/thermal-women" style={{ textDecoration: 'none', color: 'inherit' }}>
-    <b className="relative">Thermal</b>
-  </Link>
-      </div>
-      <div className="absolute top-[255px] left-[1205px] flex flex-row items-center justify-start gap-[5px] text-center">
-      <Link to="/accessories-arm-sleeves" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Accessories</b>
-          </Link>
-        <img
-          className="w-6 relative h-6 overflow-hidden shrink-0"
-          alt=""
-          src="/mingcutedownfill.svg"
-        />
-      </div>
+    </div>
     </div>
   );
 };

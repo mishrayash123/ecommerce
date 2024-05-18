@@ -2,15 +2,12 @@ import FrameComponent from "../components/FrameComponent";
 import GroupComponent from "../components/GroupComponent";
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
-import React, { useState,useEffect } from 'react';
-import {useNavigate} from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const MenHomePage = () => {
-  const [products, setproducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const nav = useNavigate();
-
-
-  
 
   const fetchData = async () => {
     try {
@@ -25,188 +22,308 @@ const MenHomePage = () => {
       );
       if (response.ok) {
         const data = await response.json();
-        setproducts(data)
-        console.log(data)
+        setProducts(data);
+        console.log(data);
       } else {
         alert("Something went wrong please login again");
       }
     } catch (error) {
       console.error("Error during login:", error);
     }
-  }
+  };
 
   useEffect(() => {
-    
     fetchData();
   }, []);
 
+  const headingStyle = {
+    textShadow: '2px 2px 4px black',
+  };
 
   return (
-    <div className="w-full relative bg-white h-[5641px] overflow-hidden text-left text-13xl text-white font-made-tommy">
-      <FrameComponent />
+    <div className="min-h-screen flex flex-col">
+      {/*************************** navbar starts here **************************************/}
+      {/* <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      /> */}
+
+      {/*************************** navbar ends here **************************************/}
+
+
+      {/***************************main image starts here **************************************/}
+
       <img
-        className="absolute top-[714px] left-[0px] w-[1730px] h-[466px] object-cover"
-        alt=""
+        className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+        alt="main image"
         src="/13662927-5313737-1@2x.png"
       />
-      <div className="absolute top-[754px] left-[1467px] bg-burlywood w-[231px] h-[91px]" />
-      <div className="absolute top-[1200px] left-[calc(50%_-_108px)] rounded-2xl bg-darkgray-900 h-[29px] flex flex-row items-start justify-start pt-1.5 px-3 pb-[7px] box-border gap-[28px]">
-        <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
-        <div className="w-5 relative rounded-[50%] box-border h-5 border-[3px] border-solid border-gray-900" />
-        <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
-        <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
-        <div className="w-[15px] relative rounded-[50%] bg-gray-900 h-[15px]" />
-      </div>
-      <a href="/readymade-tshirt-men-page">
-      <div className="absolute top-[1495px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[0px] left-[0px] w-[480px] h-[480px] object-cover"
-          alt=""
-          src="/manblacktshirtwithtattoohisarmbackview-114261616-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_151px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          OVERSIZED T-SHIRT
-        </b>
-      </div>
-      </a>
-      <a href="/accessories-socks">
-      <div className="absolute top-[2575px] left-[20px] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[-220px] left-[0px] w-[480px] h-[720px] object-cover"
-          alt=""
-          src="/couplewithfeetwallvalentinesday-232148383150-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_53px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          SOCKS
-        </b>
-      </div>
-      </a>
-      <a href="/accessories-hanky">
-      <div className="absolute top-[2035px] left-[20px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[0px] left-[0px] w-[754px] h-[503px] object-cover"
-          alt=""
-          src="/whitehandkerchiefclothassortment-232149091418-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_56px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          HANKY
-        </b>
-      </div>
-      </a>
-      <a href="/">
-      <div className="absolute top-[2035px] left-[850px] rounded-lgi w-[754px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[0px] left-[4px] w-[650px] h-[499px] object-cover"
-          alt=""
-          src="/frontviewstacktowelphysiotherapyoffice-232148789867-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_63px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          TOWELS
-        </b>
-      </div>
-      </a>
-      <a href="/readymade-lower-page">
-      <div className="absolute top-[1495px] left-[calc(50%_-_238px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[-193px] left-[0px] w-[480px] h-[718px] object-cover"
-          alt=""
-          src="/portraitfemalelegsjeans-17133711954-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_55px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          LOWER
-        </b>
-      </div>
-      </a>
-      <a href="/accessories-arm-sleeves">
-      <div className="absolute top-[2575px] left-[calc(50%_-_238px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[0px] left-[calc(50%_-_353px)] w-[722px] h-[480px] object-cover"
-          alt=""
-          src="/photofrontmodelwithblacksweatshirt-1255402797-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_105px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          ARM SLEEVES
-        </b>
-      </div>
-      </a>
-      <a href="/readymade-tshirt-women-page">
-      <div className="absolute top-[1495px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[-185px] left-[0px] w-[480px] h-[720px] object-cover"
-          alt=""
-          src="/basicgreenshirtmenrsquosfashionapparelstudioshoot-53876101197-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_54px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          SHIRTS
-        </b>
-      </div>
-      </a>
-      <a href="/accessories-socks">
-      <div className="absolute top-[2575px] left-[calc(50%_+_260px)] rounded-lgi w-[480px] h-[480px] overflow-hidden">
-        <img
-          className="absolute top-[-36px] left-[calc(50%_-_260px)] w-[516px] h-[516px] object-cover"
-          alt=""
-          src="/fashionablegirlknittedsocks-1585954133-1@2x.png"
-        />
-        <b className="absolute top-[376px] left-[calc(50%_-_126px)] [text-shadow:1.8px_0_0_#000,_0_1.8px_0_#000,_-1.8px_0_0_#000,_0_-1.8px_0_#000]">
-          STOKING SCOKS
-        </b>
-      </div>
-      </a>
-      <b className="absolute top-[1397px] left-[calc(50%_-_106px)] text-21xl text-gray-700">
-        CATEGORY
-      </b>
-      
+      {/***************************main image ends here **************************************/}
 
-     <div className="absolute top-[3471px] left-[28px] flex flex-row gap-8">
-     {
-          products.filter((e)=>(e.category==="Top seller")).map(products =>(
-            <a href='' onClick={
-              (e) => {
-                nav('/material-page', { state: { id: products._id} });
-              }
-          }>
-      <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
-        <div className="relative top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
-          <img
-            className="relative top-[229px] left-[179px] w-6 h-6 overflow-hidden"
-            alt=""
-            src="/mingcuteupfill.svg"
-          />
-          <img
-            className="absolute top-[-1px] left-[calc(50%_-_146px)] w-[293px] h-[391px] object-cover"
-            alt=""
-            src={products.image1}
-          />
-          
-          <div className="absolute top-[449px] left-[15px]">
-            {products.title}
-          </div>
-          <img
-            className="absolute top-[519.3px] left-[15px] max-h-full w-[233px]"
-            alt=""
-            src="/vector-13.svg"
-          />
-          <div className="absolute top-[480px] left-[15px] font-semibold">
-            ₹{products.price}
-          </div>
-          <div className="absolute top-[528px] left-[16px] text-2xs">
-            MRP incl. of all taxes
-          </div>
-          <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
-          <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
-        </div>
-        {/* <img
-          className="relative top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        /> */}
+
+
+
+      {/* here is the scrollable dots  */}
+
+      <div className=" bg-[#d5d1d1]  md:w-1/6  w-1/5 py-2 md:px-4 px-2  justify-between text-center rounded-2xl mx-auto mt-12 flex flex-row">
+        <span className="h-2 w-2 md:h-4 md:w-4  py-auto rounded-full bg-black"> </span>
+        <span className="md:w-[16px]  md:h-[16px] w-2 h-2 relative rounded-[50%] box-border border-[3px] border-solid border-gray-900" ></span>
+        <span className="h-2 w-2 md:h-4 md:w-4  py-auto rounded-full bg-black"></span>
+        <span className="h-2 w-2 md:h-4 md:w-4   py-auto rounded-full bg-black"></span>
+        <span className="h-2 w-2 md:h-4 md:w-4   py-auto rounded-full bg-black"></span>
+
       </div>
-      </a>
+      {/* *********************scrollable dots  ends *********************/}
+
+
+
+      {/* here is the frame components */}
+      <FrameComponent />
+
+      {/* frame components end here */}
+
+
+
+      {/************************* here goes the category *****************************/}
+
+
+      <style>{`
+        .text-shadow {
+          text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+      `}</style>
+      <div>
+        <h2 className=" text-center  text-21xl">CATEGORY</h2>
+
+        <div className="flex flex-wrap   justify-center md:justify-between px-6">
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            <a
+              href="/readymade-tshirt-men-page"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/manblacktshirtwithtattoohisarmbackview-114261616-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold  inline-block">
+                <span className=" text-white  text-shadow  rounded px-3 py-2">
+                  OVERSIZED T-SHIRT
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            <a
+              href="/readymade-tshirt-men-page"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/basicgreenshirtmenrsquosfashionapparelstudioshoot-53876101197-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold  inline-block">
+                <span className=" text-white text-shadow  rounded px-3 py-2">
+                  SHIRT
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            <a
+              href="/readymade-lower-page"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/portraitfemalelegsjeans-17133711954-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold inline-block">
+                <span className=" text-shadow text-white  rounded px-3 py-2">
+                  LOWERS
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div className="flex  flex-row  justify-between   mt-6 px-6">
+          <div className="relative ml-1 mr-1 flex flex-col items-center w-1/2 md:h-[300px]  lg:[400px]  h-[100px] mt-6 ">
+            <a
+              href="/accessories-hanky"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/whitehandkerchiefclothassortment-232149091418-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold shadow-lg inline-block">
+                <span className=" text-white text-shadow rounded px-3 py-2">
+                  HANKY
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div className="relative  ml-1 mr-1 flex flex-col items-center w-1/2  md:h-[300px]  lg:[400px] h-[100px] mt-6 ">
+            <a
+              href="/"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/frontviewstacktowelphysiotherapyoffice-232148789867-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold shadow-lg inline-block">
+                <span className=" text-white text-shadow rounded px-3 py-2">
+                  TOWELS
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+
+
+
+
+
+        <div className="flex flex-wrap   justify-center md:justify-between mt-10 px-6">
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            
+               <a href="/accessories-socks"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/couplewithfeetwallvalentinesday-232148383150-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold  inline-block">
+                <span className=" text-white  text-shadow  rounded px-3 py-2">
+                  SOCKS
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            
+             <a href="/accessories-arm-sleeves"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt=""
+                src="/photofrontmodelwithblacksweatshirt-1255402797-1@2x.png"
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold  inline-block">
+                <span className=" text-white text-shadow  rounded px-3 py-2">
+                 ARM SLEEVES
+                </span>
+              </span>
+            </a>
+          </div>
+
+          <div className="relative flex flex-col items-center w-[150px] lg:w-[480px] h-[150px] lg:h-[480px] mt-6 md:mt-0">
+            <a href="/accessories-socks"
+              className="block w-full h-full rounded-lg overflow-hidden relative"
+            >
+              <img
+                className="absolute inset-0 w-full h-full object-cover"
+                alt="socks"
+                src="/fashionablegirlknittedsocks-1585954133-1@2x.png"
+               
+              />
+              <span className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold inline-block">
+                <span className=" text-shadow text-white  rounded px-3 py-2">
+                STOKING SOCKS
+                </span>
+              </span>
+            </a>
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+      {/************************* here ends the category *****************************/}
+
+
+
+
+      {/* **********************products start here ***************************/}
+
+
+
+
+      <div className="h-full w-full flex flex-col justify-center content-center mb-10">
+        <h2 className=" text-center  text-21xl">TOP SELLING</h2>
+
+        <div className="grid grid-cols-1 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center gap-9">
+          {products.map((product) => (
+            <a
+              key={product._id}
+              href=''
+              className="no-underline"
+              onClick={(e) => {
+                e.preventDefault();
+                nav('/material-page', { state: { id: product._id } });
+              }}
+            >
+              <div className="font-inter relative">
+                <div className="w-full rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg relative">
+                  <img
+                    className="w-full h-[300px] object-cover rounded-t-xl"
+                    alt=""
+                    src={product.image1}
+                  />
+                  <div className="mt-0 rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg bg-bisque h-full">
+                    <div className="font-sans text-black text-xl font-bold pt-5 pb-3 pl-2">
+                      {product.title}
+                    </div>
+                    <div className="font-semibold pl-2 text-gray-500 pb-4">
+                      ₹{product.price}
+                    </div>
+                    <img
+                      className="pl-3 max-h-full w-[80%]"
+                      alt=""
+                      src="/vector-13.svg"
+                    />
+                    <div className="text-xs text-gray-500 pb-2 pl-2 mt-1">
+                      MRP incl. of all taxes
+                    </div>
+
+                    <img
+                      className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] "
+                      alt=""
+                      src="/solarbagoutline6.svg"
+                    />
+                  </div>
+
+                </div>
+              </div>
+            </a>
           ))}
-     </div>
-      
-      <img
+        </div>
+
+      </div>
+      {/* **********************products ends here ***************************/}
+
+      {/* <img
         className="absolute top-[3721px] left-[1628px] w-[57px] h-[57px]"
         alt=""
         src="/group-6.svg"
@@ -215,23 +332,25 @@ const MenHomePage = () => {
         className="absolute top-[4431px] left-[1628px] w-[57px] h-[57px]"
         alt=""
         src="/group-6.svg"
-      />
-      <b className="absolute top-[3357px] left-[calc(50%_-_123px)] text-21xl text-gray-700">
-        TOP SELLING
-      </b>
-      <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      />
-      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
-    </div>
+      /> */}
+
+
+
+
+      {/* **********************products ends here ***************************/}
+
+      {/* <div className="mt-auto w-full">
+        <FrameComponent1
+          frame10="/path/to/image10.png"
+          frame11="/path/to/image11.png"
+          frame12="/path/to/image12.png"
+          frame14="/path/to/image14.png"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div> */}
+    </div >
   );
 };
 
