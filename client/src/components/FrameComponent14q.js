@@ -64,46 +64,46 @@ const FrameComponent14 = () => {
 
   
   return (
-    <div className="absolute top-[88px] left-[0px] box-border w-[957px] h-[846px] overflow-hidden text-left text-xl text-royalblue-100 font-made-tommy ">
-      <table className="w-full border-collapse border border-black">
-        <thead>
-          <tr className="text-salmon border border-black">
-            <th className="px-4 py-2 border border-black">Product Category</th>
-            <th className="px-4 py-2 border border-black">Product Name</th>
-            <th className="px-4 py-2 border border-black">EDIT PRODUCT</th>
-            <th className="px-4 py-2 border border-black">DELETE PRODUCT</th>
-          </tr>
+    <div className=" box-border lg:w-[957px] md:w-[500px]  overflow-hidden text-left text-xl text-royalblue-100 font-made-tommy ">
+      
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Product name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                Product Category
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Delete
+                </th>
+            </tr>
         </thead>
         <tbody>
         {
           products.map(products =>(
-          <tr className="border border-black">
-            <td className="px-4 py-2 border border-black">{products.category}</td>
-            <td className="px-4 py-2 border border-black">{products.title}</td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
-                  alt=""
-                  src="/icbaselineeditq.svg"
-                />
-                <div>Edit</div>
-              </div>
-            </td>
-            <td className="px-4 py-2 border border-black">
-              <div className="flex flex-row items-center justify-center gap-[10px]">
-                <img
-                  className="w-6 h-6"
+            <tr>
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                {products.title}
+                </th>
+                <td class="px-6 py-4">
+                {products.category}
+                </td>
+                <td class="px-6 py-4">
+                    <div className="cursor-pointer flex-row" onClick={(e) => remove(products._id)} class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><img
+                  className="w-4 h-4"
                   alt=""
                   src="/mdideleteq.svg"
-                />
-                <div className="cursor-pointer" onClick={(e) => remove(products._id)}>Delete</div>
-              </div>
-            </td>
-          </tr>
+                /> Delete</div>
+                </td>
+            </tr>
           ))}
         </tbody>
-      </table>
+    </table>
+</div>
     </div>
   );
 };

@@ -6,6 +6,7 @@ import DescriptionEditor from "../components/DescriptionEditor";
 import ProductDetailsEditor from "../components/ProductDetailsEditor"; // Import the ProductDetailsEditor component
 import {storage} from "../firebase.config";
 import {ref, uploadBytes, getDownloadURL} from "firebase/storage"
+import Sidebar from "../components/Sidebar";
 
 const Dashboard1 = () => {
   const userid = localStorage.getItem("paricollectionuserId");
@@ -119,28 +120,89 @@ const Dashboard1 = () => {
 
   return (
     <div className="w-full relative bg-gainsboro-200 h-[1200px] overflow-hidden text-left text-5xl text-darkslategray-400 font-roboto">
+         <div className="flex lg:flex-row md:flex-row flex-col ">
+      <Sidebar />
+      <div className="flex flex-col">
       <FrameComponent20 dashboard="Insert Product" />
-      <FrameComponent16 />
-      <img
-        className="absolute top-[213px] left-[485px] rounded-12xs w-[11.5px] h-4 object-contain"
-        alt=""
-        src="/vector-28q.svg"
-      />
-      <div className="absolute top-[206px] left-[500.5px] font-medium">
-        Add Product
-      </div>
-      <div className="absolute top-[253px] left-[485px] rounded-4xl bg-white box-border  w-[1000px] h-[1826px] overflow-hidden text-xl text-black border-[1px] border-solid border-lightgray">
-        <div className="absolute top-[42px] left-[50px] flex items-center">
-          <label htmlFor="productTitle" className="text-black text-xl font-bold mr-8">Product Tittle</label>
-          <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Tittle" 
-          onChange={(e) => settitle(e.target.value)}
-          value={title}
-          />
+      <div className="flex flex-row justify-between">
+      <div></div>
+      <div className='rounded-4xl bg-white box-border  lg:w-[1100px] md:w-[500px] w-full  overflow-hidden text-xl text-black '>
+      <form onSubmit={ handleInsertProduct} className='m-5'>
+    <div class="grid gap-6 mb-6 md:grid-cols-1  ">
+        <div>
+            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Product Tittle</label>
+            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required onChange={
+                        (e) => {
+                            settitle(e.target.value);
+                        }
+                    }/>
         </div>
-        <div className="absolute top-[110px] left-[50px]">
-          <label htmlFor="productCategory" className="text-black text-xl font-bold mr-20">Product Category</label>
-          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setcategory(e.target.value)}>
-            <option value="AccessoriesArmSleeves">AccessoriesArmSleeves</option>
+        <div>
+            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2"> Details</label>
+            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required onChange={
+                        (e) => {
+                            setdetails(e.target.value);
+                        }
+                    }/>
+        </div>  
+        <div>
+            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Description</label>
+            <input type="text" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required onChange={
+                        (e) => {
+                            setdescription(e.target.value);
+                        }
+                    }/>
+        </div>  
+        <div>
+            <label for="company" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Price</label>
+            <input type="Number" id="company" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="" required onChange={
+                        (e) => {
+                            setprice(e.target.value);
+                        }
+                    }/>
+        </div> 
+        <div>
+            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Gender</label>
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+onChange={(e)=>{
+    setgender(e.target.value)
+}}
+>
+  <option selected>Choose...</option>
+  <option value="Male">Male</option>
+  <option value="Female">Female</option>
+</select>
+        </div>
+
+        <div>
+            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Size</label>
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+onChange={(e)=>{
+    setsize(e.target.value)
+}}
+>
+  <option selected>Choose...</option>
+  <option value="XXS">XXS</option>
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            <option value="XXXL">XXXL</option>
+</select>
+        </div>
+
+        <div>
+            <label for="visitors" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-start ml-2">Category</label>
+            <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+onChange={(e)=>{
+    setcategory(e.target.value)
+}}
+>
+  <option selected>Choose...</option>
+  <option value="AccessoriesArmSleeves">AccessoriesArmSleeves</option>
+            <option value="Top seller">Top seller</option>
             <option value="AccessoriesHanky">AccessoriesHanky</option>
             <option value="AccessoriesSocks">AccessoriesSocks</option>
             <option value="ReadymadeKIDS">ReadymadeKIDS</option>
@@ -151,79 +213,62 @@ const Dashboard1 = () => {
             <option value="ThermalWOMEN">ThermalWOMEN</option>
             <option value="UndergarmentsMenWomen">UndergarmentsMenWomen</option>
             <option value="UndergarmentsMenWomen">UndergarmentsMenWomen</option>
-          </select>
+</select>
         </div>
-        <div className="absolute top-[660px] left-[50px]">
-          <label htmlFor="productCategory" className="text-black text-xl font-bold mr-20">Product Gender</label>
-          <input type="text" id="productCategory" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Enter Product Gender" 
-          onChange={(e) => setgender(e.target.value)}
-          value={gender}
-          />
+      
+    </div>
+    <div className="m-3 ">
+    <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">image 1</label>
+            <input type="file"
+                onChange={
+                    (e) => {
+                        if (e.target.files[0]) {
+                          uploadimage1(e.target.files[0])
+                        }
+                    }
+                }/>
         </div>
-        <div className="absolute top-[180px] left-[50px] flex items-center">
-          <label htmlFor="productImage" className="text-black text-xl font-bold mr-14">Product Image 1</label>
-          <input type="file"  onChange={(e)=>{
-          uploadimage1(e.target.files[0])
-          }}/>
+        <div className="m-3 ">
+    <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">image 2</label>
+            <input type="file"
+                onChange={
+                    (e) => {
+                        if (e.target.files[0]) {
+                            handleupload(e.target.files[0])
+                        }
+                    }
+                }/>
         </div>
-        <div className="absolute top-[230px] left-[50px] flex items-center">
-          <label htmlFor="productImage" className="text-black text-xl font-bold mr-14">Product Image 2</label>
-          <input type="file"  onChange={(e)=>{
-            handleupload(e.target.files[0])
-          }}/>
-         
+        <div className="m-3 ">
+    <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">image 3</label>
+            <input type="file"
+                onChange={
+                    (e) => {
+                        if (e.target.files[0]) {
+                            uploadimage3(e.target.files[0])
+                        }
+                    }
+                }/>
         </div>
-        <div className="absolute top-[280px] left-[50px] flex items-center">
-          <label htmlFor="productImage" className="text-black text-xl font-bold mr-14">Product Image 3</label>
-          <input type="file"  onChange={(e)=>{
-            uploadimage3(e.target.files[0])
-          }} />
-          
+    
+    <div className="m-3 ">
+    <label for="confirm_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">image 4</label>
+            <input type="file"
+                onChange={
+                    (e) => {
+                        if (e.target.files[0]) {
+                            upload(e.target.files[0])
+                        }
+                    }
+                }/>
         </div>
-        <div className="absolute top-[330px] left-[50px] flex items-center">
-          <label htmlFor="productImage" className="text-black text-xl font-bold mr-14">Product Image 4</label>
-          <input type="file"  onChange={(e)=>{
-            upload(e.target.files[0])
-          }}/>
-        </div>
-        <div className="absolute top-[420px] left-[50px]">
-          <label htmlFor="productPrice" className="text-black text-xl font-bold mr-8">Product Price</label>
-          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Enter Product Price"  onChange={(e) => setprice(e.target.value)}
-          value={price}/>
-        </div>
-        <div className="absolute top-[500px] left-[50px]">
-          <label htmlFor="availableSize" className="text-black text-xl font-bold mr-14">Choose Available Size</label>
-          <select id="availableSize" className="border border-solid border-darkgray-300 px-3 py-2 rounded text-xl" onChange={(e) => setsize(e.target.value)}>
-            <option value="XXS">XXS</option>
-            <option value="XS">XS</option>
-            <option value="S">S</option>
-            <option value="M">M</option>
-            <option value="L">L</option>
-            <option value="XL">XL</option>
-            <option value="XXL">XXL</option>
-            <option value="XXXL">XXXL</option>
-          </select>
-        </div>
-        <div className="absolute top-[550px] left-[50px]">
-  <label className="text-black text-xl font-bold mr-14 mb-8">Product Description</label>
-          <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Description" 
-          onChange={(e) => setdescription(e.target.value)}
-          value={description}
-          />
-</div>
- <div className="absolute top-[600px] left-[50px]">
-          <label htmlFor="productDetails" className="text-black text-xl font-bold mr-14 mb-8">Product Details</label>
-          <input type="text" id="productTitle" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[300px] text-xl" placeholder="Product Details" 
-          onChange={(e) => setdetails(e.target.value)}
-          value={details}
-          />
-        </div>
-        <div className="absolute top-[800px] left-[500px]">
-          <button onClick={()=>{
-            handleInsertProduct()}} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-16 rounded cursor-pointer">
-            Insert Product
-          </button>
-        </div>
+    <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer" onClick={(e)=>{
+         handleInsertProduct(e)
+    }}>Add</button>
+</form>
+      </div>
+      </div>
+      </div>
       </div>
     </div>
   );

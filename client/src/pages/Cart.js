@@ -13,7 +13,7 @@ const Cart = () => {
   const fetchData = async () => {
     try {
         const response = await fetch(
-          "https://ecommercebackend-32ve.onrender.com/getCart",
+          "https://ecommercebackend-32ve.onrender.com/getCartfororders",
           {
             method: "GET",
             headers: {
@@ -24,13 +24,36 @@ const Cart = () => {
         if (response.ok) {
           const data = await response.json();
           setproducts(data)
-          console.log(data)
         } else {
           alert("Something went wrong please login again");
         }
       } catch (error) {
         console.error("Error during login:", error);
       }
+}
+
+const remove = async (id) => {
+  try {
+  const response = await fetch(
+    `https://ecommercebackend-32ve.onrender.com/deleteCartfororders/${id}`,
+    {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  );
+
+  if (response.ok) {
+    const data = await response.json();
+    alert("Removed");
+    fetchData()
+  } else {
+    alert("something went wrong");
+  }
+} catch (error) {
+  console.error("Error during login:", error);
+}
 }
 
 useEffect(() => {
@@ -57,14 +80,16 @@ useEffect(() => {
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
       />
+
+<div className="absolute top-[161px] left-[726px] rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
+       nav('/cart-page');
+      }}>
+        <div className="relative font-semibold text-white">Order Now {products.length} Items</div>
+      </div>
+
       <div className='absolute top-[249px] left-[122px] flex flex-row gap-8'>
       {
           products.filter((e)=>(e.userid===userid)).map(products =>(
-            <a href='' onClick={
-              (e) => {
-                nav('/material-page', { state: { id: products.productid} });
-              }
-          }>
       <div className="shadow-[1px_0px_19.3px_rgba(0,_0,_0,_0.3)] w-[348px] h-[552px] font-inter">
         <div className="relative top-[0px] left-[0px] rounded-t-xl rounded-br-120xl rounded-bl-xl bg-bisque w-[348px] h-[552px] overflow-hidden">
           <img
@@ -72,12 +97,17 @@ useEffect(() => {
             alt=""
             src="/mingcuteupfill.svg"
           />
+          <a href='' onClick={
+              (e) => {
+                nav('/material-page', { state: { id: products.productid} });
+              }
+          }>
           <img
             className="absolute top-[-1px] left-[calc(50%_-_146px)] w-[293px] h-[391px] object-cover"
             alt=""
             src={products.image1}
           />
-          
+          </a>
           <div className="absolute top-[459px] left-[15px]">
             {products.title}
           </div>
@@ -92,16 +122,13 @@ useEffect(() => {
           <div className="absolute top-[528px] left-[16px] text-2xs">
             MRP incl. of all taxes
           </div>
+          <div className="text-black absolute top-[450px] left-[280px] font-bold text-base cursor-pointer" onClick={()=>{
+          remove(products._id)
+        }}>Delete</div>
           <div className="absolute top-[0px] left-[313px] bg-whitesmoke-100 w-[54px] h-[390px]" />
           <div className="absolute top-[0px] left-[0px] bg-whitesmoke-100 w-[54px] h-[390px]" />
         </div>
-        {/* <img
-          className="relative top-[462px] left-[258px] rounded-23xl w-[90px] h-[90px] overflow-hidden"
-          alt=""
-          src="/solarbagoutline6.svg"
-        /> */}
       </div>
-      </a>
           ))}
       </div>
     </div>

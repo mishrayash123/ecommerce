@@ -61,7 +61,7 @@ const ADDRESSPOPUP = () => {
             <h2 className="m-0 w-[330px] relative text-inherit font-normal font-inherit inline-block whitespace-nowrap max-w-full">
               Add New Address
             </h2>
-            <div className="flex flex-col items-start justify-start pt-[5px] px-0 pb-0">
+            {/* <div className="flex flex-col items-start justify-start pt-[5px] px-0 pb-0">
               <img
                 className="w-[41px] h-[41px] relative overflow-hidden shrink-0 cursor-pointer"
                 loading="lazy"
@@ -69,7 +69,7 @@ const ADDRESSPOPUP = () => {
                 src="/mdicancelbold.svg"
                 // onClick={onMdicancelBoldIconClick}
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <img
@@ -82,7 +82,7 @@ const ADDRESSPOPUP = () => {
       <main className="w-[1225px] flex flex-col items-end justify-start gap-[38px] max-w-full mq750:gap-[19px]">
         <section className="self-stretch flex flex-row items-start justify-center pt-0 px-[63px] pb-[11px] box-border max-w-full lg:pl-[31px] lg:pr-[31px] lg:box-border">
           <div className="flex-1 flex flex-col items-start justify-start gap-[49px] max-w-full mq750:gap-[24px]">
-            <Button
+            {/* <Button
               className="w-[528px] h-[57px] max-w-full"
               startIcon={
                 <img
@@ -105,7 +105,7 @@ const ADDRESSPOPUP = () => {
               }}
             >
               Use my current location
-            </Button>
+            </Button> */}
             <div className="self-stretch flex flex-row flex-wrap items-center justify-center gap-[43px] max-w-full mq750:gap-[21px]">
               <TextField
                 className="[border:none] bg-[transparent] h-[57px] flex-1 font-roboto-flex text-3xl text-darkgray min-w-[343px] max-w-full mq750:min-w-full"

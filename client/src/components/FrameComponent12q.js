@@ -40,25 +40,6 @@ const FrameComponent12 = ({
         alt=""
         src={frame92}
       />
-      {/* <Property1Variant
-        prop="Last Week"
-        showListBoxTitle={false}
-        showDiv={false}
-        property1Variant4Position="absolute"
-        property1Variant4Top="calc(50% - 43.5px)"
-        property1Variant4Left="505px"
-        showDiv1={false}
-        showItem
-      /> */}
-      {/* <div className="absolute top-[42px] left-[833px]">Or</div>
-      <div className="absolute top-[34px] left-[889px] shadow-[0px_4px_14px_rgba(0,_0,_0,_0.1)] rounded-lg bg-white flex flex-row items-center justify-center py-1.5 px-2.5 gap-[10px] text-dimgray-200 font-montserrat">
-        <img
-          className="w-6 relative h-6 overflow-hidden shrink-0"
-          alt=""
-          src="/simplelineiconscalenderq.svg"
-        />
-        <div className="relative">Select Date</div>
-      </div> */}
     </div>
   );
 };

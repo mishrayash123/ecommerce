@@ -156,11 +156,11 @@ const MenHomePage = () => {
       <b className="absolute top-[1397px] left-[calc(50%_-_106px)] text-21xl text-gray-700">
         CATEGORY
       </b>
-     
+      
 
      <div className="absolute top-[3471px] left-[28px] flex flex-row gap-8">
      {
-          products.map(products =>(
+          products.filter((e)=>(e.category==="Top seller")).map(products =>(
             <a href='' onClick={
               (e) => {
                 nav('/material-page', { state: { id: products._id} });

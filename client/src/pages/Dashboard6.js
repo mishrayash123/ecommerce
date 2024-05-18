@@ -2,13 +2,16 @@ import FrameComponent20 from "../components/FrameComponent20q";
 import FrameComponent7 from "../components/FrameComponent7q";
 import FrameComponent12 from "../components/FrameComponent12q";
 import FrameComponent8 from "../components/FrameComponent8q";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard6 = () => {
   return (
     <div className="w-full relative bg-gainsboro-200 h-[976px] overflow-hidden">
       <FrameComponent20 dashboard="Dashboard" />
-      <FrameComponent7 />
-      <FrameComponent12
+      {/* <FrameComponent7 /> */}
+      <Sidebar />
+      
+      {/* <FrameComponent12
         todaysSales="New Clients"
         prop="+4%"
         thanLastWeek=" than last Month"
@@ -20,9 +23,9 @@ const Dashboard6 = () => {
         showDiv={false}
         showItem
         showDiv1={false}
-      />
+      /> */}
       
-      <FrameComponent8
+      {/* <FrameComponent8
         prop="250"
         prop1="200"
         prop2="150"
@@ -37,7 +40,7 @@ const Dashboard6 = () => {
         propHeight2="54px"
         propTop3="354px"
         propHeight3="33px"
-      />
+      /> */}
     </div>
   );
 };

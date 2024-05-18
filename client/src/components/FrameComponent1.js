@@ -39,7 +39,7 @@ const FrameComponent1 = ({
 
   return (
     <div
-      className="absolute top-[4972px] left-[0px] w-[1728px] h-[489px] text-left text-base text-white font-red-hat-display"
+      className="absolute bottom-[0px] left-[0px] w-[1728px] h-[489px] text-left text-base text-white font-red-hat-display"
       style={frameDiv4Style}
     >
       <div
