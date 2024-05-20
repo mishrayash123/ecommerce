@@ -64,7 +64,7 @@ useEffect(() => {
 
 
   return (
-    <div className="w-full relative bg-white h-[1588px] overflow-hidden text-left text-9xl text-black font-inter m-5">
+    <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter m-5">
                                              {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       <div className="m-5">
         <span className="font-semibold">My Wishlist</span>
