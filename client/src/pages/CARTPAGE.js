@@ -81,8 +81,8 @@ const handlesubmit = async()=>{
 
 
   return (
-    <div className="w-full relative bg-white h-[1625px] overflow-hidden text-left text-base text-white font-inter">
-                  <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
+    <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter">
+                  {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"
@@ -94,27 +94,32 @@ const handlesubmit = async()=>{
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
       /> */}
-      <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-8">
-        <div className="relative font-semibold">MY BAG</div>
-      </div>
-      <div className="absolute top-[161px] left-[826px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 text-black border-[1.5px] border-solid border-black">
-        <div className="relative font-semibold">ADDRESS</div>
-      </div>
-      <div className="absolute top-[161px] left-[1100px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 text-black border-[1.5px] border-solid border-black">
-        <div className="relative font-semibold">PAYMENT</div>
+      <div className="flex md:items-center md:justify-center mb-4">
+      <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
+        <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
       </div>
       <img
-        className="absolute top-[180.5px] left-[704.5px] max-h-full w-[109px]"
+        className=" max-h-full md:w-40 w-10"
         alt=""
         src="/vector-14.svg"
       />
+      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid border-black">
+        <div className=" font-semibold text-xs md:text-xl">ADDRESS</div>
+      </div>
       <img
-        className="absolute top-[180.5px] left-[979.5px] max-h-full w-[109px]"
+        className="max-h-full md:w-40 w-10"
         alt=""
         src="/vector-14.svg"
-      />
+        />
+      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid border-black">
+        <div className=" font-semibold text-xs md:text-xl">PAYMENT</div>
+      </div>
+        </div>
       
-      <div className='absolute top-[311px] left-[20px]  flex flex-col gap-8' >
+
+      <div className="flex flex-col xl:flex-row">
+
+      <div className='  flex flex-col gap-8 ' >
 
       {
                     products.filter((e)=>(e.userid===userid)).map(products => (
@@ -154,7 +159,7 @@ const handlesubmit = async()=>{
 </div>
         <div className="flex flex-row gap-4">
         <img
-        className=" w-[244px] h-[325px] object-cover"
+        className=" md:w-[244px] md:h-[325px] object-cover"
         alt=""
         src={products.image1}
       />
@@ -166,7 +171,7 @@ const handlesubmit = async()=>{
       </div>
       <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
       <label htmlFor="productPrice" className="text-black text-base font-bold ">Quantity</label>
-          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[100px] text-xl" placeholder="Enter Product Price"
+          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded md:w-[100px] w-10 text-xl" placeholder="Enter Product Price"
           value={products.quantity}/>
       </div>
         </div>
@@ -179,61 +184,72 @@ const handlesubmit = async()=>{
                     ))}
                     </div>
 
-      <div className="absolute top-[389px] left-[1050px] text-xl text-gray-400">
+       <div className=" flex flex-col mt-4 md:mr-20 space-y-6">
+       <div className=" rounded-md bg-salmon-100 md:w-[459px] w-72 flex flex-row items-center justify-center md:py-2.5  text-5xl font-made-tommy cursor-pointer" onClick={()=>{
+        handlesubmit();
+      }}>
+        <b className="relative">PLACE ORDER</b>
+      </div>
+      <div className=" text-xl text-gray-400">
         BILLING DETAILS
       </div>
-      <div className="absolute top-[311px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy cursor-pointer" onClick={()=>{
-        handlesubmit();
-      }}>
-        <b className="relative">PLACE ORDER</b>
-      </div>
-      <div className="absolute top-[768px] left-[1050px] rounded-md bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-[186px] text-5xl font-made-tommy cursor-pointer" onClick={()=>{
-        handlesubmit();
-      }}>
-        <b className="relative">PLACE ORDER</b>
-      </div>
+
+
       
 
       <div
-      className="absolute top-[451px] left-[1050px] box-border w-[459px] h-[244px] overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400"
-      style={frameDiv12Style}
-    >
-      <img
-        className="absolute top-[123.5px] left-[0.5px] max-h-full w-[528px]"
-        alt=""
-        src="/vector-20.svg"
-      />
-      <img
-        className="absolute top-[183.5px] left-[0.5px] max-h-full w-[528px]"
-        alt=""
-        src="/vector-20.svg"
-      />
-      <div className="absolute top-[82px] left-[23px] text-salmon-100">
-        Discount
-      </div>
-      <div className="absolute top-[142px] left-[23px] text-black">
-        Shipping Charges
-      </div>
-      <div className="absolute top-[202px] left-[23px] font-semibold">
-        TOTAL AMOUNT
-      </div>
-      <b className="absolute top-[205px] left-[363px] text-base">₹ {price}</b>
-      <div className="absolute top-[145px] left-[384px] text-base">₹0</div>
-      <img
-        className="absolute top-[63.5px] left-[0.5px] max-h-full w-[528px]"
-        alt=""
-        src="/vector-20.svg"
-      />
-      <div className="absolute top-[85px] left-[360px] text-base text-salmon-100">
-        -₹100
-      </div>
-      <div className="absolute top-[30px] left-[365px] text-base">₹ {price+100}</div>
-      <div className="absolute top-[22px] left-[23px] text-black">
+      className=" box-border md:w-[459px]   overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400"
+      >
+             <div className=" text-black flex items-center justify-between">
+              <div>
         <span>Cart Total </span>
         <span className="text-base">(Excl. of all taxes)</span>
+              </div>
+              <div className=" text-base">₹ {price+100}</div>
       </div>
-    </div>
-
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg"
+        />
+          <div className=" text-salmon-100 flex items-center  justify-between">
+            <p>
+        Discount
+            </p>
+            <div className=" text-base text-salmon-100">
+        -₹100
+      </div>
+      </div>
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg"
+        />
+    
+      <div className=" text-black flex items-center justify-between">
+        <p>
+        Shipping Charges
+        </p>
+        <div className=" text-base">₹0</div>
+      </div>
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg" />
+      <div className=" font-semibold flex items-center justify-between">
+        <p>
+        TOTAL AMOUNT
+        </p>
+      <b className=" text-base">₹ {price}</b>
+      </div>
+      </div>
+      <div className=" rounded-md bg-salmon-100 md:w-[459px] w-72  flex flex-row items-center justify-center md:py-2.5  text-5xl font-made-tommy cursor-pointer" onClick={()=>{
+        handlesubmit();
+      }}>
+        <b className="relative">PLACE ORDER</b>
+      </div>
+        </div>
+        </div>
     </div>
   );
 };
