@@ -10,10 +10,10 @@ const TRACKORDER1 = () => {
 
 
   return (
-    <div className="w-full relative bg-white h-[1475px] overflow-hidden text-left text-mini text-black font-made-tommy">
-                                          <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
+    <div className=" flex  flex-col sm:flex-row h-96  justify-evenly w-screen float-right  text-black font-made-tommy ">
+                                          {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <FrameComponent5 /> */}
-      <FrameComponent1
+      {/* <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"
         frame12="/frame-12.svg"
@@ -23,42 +23,51 @@ const TRACKORDER1 = () => {
         propBackgroundColor="#ff6868"
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
-      />
-
-      <div className="absolute top-[176px] left-[20px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm font-inter">
-        <div className="absolute top-[22px] left-[22px] font-semibold">
+      /> */}
+     {/* <div className="flex  flex-col md:flex-row  justify-evenly  "> */}
+      <div className="space-y-9 flex flex-col  justify-center lg:justify-start items-center md:justify-start">
+      <div className=" bg-gainsboro-100 w-48  overflow-hidden  text-sm font-inter">
+        <div className=" font-semibold">
           Email
         </div>
-        <div className="absolute top-[42px] left-[22px] text-xs text-dimgray-300 text-left">
+        <div className=" text-xs text-dimgray-300 text-left">
         {email}
         </div>
       </div>
-      <div className="absolute top-[176px] left-[596px] text-lg text-darkslategray-100">
+      {/* <div className=" text-lg text-darkslategray-100">
         TRACKING ORDER
-      </div>
-      <div className="absolute top-[318px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
+      </div> */}
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+        <div className=" font-light">
           Profile
         </div>
       </div>
-      <div className="absolute top-[357px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+        <div className=" font-light">
           Track Order
         </div>
         
       </div>
-      <div className="absolute top-[396px] left-[20px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px]">FAQ</div>
+      <div className=" bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+        <div className="">FAQ</div>
       </div>
          {/* Logout Button */}
-      <div className="absolute top-[480px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
         <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white cursor-pointer" style={{ fontFamily: 'Roboto' }} onClick={logout}>
           Logout
         </button>
       </div>
+        </div>
 
 
+       
       <Property1Frame6 frameDivTop="225px" frameDivLeft="596px" />
+        
+      
+
+
+
+      {/* </div> */}
     </div>
   );
 };
