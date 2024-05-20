@@ -63,6 +63,7 @@ const handleaddtowishlist = async(productid,title,color,gender,size,price,descri
 
 
 const handleaddtocart = async(productid,title,color,gender,price,description,details,category,subcategory,subcategory1,image1,image2,image3,image4) => {
+  
   try {
     const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtocartfororders", {
       method: "POST",

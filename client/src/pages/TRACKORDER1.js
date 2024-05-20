@@ -3,14 +3,16 @@ import FrameComponent5 from "../components/FrameComponent5q";
 import Property1Frame6 from "../components/Property1Frame6q";
 import FrameComponent1 from "../components/FrameComponent1";
 import { useAuth } from "../AuthContext";
+import {useNavigate} from 'react-router-dom'
 
 const TRACKORDER1 = () => {
   const email = localStorage.getItem("email");
   const {logout} = useAuth();
+  const nav = useNavigate();
 
 
   return (
-    <div className=" flex  flex-col sm:flex-row h-96  justify-evenly w-screen float-right  text-black font-made-tommy ">
+    <div className=" flex  flex-col sm:flex-row h-96  justify-evenly w-screen float-right  text-black font-made-tommy m-5">
                                           {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <FrameComponent5 /> */}
       {/* <FrameComponent1
@@ -37,14 +39,18 @@ const TRACKORDER1 = () => {
       {/* <div className=" text-lg text-darkslategray-100">
         TRACKING ORDER
       </div> */}
-      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer" onClick={()=>{
+        nav('/profile');
+      }}>
         <div className=" font-light">
           Profile
         </div>
       </div>
-      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer" onClick={()=>{
+        nav('/frame-80');
+      }}>
         <div className=" font-light">
-          Track Order
+          Edit Address
         </div>
         
       </div>

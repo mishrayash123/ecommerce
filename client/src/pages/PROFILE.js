@@ -11,7 +11,7 @@ const PROFILE = () => {
   const {logout} = useAuth();
 
   return (
-    <div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy">
+    <div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy m-5">
                                           {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
                                           <FrameComponent1
         frame10="/frame-10.svg"

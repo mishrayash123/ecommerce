@@ -38,14 +38,14 @@ const WISHLISTPAGE = () => {
 
   return (
     <div className="w-full relative bg-white h-[1588px] overflow-hidden text-left text-9xl text-black font-inter">
-                                         <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
+                                         {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <b className="absolute top-[767px] left-[calc(50%_-_289px)]">
         Your wishlist is lonely and looking for love.
       </b> */}
       <div className="absolute top-[147px] left-[calc(50%_-_700px)]">
         <span className="font-semibold">My Orders</span>
         <b> </b>
-        <span>({orderdata.length})</span>
+        <span>({orderdata.filter((e) => (e.userid === userid)).length})</span>
       </div>
       {/* <div className="absolute top-[817px] left-[calc(50%_-_429px)] text-5xl">
         Add products to your wishlist, review them anytime and easily move to
@@ -105,7 +105,7 @@ const WISHLISTPAGE = () => {
       </div>
 
 
-      <FrameComponent1
+      {/* <FrameComponent1
         frame10="/frame-10.svg"
         frame11="/frame-11.svg"
         frame12="/frame-12.svg"
@@ -115,7 +115,7 @@ const WISHLISTPAGE = () => {
         propBackgroundColor="#ff6868"
         propBackgroundColor1="#ebebeb"
         propBackgroundColor2="#ff6868"
-      />
+      /> */}
       {/* <Component /> */}
     </div>
   );
