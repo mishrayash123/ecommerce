@@ -274,7 +274,7 @@ const MenHomePage = () => {
         <h2 className=" text-center  text-21xl">TOP SELLING</h2>
 
         <div className="grid grid-cols-1 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center gap-9">
-          {products.map((product) => (
+          {products.filter((e) => (e.category === "Top seller")).map((product) => (
             <a
               key={product._id}
               href=''
