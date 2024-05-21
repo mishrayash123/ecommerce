@@ -37,7 +37,15 @@ const WISHLISTPAGE = () => {
   }, []);
 
   return (
-    <div className="w-full relative bg-white h-[1588px] overflow-hidden text-left text-9xl text-black font-inter">
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
+    <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter">
                                          {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <b className="absolute top-[767px] left-[calc(50%_-_289px)]">
         Your wishlist is lonely and looking for love.
@@ -104,19 +112,20 @@ const WISHLISTPAGE = () => {
      </div>
       </div>
 
-
-      {/* <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
+      
       {/* <Component /> */}
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </div>
   );
 };

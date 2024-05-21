@@ -216,7 +216,13 @@ const AccessoriesArmSleeves = () => {
 
   return (
     <div className=" bg-white text-dimgray-600 font-poppins">
-
+<MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
 
 
       {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
@@ -485,17 +491,17 @@ const AccessoriesArmSleeves = () => {
 
 
       {/******************** footer ***************************/}
-      {/* <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
+      <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
 
       {/* <ListboxComponent chevron="/chevron.svg" /> */}
     </div>

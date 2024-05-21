@@ -76,20 +76,17 @@ const TRACKORDER = () => {
   }, []);
 
   return (
-    <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
-                                          <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
-      <FrameComponent5 />
-      <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
       />
+    <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
+      <FrameComponent5 />
+      
       <div className="absolute top-[176px] left-[20px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
         <div className="absolute top-[22px] left-[22px] font-semibold">
           Email
@@ -338,6 +335,19 @@ const TRACKORDER = () => {
         </div>
       </div>
                     ))}
+                   
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </div>
   );
 };

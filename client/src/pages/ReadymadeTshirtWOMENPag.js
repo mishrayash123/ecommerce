@@ -222,6 +222,13 @@ const ReadymadeTshirtWOMENPage = () => {
   return (
     <div className="bg-white text-dimgray-600 font-poppins">
       {/* <MainHeader /> */}
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
 
 
       <div className="relative">
@@ -392,6 +399,17 @@ const ReadymadeTshirtWOMENPage = () => {
       {/**************************** Navigation Component ***************************/}
       <div className="mt-2 mx-auto w-full md:w-[40%]">
         {/* <FrameComponent1 /> */}
+      </div>
+      <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
       </div>
     </div>
   );
