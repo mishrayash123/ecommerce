@@ -336,15 +336,14 @@ const MenHomePage = () => {
 
 
 
-
       {/* **********************products ends here ***************************/}
 
       <div className="mt-auto ">
         <FrameComponent1
-          frame10="/path/to/image10.png"
-          frame11="/path/to/image11.png"
-          frame12="/path/to/image12.png"
-          frame14="/path/to/image14.png"
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
           propBackgroundColor="salmon"
           propBackgroundColor1="whitesmoke"
           propBackgroundColor2="salmon"

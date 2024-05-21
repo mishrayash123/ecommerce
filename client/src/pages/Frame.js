@@ -12,6 +12,7 @@ import {
   FormHelperText,
   FormControl,
 } from "@mui/material";
+import FrameComponent1 from "../components/FrameComponent1";
 
 const ADDRESSPOPUP = () => {
   const [fname, setfname] = useState('');
@@ -55,7 +56,13 @@ const ADDRESSPOPUP = () => {
     <>
       <div>
         {/************************* * here  is navbar **********************************/}
-
+        <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
         {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
 
         {/************************* * here  ends navbar **********************************/}
@@ -432,7 +439,17 @@ const ADDRESSPOPUP = () => {
           </main>
         </div>
       </div>
-
+      <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </>
   );
 };

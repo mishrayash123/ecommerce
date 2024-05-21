@@ -81,19 +81,17 @@ const handlesubmit = async()=>{
 
 
   return (
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
     <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter">
                   {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
-      {/* <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-123.svg"
-        frame14="/frame-143.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
+      
       <div className="flex md:items-center md:justify-center mb-4">
       <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
         <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
@@ -250,6 +248,18 @@ const handlesubmit = async()=>{
       </div>
         </div>
         </div>
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </div>
   );
 };

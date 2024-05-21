@@ -12,6 +12,14 @@ const TRACKORDER1 = () => {
 
 
   return (
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
     <div className=" flex  flex-col sm:flex-row h-96  justify-evenly w-screen float-right  text-black font-made-tommy m-5">
                                           {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       {/* <FrameComponent5 /> */}
@@ -69,11 +77,21 @@ const TRACKORDER1 = () => {
        
       <Property1Frame6 frameDivTop="225px" frameDivLeft="596px" />
         
-      
-
 
 
       {/* </div> */}
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </div>
   );
 };

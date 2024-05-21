@@ -62,6 +62,14 @@ useEffect(() => {
 
 
   return (
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
     <div className="w-full relative bg-white overflow-hidden text-left text-9xl text-black font-inter m-5">
                                              {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       <div className="m-5">
@@ -69,17 +77,6 @@ useEffect(() => {
         <b> </b>
         <span>({products.filter((e)=>(e.userid===userid)).length})</span>
       </div>
-      {/* <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
 
 <div className="w-1/4 mx-auto rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
        nav('/cart-page');
@@ -131,6 +128,18 @@ useEffect(() => {
                 </div>
               </div>
           ))}
+      </div>
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
       </div>
     </div>
   );

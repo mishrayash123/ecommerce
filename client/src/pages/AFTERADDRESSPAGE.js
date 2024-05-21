@@ -7,8 +7,15 @@ import FrameComponent1 from "../components/FrameComponent1";
 const AFTERADDRESSPAGE = () => {
   
   return (
+    <div>
+      <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
     <div className="w-full relative bg-white h-[1445px] overflow-hidden text-left text-base text-white font-inter">
-                  <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
       {/* <FrameComponent5 /> */}
       <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon flex flex-row items-center justify-center py-2.5 px-8">
         <div className="relative font-semibold">MY BAG</div>
@@ -50,17 +57,19 @@ const AFTERADDRESSPAGE = () => {
         <b className="relative">CONTINUE TO PAYMENT</b>
       </div>
       <FrameComponent3 />
-      <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      />
+      
+    </div>
+    <div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
     </div>
   );
 };
