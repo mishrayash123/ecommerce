@@ -1,43 +1,47 @@
-import { useMemo } from "react";
 
-const Property1Frame2 = ({ frameDivTop, frameDivLeft,details,description }) => {
-  const property1Frame66Style = useMemo(() => {
-    return {
-      top: frameDivTop,
-      left: frameDivLeft,
-    };
-  }, [frameDivTop, frameDivLeft]);
+import { useState } from "react";
+
+const Property1Frame2 = ({ details, description }) => {
+  const [showDescription, setShowDescription] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div
-      className="absolute top-[20px] left-[20px] flex flex-col items-start justify-start text-left text-xl text-dimgray-400 font-inter"
-      style={property1Frame66Style}
-    >
-      <div className="w-[750px] bg-white box-border  flex flex-row items-center justify-center py-[18px] px-2.5 relative gap-[10px] border-[1px] border-solid border-darkgray-600">
-        <div className="w-[194px] absolute !m-[0] top-[18px] left-[30px] font-semibold inline-block z-[0]">
-          Product Description
+    <div className="flex flex-col items-start justify-start text-left text-xl text-dimgray-400 font-inter  p-4 w-full">
+      <div className="w-full max-w-3xl bg-white box-border flex flex-col items-start justify-center py-4 px-6 border border-solid border-darkgray-600">
+        <div  onClick={() => setShowDescription(!showDescription)}  className="font-semibold mb-2 flex justify-between items-center w-full">
+          <span>Product Description</span>
+          <button 
+           
+            className="text-sm text-black bg-white focus:outline-none"
+          >
+            <div className={`transform transition-transform ${showDescription ? 'rotate-180' : ''}`}>
+              ▼
+            </div>
+          </button>
         </div>
-        {/* <img
-          className="w-[13px] absolute !m-[0] top-[calc(50%_-_3px)] left-[695px] h-1.5 z-[1]"
-          alt=""
-          src="/vector-132.svg"
-        /> */}
-        <p className="text-wrap overflow-y-auto m-2 mt-8">
+        {showDescription && (
+          <p className="text-wrap w-full break-words overflow-y-auto max-h-60">
             {description}
           </p>
+        )}
       </div>
-      <div className="w-[750px] bg-white box-border  flex flex-row items-center justify-center py-[18px] px-2.5 relative gap-[10px] border-r-[1px] border-solid border-darkgray-600 border-b-[1px] border-l-[1px]">
-        <div className="w-[149px] absolute !m-[0] top-[18px] left-[30px] font-semibold inline-block z-[0]">
-          Product Details
+      <div  onClick={() => setShowDetails(!showDetails)}  className="w-full max-w-3xl bg-white box-border flex flex-col items-start justify-center py-4 px-6 border border-solid border-darkgray-600">
+        <div  className="font-semibold mb-2 flex justify-between items-center w-full">
+          <span>Product Details</span>
+          <button 
+            
+            className="text-sm text-black bg-white focus:outline-none"
+          >
+            <div className={`transform transition-transform ${showDetails ? 'rotate-180' : ''}`}>
+              ▼
+            </div>
+          </button>
         </div>
-        {/* <img
-          className="w-[13px] absolute !m-[0] top-[calc(50%_-_3px)] left-[695px] h-1.5 z-[1]"
-          alt=""
-          src="/vector-132.svg"
-        /> */}
-        <p className="text-wrap overflow-y-auto m-2 mt-8">
+        {showDetails && (
+          <p className="text-wrap w-full break-words overflow-y-auto max-h-60">
             {details}
           </p>
+        )}
       </div>
     </div>
   );
