@@ -39,101 +39,118 @@ const FrameComponent1 = ({
 
   return (
     <div
-      className="absolute bottom-[0px] left-[0px] w-[1728px] h-[489px] text-left text-base text-white font-red-hat-display"
-      style={frameDiv4Style}
+      className=" text-left text-base text-white static md:relative font-red-hat-display flex md:flex-row flex-col" 
     >
       <div
-        className="absolute top-[0px] left-[0px] bg-salmon-100 w-[1039px] h-[489px] overflow-hidden"
-        style={frameDiv5Style}
-      >
-        <div className="absolute top-[415px] left-[29.5px] text-lg leading-[30.6px]">
-          © Copyright 2023. All Rights Reserved
-        </div>
-        <div className="absolute top-[390.6px] left-[400px] w-[396px] flex flex-row items-start justify-end py-0 pr-0 pl-[247.9px] box-border text-lg">
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10">
-            <div className="relative leading-[27px]">Privacy Policy</div>
-          </div>
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10 ml-[-0.4px]">
-            <div className="relative leading-[27px]">Term of Service</div>
-          </div>
-          <div className="self-stretch flex flex-col items-start justify-start py-0 pr-0 pl-10 ml-[-0.4px]">
-            <div className="relative leading-[27px]">Legal Info</div>
-          </div>
-        </div>
-        <div className="absolute top-[49px] left-[174px] text-5xl leading-[30.6px] font-extrabold">
+        className=" bg-salmon-100  md:w-3/5 w-screen  md:h-[489px] overflow-hidden flex flex-col justify-between"       
+       >
+        <div className="flex  p-10 space-x-20">
+
+        <div className="  space-y-1">
+        <div className=" md:text-5xl leading-[30.6px] font-extrabold">
           NEED HELP
         </div>
-        <div className="absolute top-[49px] left-[384px] text-5xl leading-[30.6px] font-extrabold">
-          COMPANY
-        </div>
-        <div className="absolute top-[99px] left-[174px] leading-[30.6px] font-medium">
+        <div className=" leading-[30.6px] md:font-medium">
           Contact Us
         </div>
-        <div className="absolute top-[99px] left-[384px] leading-[30.6px] font-medium">
-          About Us
-        </div>
-        <div className="absolute top-[129px] left-[174px] leading-[30.6px] font-medium">
+        <div className=" leading-[30.6px] md:font-medium">
           Track Order
         </div>
-        <div className="absolute top-[129px] left-[384px] leading-[30.6px] font-medium">
-          Careers
-        </div>
-        <div className="absolute top-[159px] left-[174px] leading-[30.6px] font-medium">
+        <div className=" leading-[30.6px] md:font-medium">
           FAQs
         </div>
-        <div className="absolute top-[159px] left-[384px] leading-[30.6px] font-medium">
-          Privacy Policy
-        </div>
-        <div className="absolute top-[189px] left-[174px] leading-[30.6px] font-medium">
+        <div className=" leading-[30.6px] md:font-medium">
           My Account
         </div>
+        </div>
+
+        <div>
+
+        <div className=" md:text-5xl leading-[30.6px] font-extrabold">
+          COMPANY
+        </div>
+        
+        <div className=" leading-[30.6px] font-medium">
+          About Us
+        </div>
+     
+        <div className=" leading-[30.6px] font-medium">
+          Careers
+        </div>
+
+        <div className=" leading-[30.6px] font-medium">
+          Privacy Policy
+        </div>
+        </div>
+        </div>
+
+
+        <div className="flex flex-col md:flex-row items-center space-x-8">
+        <div className=" text-lg leading-[30.6px]">
+          © Copyright 2023. All Rights Reserved
+        </div>
+        <div className=" w-3/5 flex flex-row items-start md:space-x-5 py-0  pr-0   box-border md:text-lg">
+        <p>Privacy Policy</p>
+        <p>Term Of Service</p>
+        <p>Legal Info</p>
+        </div>
+
+        </div>
+
+
       </div>
+
+
       <div
-        className="absolute top-[105px] left-[853px] bg-whitesmoke-400 w-[825px] h-96 overflow-hidden text-29xl text-black font-vujahday-script"
-        style={frameDiv6Style}
+        className=" bg-whitesmoke-400 md:w-2/4 w-3/4  p-10 md:p-0 left-1/2 static md:absolute h-96 top-[6.5rem] overflow-hidden flex flex-col lg:flex-row items-center text-29xl text-black font-vujahday-script"
       >
-        <img
-          className="absolute top-[90.9px] left-[368.9px] w-[70.7px] h-[70.7px] overflow-hidden object-contain"
-          alt=""
-          src="/teenyiconsarrowsolid@2x.png"
-        />
-        <img
-          className="absolute top-[59px] left-[517px] rounded-14xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src={frame10}
-        />
-        <img
-          className="absolute top-[131px] left-[517px] rounded-11xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src={frame11}
-        />
-        <img
-          className="absolute top-[59px] left-[579px] rounded-19xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src={frame12}
-        />
-        <img
-          className="absolute top-[131px] left-[579px] rounded-27xl w-[50px] h-[50px] overflow-hidden"
-          alt=""
-          src={frame14}
-        />
-        <div className="absolute top-[106px] left-[54px] leading-[30.6px]">
+                <div>
+        <div className=" leading-[30.6px] ml-6 md:ml-0">
           Get The Latest
         </div>
         <img
-          className="absolute top-[148.5px] left-[60px] max-h-full w-[380px]"
+          className=" md:max-h-full md:w-[380px]"
           alt=""
           src="/vector-6.svg"
-        />
-        <div className="absolute top-[178px] left-[67px] text-mini leading-[21px] font-lato flex items-center w-[402px]">
+          />
+        <div className=" text-mini  p-10 md:p-0 md:leading-[21px] font-lato flex items-center md:w-[402px]">
           Lorem ipsum dolor sit amet consectetur. Eu ut orci amet egestas id in
           facilisis eget.
         </div>
-      </div>
-      <div
-        className="absolute top-[63px] left-[1459px] bg-salmon-100 w-[269px] h-[67px]"
-        style={rectangleDivStyle}
+          </div>
+        <div>
+        <img
+          className=" w-[70.7px] h-[70.7px] overflow-hidden object-contain"
+          alt=""
+          src="/teenyiconsarrowsolid@2x.png"
+          />
+        <img
+          className=" rounded-14xl w-[50px] h-[50px] overflow-hidden"
+          alt=""
+          src={frame10}
+          />
+        <img
+          className=" rounded-11xl w-[50px] h-[50px] overflow-hidden"
+          alt=""
+          src={frame11}
+          />
+        <img
+          className=" rounded-19xl w-[50px] h-[50px] overflow-hidden"
+          alt=""
+          src={frame12}
+          />
+        <img
+          className=" rounded-27xl w-[50px] h-[50px] overflow-hidden"
+          alt=""
+          src={frame14}
+          />
+          </div>
+
+          <div
+        className=" bg-salmon-100 absolute  hidden lg:block left-[28rem]  bottom-[22rem] z-50 overflow-visible w-[269px] h-[67px]"
       />
+      </div>
+      
     </div>
   );
 };

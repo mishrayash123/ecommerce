@@ -1,6 +1,7 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useAuth } from "../AuthContext";
+
 
 const Header = ({
   solarbagOutline,
@@ -18,6 +19,8 @@ const Header = ({
   propTop1,
   propTop2,
 }) => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const frameDiv1Style = useMemo(() => {
     return {
       left: propLeft,
@@ -76,60 +79,90 @@ const Header = ({
 
 
   return (
-    <div
-      className="absolute top-[0px] left-[calc(50%_-_864px)] bg-sandybrown w-[1728px] h-[89px] overflow-hidden text-left text-xl text-black font-made-tommy"
-      style={frameDiv1Style}
-    >
-       <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
-       <img
-        className="absolute top-[27px] left-[1566px] w-[35px] h-[35px] overflow-hidden"
-        alt=""
-        src={solarbagOutline}
-      />
+    <div className="bg-sandybrown flex md:justify-between  h-[89px] overflow-hidden text-xl text-black font-made-tommy">
+    <div></div>
+    <div className="flex items-center">
+
+    <div className="flex  mt-4 md:mt-0">
+      <div className="rounded-3xl bg-palegoldenrod w-full md:w-[334px] h-[51px] overflow-hidden flex items-center space-x-2 px-2">
+        <img className="w-[26px] h-[26px] overflow-hidden" alt="search" src={ionsearch} />
+        <div className="font-semibold text-gray-300">What are you looking for?</div>
+      </div>
+    </div>
+
+    <div className="flex items-center justify-between px-4 py-2">
+      <div className="flex flex-grow items-center justify-center md:justify-end">
+        <div className="hidden md:flex space-x-4">
+        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <b>Home</b>
           </Link>
-          {
-            isLoggedIn ? <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <img
-          className="absolute top-[27px] left-[1500px] rounded-45xl w-[35px] h-[35px] overflow-hidden"
-          alt=""
-          src="/codiconaccount2.svg"
-        />
-            </Link> : <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="absolute top-[29px] left-[1500px] overflow-hidden">Sign in</b>
+          <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <b>Your wishlist</b>
           </Link>
-          }
-          
-      <div
-        className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_106px)] rounded-3xl bg-palegoldenrod w-[334px] h-[51px] overflow-hidden text-base text-gray-300 font-inter"
-        style={frameDiv2Style}
-      >
-        <img
-          className="absolute top-[calc(50%_-_13.5px)] left-[25px] w-[26px] h-[26px] overflow-hidden"
-          alt=""
-          src={ionsearch}
-        />
-        <div
-          className="absolute top-[calc(50%_-_9.5px)] left-[75px] font-semibold"
-          style={whatAreYouStyle}
-        >
-          What are you looking for?
+      
+          {isLoggedIn ? (
+            <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <img className="rounded-45xl w-[35px] h-[35px] overflow-hidden" alt="profile" src="/codiconaccount2.svg" />
+            </Link>
+          ) : (
+            <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b>Sign in</b>
+            </Link>
+          )}
         </div>
       </div>
-      <div
-        className="absolute top-[30px] left-[1379px]"
-        style={trackOrderStyle}
-      >
-        <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Your wishlist</b>
-          </Link>
+      <Link to="/cart" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <img className="w-[35px] h-[35px] overflow-hidden" alt="cart" src={solarbagOutline} />
+      </Link>
+      <div className="xl:hidden block">
+        <button onClick={() => setIsMenuOpen(true)} className=" bg-transparent">
+        <p className="block w-6 h-px bg-black "></p>
+  <p className="block w-6 h-px bg-black "></p>
+  <p className="block w-6 h-px bg-black"></p>
+        </button>
       </div>
-      <div className="absolute top-[calc(50%_-_25.5px)] left-[calc(50%_+_6px)] mx-2 mt-3" style={contactUsStyle}>
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-          <b className="relative">Home</b>
+    </div>
+        </div>
+
+    {isMenuOpen && (
+      <div className="xl:hidden fixed inset-0 bg-black bg-opacity-30 z-10" onClick={() => setIsMenuOpen(false)}>
+        <div className="fixed  flex flex-col top-0 right-0 w-2/3 h-full bg-[#FF6868] text-white p-4 space-y-4 z-20" onClick={(e) => e.stopPropagation()}>
+          <button className="mb-4 text-xl bg-transparent" onClick={() => setIsMenuOpen(false)} >
+                 &#10005;
+          </button>
+          <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
+            <b>Your wishlist</b>
           </Link>
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
+            <b>Home</b>
+          </Link>
+          <Link to="/undergarments-men-women" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">Undergarments</b>
+          </Link>
+          <Link to="/thermal-men" style={{ textDecoration: 'none', color: 'inherit' }}>
+    <b className="relative">Thermal</b>
+  </Link>
+  <Link to="/accessories-hanky" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <b className="relative">Accessories</b>
+          </Link>
+
+          {isLoggedIn ? (
+            <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
+              <img className="rounded-45xl w-[35px] h-[35px] overflow-hidden" alt="profile" src="/codiconaccount2.svg" />
+            </Link>
+          ) : (
+            <Link to="/login" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
+              <b>Sign in</b>
+            </Link>
+          )}
+        </div>
       </div>
+    )}
+
+  
+  
       <div
-        className="absolute top-[-1px] left-[0px] shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-br-51xl rounded-bl-none bg-salmon-100 w-[870px] h-[89px] overflow-hidden text-5xl text-white"
+        className="absolute top-[-1px] left-[0px] hidden xl:block shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-br-51xl rounded-bl-none bg-salmon-100 w-[870px] h-[89px] overflow-hidden text-5xl text-white"
         style={frameDiv3Style}
       >
         <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start">

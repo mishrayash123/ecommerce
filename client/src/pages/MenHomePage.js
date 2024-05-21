@@ -43,13 +43,13 @@ const MenHomePage = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/*************************** navbar starts here **************************************/}
-      {/* <MainHeader
+      <MainHeader
         className="sticky z-50"
         solarbagOutline="/solarbagoutline1.svg"
         ionsearch="/ionsearch.svg"
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
-      /> */}
+      />
 
       {/*************************** navbar ends here **************************************/}
 
@@ -339,7 +339,7 @@ const MenHomePage = () => {
 
       {/* **********************products ends here ***************************/}
 
-      {/* <div className="mt-auto w-full">
+      <div className="mt-auto ">
         <FrameComponent1
           frame10="/path/to/image10.png"
           frame11="/path/to/image11.png"
@@ -349,7 +349,7 @@ const MenHomePage = () => {
           propBackgroundColor1="whitesmoke"
           propBackgroundColor2="salmon"
         />
-      </div> */}
+      </div>
     </div >
   );
 };
