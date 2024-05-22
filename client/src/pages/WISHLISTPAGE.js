@@ -46,26 +46,12 @@ const WISHLISTPAGE = () => {
         prop="2"
       />
     <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter">
-                                         {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
-      {/* <b className="absolute top-[767px] left-[calc(50%_-_289px)]">
-        Your wishlist is lonely and looking for love.
-      </b> */}
       <div className="absolute top-[147px] left-[calc(50%_-_700px)]">
         <span className="font-semibold">My Orders</span>
         <b> </b>
         <span>({orderdata.filter((e) => (e.userid === userid)).length})</span>
       </div>
-      {/* <div className="absolute top-[817px] left-[calc(50%_-_429px)] text-5xl">
-        Add products to your wishlist, review them anytime and easily move to
-        cart.
-      </div> */}
-      {/* <div className="absolute top-[895px] left-[calc(50%_-_130px)] rounded-8xs bg-salmon-200 flex flex-row items-center justify-center py-3 px-[23px] text-xl text-salmon-100 border-[1px] border-solid border-salmon-100">
-        <div className="relative font-medium">CONTINUE SHOPPING</div>
-      </div> */}
-
-
       <div className='my-44'>
-        {/* <h2 className="font-bold text-center text-2xl">Order's History</h2> */}
        <div className="container mx-auto grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 pt-3 gap-8 w-[90%]  " role="group">
          {
           orderdata.filter((e) => (e.userid === userid)).map(orders =>(
@@ -93,16 +79,6 @@ const WISHLISTPAGE = () => {
           <div className="text-sm font-bold text-center" placeholder="k">
           <p className="text-black text-center">Ordered:</p> {orders.ordered? <span>Ordered</span>: <span>Payment Pending</span>} 
           </div>
-          {/* <a
-                    href=""
-                    className="text-sm text-center cursor-pointer text-red-500 italic hover:underline hover:text-red-900 font-medium"
-                    onClick={
-                      (e) => {
-                        remove(orders._id)
-                      }
-                  }>
-                    <h2 className="text-center">Delete</h2>
-                  </a> */}
         </div>
       </div>
     </div>
@@ -111,9 +87,6 @@ const WISHLISTPAGE = () => {
          }
      </div>
       </div>
-
-      
-      {/* <Component /> */}
     </div>
     <div className="mt-auto ">
         <FrameComponent1

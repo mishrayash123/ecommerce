@@ -1,7 +1,5 @@
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
-import FrameComponent13 from "../components/FrameComponent13";
-import FrameComponent12 from "../components/FrameComponent12";
 import { useState,useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
 
@@ -72,24 +70,12 @@ useEffect(() => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter m-5">
-                                             {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
+    <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter ">
       <div className="m-5">
         <span className="font-semibold">My Wishlist</span>
         <b> </b>
         <span>({products.filter((e) => (e.userid === userid)).length})</span>
       </div>
-      {/* <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
       <div className='grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9'>
       {
           products.filter((e)=>(e.userid===userid)).map(product =>(

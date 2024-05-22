@@ -3,10 +3,6 @@ import Frame from "../components/Frameq";
 import PortalPopup from "../components/PortalPopupq";
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
-import FrameComponent5 from "../components/FrameComponent5q";
-import FrameComponent3 from "../components/FrameComponent3q";
-import FrameComponent2 from "../components/FrameComponent2q";
-import Component from "../components/Componentq";
 import { useLocation } from 'react-router-dom'
 import {useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
@@ -180,53 +176,40 @@ const PaymentPage1 = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-      <div className="w-full relative bg-white h-[1776px] overflow-hidden text-left text-base text-white font-inter">
+       <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter m-5 my-16">
       
-        <div className="absolute top-[161px] left-[564px] rounded-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-8">
-        <div className="relative font-semibold">MY BAG</div>
+      <div className="flex md:items-center md:justify-center mb-4">
+      <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
+        <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
       </div>
-      <div className="absolute top-[161px] left-[826px] rounded-11xl bg-salmon-100 flex flex-row items-center justify-center py-2.5 px-8">
-        <div className="relative font-semibold">ADDRESS</div>
+      <img
+        className=" max-h-full md:w-40 w-10"
+        alt=""
+        src="/vector-14.svg"
+      />
+      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid border-black">
+        <div className=" font-semibold text-xs md:text-xl">ADDRESS</div>
       </div>
-      <div className="absolute top-[161px] left-[1100px] rounded-11xl flex flex-row items-center justify-center py-2.5 px-8 border-[1.5px] border-solid bg-salmon-100">
-        <div className="relative font-semibold">PAYMENT</div>
+      <img
+        className="max-h-full md:w-40 w-10"
+        alt=""
+        src="/vector-14.svg"
+        />
+      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid border-black">
+        <div className=" font-semibold text-xs md:text-xl">PAYMENT</div>
       </div>
-                      <div>
+        </div>
+        <div className="my-16">
                          {
                     orders.filter((e) => (e.userid ==userid)).filter((e) => (e.orderid ==location.state.id)).map(orders => (
-      <div className="absolute top-[261px] left-[726px] rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
+      <div className="w-1/2 mx-auto rounded-11xl bg-blue-700 flex flex-row items-center justify-center py-2.5 px-8 cursor-pointer" onClick={()=>{
         razorPay(price,orders._id);
       }}>
         <div className="relative font-semibold">Continue To Payment</div>
       </div>
       ))}
       </div>
-        <img
-          className="absolute top-[180.5px] left-[704.5px] max-h-full w-[109px]"
-          alt=""
-          src="/vector-141q.svg"
-        />
-        <img
-          className="absolute top-[180.5px] left-[979.5px] max-h-full w-[109px]"
-          alt=""
-          src="/vector-141q.svg"
-        />
-        {/* <div className="absolute top-[309px] left-[1115px] text-xl text-gray-400">
-          BILLING DETAILS
-        </div> */}
-        <div
-          className="absolute top-[668px] left-[1115px] rounded-md bg-salmon flex flex-row items-center justify-center py-2.5 px-[127.5px] cursor-pointer text-5xl font-made-tommy"
-          onClick={openFrame}
-        >
-          <b className="relative">CONTINUE TO PAYMENT</b>
         </div>
-        {/* <FrameComponent3 /> */}
-        {/* <FrameComponent2 /> */}
-        {/* <div className="absolute top-[448px] left-[87px] text-xl font-semibold text-salmon">
-          Payment Options
-        </div> */}
-        {/* <Component propTop="531px" propLeft="100px" /> */}
-      </div>
       {isFrameOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.3)"

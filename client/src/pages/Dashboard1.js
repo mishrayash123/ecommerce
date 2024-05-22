@@ -1,9 +1,5 @@
 import React, {useRef, useState , useEffect } from 'react';
 import FrameComponent20 from "../components/FrameComponent20q";
-import FrameComponent16 from "../components/FrameComponent16q";
-import Property1Default from "../components/Property1Defaultq";
-import DescriptionEditor from "../components/DescriptionEditor";
-import ProductDetailsEditor from "../components/ProductDetailsEditor"; // Import the ProductDetailsEditor component
 import {storage} from "../firebase.config";
 import {ref, uploadBytes, getDownloadURL} from "firebase/storage"
 import Sidebar from "../components/Sidebar";

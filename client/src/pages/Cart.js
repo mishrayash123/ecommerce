@@ -1,7 +1,5 @@
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
-import FrameComponent13 from "../components/FrameComponent13";
-import FrameComponent12 from "../components/FrameComponent12";
 import { useState,useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
 
@@ -71,7 +69,6 @@ useEffect(() => {
         prop="2"
       />
     <div className="w-full relative bg-white overflow-hidden text-left text-9xl text-black font-inter m-5">
-                                             {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
       <div className="m-5">
         <span className="font-semibold">My Cart</span>
         <b> </b>

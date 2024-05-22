@@ -1,7 +1,5 @@
 import MainHeader from "../components/MainHeader";
 import FrameComponent1 from "../components/FrameComponent1";
-import FrameComponent14 from "../components/FrameComponent14";
-import DiscountFormContainer from "../components/DiscountFormContainer";
 import { useLocation } from 'react-router-dom'
 import { useState,useEffect } from "react";
 import {useNavigate} from 'react-router-dom'
@@ -89,8 +87,7 @@ const handlesubmit = async()=>{
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter">
-                  {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
+    <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter m-5">
       
       <div className="flex md:items-center md:justify-center mb-4">
       <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
@@ -191,10 +188,6 @@ const handlesubmit = async()=>{
       <div className=" text-xl text-gray-400">
         BILLING DETAILS
       </div>
-
-
-      
-
       <div
       className=" box-border md:w-[459px]   overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400"
       >

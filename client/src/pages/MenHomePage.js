@@ -323,17 +323,6 @@ const MenHomePage = () => {
       </div>
       {/* **********************products ends here ***************************/}
 
-      {/* <img
-        className="absolute top-[3721px] left-[1628px] w-[57px] h-[57px]"
-        alt=""
-        src="/group-6.svg"
-      />
-      <img
-        className="absolute top-[4431px] left-[1628px] w-[57px] h-[57px]"
-        alt=""
-        src="/group-6.svg"
-      /> */}
-
 
 
       {/* **********************products ends here ***************************/}

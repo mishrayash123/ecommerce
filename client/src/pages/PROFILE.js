@@ -1,5 +1,4 @@
 import MainHeader from "../components/MainHeader";
-import FrameComponent5 from "../components/FrameComponent5q";
 import FrameComponent6 from "../components/FrameComponent6q";
 import { useAuth } from "../AuthContext";
 import FrameComponent1 from "../components/FrameComponent1";
@@ -20,18 +19,7 @@ const PROFILE = () => {
         prop="2"
       />
     <div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy m-5">
-                                          {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg"  basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
-                                          <FrameComponent1
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-12.svg"
-        frame14="/frame-14.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      /> */}
+                                          
       <div className="flex  flex-col lg:flex-row  justify-evenly ">
         <div className="space-y-9 flex flex-col  justify-center lg:justify-start items-center md:justify-start">
       <div className=" bg-gainsboro-100 w-[313px]  p-2 text-sm font-inter">
@@ -42,9 +30,6 @@ const PROFILE = () => {
           {email}
         </div>
       </div>
-      {/* <div className=" text-lg text-darkslategray-100">
-        EDIT PROFILE
-      </div> */}
 
       <div>
       <div className=" bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">

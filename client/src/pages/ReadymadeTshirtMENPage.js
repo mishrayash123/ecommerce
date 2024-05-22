@@ -4,11 +4,7 @@ import MainHeader from "../components/MainHeader";
 import FrameComponent5 from "../components/FrameComponent5";
 import FrameComponent4 from "../components/FrameComponent4";
 import FrameComponent3 from "../components/FrameComponent3";
-import GroupComponent4 from "../components/GroupComponent4";
-import GroupComponent3 from "../components/GroupComponent3";
-import FrameComponent2 from "../components/FrameComponent2";
 import FrameComponent1 from "../components/FrameComponent1";
-import ListboxComponent from "../components/ListboxComponent";
 import { Link } from 'react-router-dom';
 
 
@@ -64,11 +60,6 @@ const ReadymadeTshirtMENPage = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-
-      {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
-
-
-
       {/***************************main image starts here **************************************/}
 
 
@@ -260,76 +251,6 @@ const ReadymadeTshirtMENPage = () => {
       </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-      {/******************************* code without filter ****************************************** */}
-      {/* <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.map((product) => (
-            <a
-              key={product._id}
-              href=''
-              className="no-underline"
-              onClick={(e) => {
-                e.preventDefault();
-                nav('/material-page', { state: { id: product._id } });
-              }}
-            >
-              <div className="font-inter md:ml-2 lg:ml-0 relative">
-                <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
-                  <img
-                    className="w-full h-[300px] object-cover rounded-t-xl"
-                    alt=""
-                    src={product.image1}
-                  />
-                  <div className="mt-0 rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg bg-bisque h-full">
-                    <div className="font-sans text-black text-xl font-bold pt-5 pb-3 pl-2">
-                      {product.title}
-                    </div>
-                    <div className="font-semibold pl-2 text-gray-500 pb-4">
-                      ₹{product.price}
-                    </div>
-                    <img
-                      className="pl-3 max-h-full w-[80%]"
-                      alt=""
-                      src="/vector-13.svg"
-                    />
-                    <div className="text-xs text-gray-500 pb-2 pl-2 mt-1">
-                      MRP incl. of all taxes
-                    </div>
-                    <img
-                      className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] "
-                      alt=""
-                      src="/solarbagoutline6.svg"
-                    />
-                  </div>
-                </div>
-              </div>
-            </a>
-          ))}
-        </div>
-       */}
-
-
-
-
-
-
-
-
-
-
-
-
       {/******************** footer ***************************/}
       <div className="mt-auto ">
         <FrameComponent1
@@ -343,7 +264,6 @@ const ReadymadeTshirtMENPage = () => {
         />
       </div>
 
-      {/* <ListboxComponent chevron="/chevron.svg" /> */}
     </div>
   );
 };

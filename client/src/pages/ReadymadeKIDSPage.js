@@ -1,19 +1,10 @@
 import MainHeader from "../components/MainHeader";
-import ListboxComponent from "../components/ListboxComponent";
 import FrameComponent6 from "../components/FrameComponent6";
 import FrameComponent4 from "../components/FrameComponent4";
-import GroupComponent5 from "../components/GroupComponent5";
-import GroupComponent6 from "../components/GroupComponent6";
 import FrameComponent1 from "../components/FrameComponent1";
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom'
-
-
-import { NavLink } from 'react-router-dom';
-
-import ReadymadeTshirtWOMENPage from "./ReadymadeTshirtWOMENPag";
-import ReadymadeTshirtMENPage from "./ReadymadeTshirtMENPage"
 
 const ReadymadeKIDSPage = () => {
   const [products, setproducts] = useState([]);
@@ -59,10 +50,6 @@ const ReadymadeKIDSPage = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-      {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
-
-
-
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
@@ -104,22 +91,6 @@ const ReadymadeKIDSPage = () => {
         <span className="h-2 w-2 md:h-4 md:w-4 py-auto rounded-full bg-black"></span>
         <span className="h-2 w-2 md:h-4 md:w-4 py-auto rounded-full bg-black"></span>
       </div>
-
-
-
-      {/* <ListboxComponent
-        chevron="/chevron.svg"
-        propTop="816px"
-        propLeft="1333px"
-        propHeight="1px"
-        propOpacity="0"
-        propBackgroundColor="unset"
-        propBackgroundColor1="#fff"
-        propBackgroundColor2="#fff"
-        propBackgroundColor3="#fff"
-      /> */}
-
-
       <div className='flex flex-row mb-10 w-[95%] md:w-full items-start justify-center'>
         <div className='hidden md:inline-block'></div>
         <div className='flex items-end flex-col'>

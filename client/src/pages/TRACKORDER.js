@@ -1,7 +1,4 @@
 import MainHeader from "../components/MainHeader";
-import FrameComponent5 from "../components/FrameComponent5q";
-import FrameComponent2 from "../components/FrameComponent1q";
-import FrameComponent from "../components/FrameComponentq";
 import FrameComponent1 from "../components/FrameComponent1";
 import { useAuth } from "../AuthContext";
 import {useNavigate} from 'react-router-dom'
@@ -77,180 +74,98 @@ const TRACKORDER = () => {
 
   return (
     <div>
-      <MainHeader
+<MainHeader
         className="sticky z-50"
         solarbagOutline="/solarbagoutline1.svg"
         ionsearch="/ionsearch.svg"
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full relative bg-white h-[2295px] overflow-hidden text-left text-lg text-black font-inter">
-      <FrameComponent5 />
-      
-      <div className="absolute top-[176px] left-[20px] bg-gainsboro-100 w-[313px] h-[79px] overflow-hidden text-center text-sm">
-        <div className="absolute top-[22px] left-[22px] font-semibold">
+<div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy m-5">
+<div className="flex  flex-col lg:flex-row justify-between  m-5 ">
+        <div className="space-y-9 flex flex-col  justify-center lg:justify-start items-center md:justify-start">
+      <div className=" bg-gainsboro-100 w-[313px]  p-2 text-sm font-inter">
+        <div className=" font-semibold">
           Email
         </div>
-        <div className="absolute top-[42px] left-[22px] text-xs text-dimgray-300 text-left">
+        <div className=" text-xs text-dimgray-300 text-left">
           {email}
         </div>
       </div>
-      <div className="absolute top-[176px] left-[596px] font-made-tommy text-darkslategray-100">
-        TRACKING ORDER
-      </div>
-      <div className="absolute top-[318px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light" style={{ fontFamily: 'Roboto', fontWeight:"bold" }}>
+
+      <div>
+      <div className=" bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300">
+        <div className="" style={{ fontFamily: 'Roboto', fontWeight:"bold" }}>
           Profile
         </div>
       </div>
-      <div className="absolute top-[357px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer" onClick={()=>{
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer" onClick={()=>{
         nav('/frame-80');
       }}>
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light text-sm">
+        <div className=" font-light">
           Edit Address
         </div>
       </div>
-      {/* <div className="absolute top-[357px] left-[20px] bg-whitesmoke-200 box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300">
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px]">
-          Track Order
-        </div>
-      </div> */}
-      <div className="absolute top-[396px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden text-mini font-made-tommy border-[1px] border-solid border-silver-300 cursor-pointer"  onClick={()=>{
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-silver-300 cursor-pointer"  onClick={()=>{
         nav('/wishlist-page');
       }}>
-        <div className="absolute top-[calc(50%_-_9px)] left-[27px] font-light">
+        <div className=" font-light">
           Your Orders
         </div>
       </div>
-         {/*+ Logout Button */}
-         <div className="absolute top-[480px] left-[20px] bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
-        <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white cursor-pointer" style={{ fontFamily: 'Roboto' }} onClick={logout}>
+        </div>
+
+      {/* Logout Button */}
+      <div className=" bg-white box-border w-[313px] h-10 overflow-hidden border-[1px] border-solid border-red-500 mt-4">
+        <button className="w-full h-full flex justify-center items-center text-red-500 font-bold border border-red-500 rounded-md bg-white cursor-pointer" style={{ fontFamily: 'Roboto' }}
+        onClick={logout}
+        >
           Logout
         </button>
       </div>
-    
-      <div className="absolute top-[237px] left-[496px] bg-white box-border w-[962px] h-[199px] overflow-hidden text-left text-xl text-gray-300 font-made-tommy border-[1px] border-solid border-silver-300">
-      {
+          </div>
+
+<div className='  flex flex-col gap-8 '>
+{
           orderdata.filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-            <>
-            {
-              orders.ordered ? <img
-              className="absolute top-[calc(50%_+_3px)] left-[106px] max-h-full w-[250px]"
-              alt=""
-              src="/vector-65q.svg"
-            />:
-            <img
-            className="absolute top-[calc(50%_+_3.5px)] left-[106px] max-h-full w-[250px]"
-            alt=""
-            src="/vector-67q.svg"
-          />
-            }
-            {
-              orders.shipped ? <img
-              className="absolute top-[calc(50%_+_3px)]  left-[calc(50%_-_125px)]  max-h-full w-[250px]"
-              alt=""
-              src="/vector-65q.svg"
-            />:
-            <img
-        className="absolute top-[calc(50%_+_3px)] left-[calc(50%_-_125px)] max-h-full w-[250px]"
-        alt=""
-        src="/vector-67q.svg"
-      />
-            }
-            {/* delivered */}
-            {
-              orders.ontheway ? <img
-              className="absolute top-[calc(50%_+_3px)] left-[607px] max-h-full w-[250px]"
-              alt=""
-              src="/vector-65q.svg"
-            />:
-            <img
-            className="absolute top-[calc(50%_+_3.5px)] left-[607px] max-h-full w-[250px]"
-            alt=""
-            src="/vector-67q.svg"
-          />
-            }
-            </>
-          ))}
-      <div className="absolute top-[141px] left-[67px] font-medium">
-        Ordered
-      </div>
-      <div className="absolute top-[141px] left-[317px] font-medium">
-        Shipped
-      </div>
-      <div className="absolute top-[141px] left-[552px] font-medium">
-        On the Way
-      </div>
-      <div className="absolute top-[141px] left-[812px] font-medium">
-        Delivered
-      </div>
-      {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-      <div className="absolute top-[40px] left-[86px] text-smi font-medium text-darkslategray-100">
-        {orders.date}
-      </div>
-          ))}
+<div className="bg-white p-4 rounded-lg shadow-md  max-w-4xl  -ml-8">
+      <div className="flex justify-between items-center text-center text-gray-600">
+        <div>
+          <div className="text-sm">{orders.date}</div>
           {
-          orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-      <div className="absolute top-[40px] left-[336px] text-smi font-medium text-darkslategray-100">
-        {orders.date}
+              orders.ordered ?<div className="mt-2 h-4 w-4 bg-blue-700 rounded-full mx-auto"></div> :<div className="mt-2 h-4 w-4 bg-gray-400 rounded-full mx-auto"></div> }
+          <div className="mt-2 text-gray-800 font-semibold">Ordered</div>
+        </div>
+        <div className="flex-grow border-t-2 border-gray-300 mx-2"></div>
+        <div>
+          <div className="text-sm">{orders.date}</div>
+          {
+              orders.shipped ?<div className="mt-2 h-4 w-4 bg-blue-700 rounded-full mx-auto"></div> :<div className="mt-2 h-4 w-4 bg-gray-400 rounded-full mx-auto"></div> }
+          <div className="mt-2 text-gray-800 font-semibold">Shipped</div>
+        </div>
+        <div className="flex-grow border-t-2 border-gray-300 mx-2"></div>
+        <div>
+          <div className="text-sm">{orders.date}</div>
+          {
+              orders.ontheway ?<div className="mt-2 h-4 w-4 bg-blue-700 rounded-full mx-auto"></div> :<div className="mt-2 h-4 w-4 bg-gray-400 rounded-full mx-auto"></div> }
+          <div className="mt-2 text-gray-800 font-semibold">On the Way</div>
+        </div>
+        <div className="flex-grow border-t-2 border-gray-300 mx-2"></div>
+        <div>
+          <div className="text-sm">Expected by,</div>
+          <div className="text-sm">{orders.date}</div>
+          {
+              orders.delivered ?<div className="mt-2 h-4 w-4 bg-blue-700 rounded-full mx-auto"></div> :<div className="mt-2 h-4 w-4 bg-gray-400 rounded-full mx-auto"></div> }
+          <div className="mt-2 text-gray-800 font-semibold">Delivered</div>
+        </div>
       </div>
-          ))}
-      {
-        orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-      <div className="absolute top-[40px] left-[586px] text-smi font-medium text-darkslategray-100">
-        {orders.date}
-      </div>
-        ))}
-      {
-        orderdata.filter((e) => (e.userid === userid)).filter((e) => (e.orderid === location.state.orderid)).map(orders =>(
-      <div className="absolute top-[40px] left-[817px] text-smi font-medium text-darkslategray-100 text-center">
-        <p className="m-0">Expected by,</p>
-        <p className="m-0">{orders.date}</p>
-      </div>
-        ))}
     </div>
-      <div className="absolute top-[1100px] left-[calc(50%_-_468px)] box-border w-[962px] h-[244px] overflow-hidden text-darkslategray-100 border-[1px] border-solid border-darkgray-600">
-        <img
-          className="absolute top-[124px] left-[1px] max-h-full w-[961px]"
-          alt=""
-          src="/vector-20q.svg"
-        />
-        <img
-          className="absolute top-[184px] left-[1px] max-h-full w-[961px]"
-          alt=""
-          src="/vector-20q.svg"
-        />
-        <div className="absolute top-[82px] left-[23px] text-salmon">
-          Discount
-        </div>
-        <div className="absolute top-[142px] left-[23px] text-black">
-          Shipping Charges
-        </div>
-        <div className="absolute top-[202px] left-[23px] font-semibold">
-          TOTAL AMOUNT
-        </div>
-        
-        <b className="absolute top-[205px] left-[886px] text-base">₹ {price}</b>
-        <div className="absolute top-[145px] left-[908px] text-base">₹0</div>
-        <img
-          className="absolute top-[64px] left-[1px] max-h-full w-[961px]"
-          alt=""
-          src="/vector-20q.svg"
-        />
-        <div className="absolute top-[85px] left-[883px] text-base text-salmon">
-          -₹100
-        </div>
-        <div className="absolute top-[30px] left-[888px] text-base">₹ {price+100}</div>
-        <div className="absolute top-[22px] left-[23px] text-black">
-          <span>Cart Total </span>
-          <span className="text-base">(Excl. of all taxes)</span>
-        </div>
-      </div>
-      <div className="absolute top-[523px] left-[496px] flex flex-col gap-8">
-    {
+   )) }
+<div className='  flex flex-col gap-8 ' >
+
+      {
                     orderdata1.map(products => (
-     <div className="box-border m-2 w-3/4  overflow-hidden text-left text-base text-darkslategray-200 font-inter border-[1px] border-solid border-darkgray-400">
+      <div className="box-border m-2 w-3/4  overflow-hidden text-left text-base text-darkslategray-200 font-inter border-[1px] border-solid border-darkgray-400">
       <div className="flex justify-between ">
         <div></div>
       <b className="m-2 text-xl [text-decoration:underline] text-salmon-100">
@@ -286,7 +201,7 @@ const TRACKORDER = () => {
 </div>
         <div className="flex flex-row gap-4">
         <img
-        className=" w-[244px] h-[325px] object-cover"
+        className=" md:w-[244px] md:h-[325px] w-1/4 object-cover"
         alt=""
         src={products.image1}
       />
@@ -298,7 +213,7 @@ const TRACKORDER = () => {
       </div>
       <div className=" rounded-lg box-border w-[114px] h-[35px] flex flex-col items-center justify-center ">
       <label htmlFor="productPrice" className="text-black text-base font-bold ">Quantity</label>
-          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded w-[100px] text-xl" placeholder="Enter Product Price"
+          <input type="Number" id="productPrice" className="border border-solid border-darkgray-300 px-3 py-2 rounded md:w-[100px] w-10 text-xl" placeholder="Enter Product Price"
           value={products.quantity}/>
       </div>
         </div>
@@ -309,35 +224,88 @@ const TRACKORDER = () => {
       />
     </div>
                     ))}
-</div>
+                    </div>
+                    <div className="text-start text-xl text-gray-400">
+        BILLING DETAILS       </div>
 
-      <div className="absolute top-[1050px] left-[596px] text-xl text-gray-400">
-        BILLING DETAILS
+                    <div
+      className=" box-border md:w-[459px]   overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400"
+      >
+
+             <div className=" text-black flex items-center justify-between p-2">
+              <div>
+        <span>Cart Total </span>
+        <span className="text-base">(Excl. of all taxes)</span>
+              </div>
+              <div className=" text-base">₹ {price+100}</div>
       </div>
-      <div className="absolute top-[1378px] left-[596px] text-xl text-gray-400">
-        DELIVERY
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg"
+        />
+          <div className=" text-salmon-100 flex items-center  justify-between p-2">
+            <p>
+        Discount
+            </p>
+            <div className=" text-base text-salmon-100">
+        -₹100
       </div>
-      {
+      </div>
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg"
+        />
+    
+      <div className=" text-black flex items-center justify-between p-2">
+        <p>
+        Shipping Charges
+        </p>
+        <div className=" text-base">₹0</div>
+      </div>
+      <img
+        className=" max-h-full w-[528px]"
+        alt=""
+        src="/vector-20.svg" />
+      <div className=" font-semibold flex items-center justify-between p-2">
+        <p>
+        TOTAL AMOUNT
+        </p>
+      <b className=" text-base">₹ {price}</b>
+      </div>
+      </div>
+      <div className="text-start text-xl text-gray-400 my-3">
+        Delivery       </div>
+
+         <div className="box-border md:w-[459px]   overflow-hidden text-left text-lg text-darkslategray-100 font-inter border-[1px] border-solid border-darkgray-400">
+{
                     users.filter((e) => (e._id == userid)).map(products => (
-      <div className="absolute top-[1426px] left-[296px] rounded-10xs bg-white box-border w-[962px] h-[202px] overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600">
-        <div className="absolute top-[56px] left-[22px] font-semibold">
+      <div className=" rounded-10xs bg-white box-border  overflow-hidden text-darkslategray-800 border-[1px] border-solid border-darkgray-600 p-2">
+        <div className="font-semibold">
         {products.fname} {products.lname}
         </div>
-        <div className="absolute top-[16px] left-[22px] text-xl font-semibold">
+        <div className=" text-xl font-semibold">
           Address
         </div>
-        <div className="absolute top-[83px] left-[22px]">{products.houseno}</div>
-        <div className="absolute top-[110px] left-[22px]">{products.street}</div>
-        <div className="absolute top-[137px] left-[22px]">{products.defaultaddress}</div>
-        <div className="absolute top-[164px] left-[22px]">
+        <div className="">{products.houseno}</div>
+        <div className="">{products.street}</div>
+        <div className="">{products.defaultaddress}</div>
+        <div className="">
           <span>{`Mobile: `}</span>
           <span className="font-semibold">{products.phone}</span>
         </div>
       </div>
                     ))}
-                   
-    </div>
-    <div className="mt-auto ">
+          </div>
+  </div> 
+          </div>
+
+
+  </div>
+
+
+<div className="mt-auto ">
         <FrameComponent1
           frame10="/frame-10.svg"
           frame11="/frame-11.svg"
@@ -348,7 +316,7 @@ const TRACKORDER = () => {
           propBackgroundColor2="salmon"
         />
       </div>
-    </div>
+      </div>
   );
 };
 
