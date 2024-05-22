@@ -68,7 +68,7 @@ useEffect(() => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full relative bg-white overflow-hidden text-left text-9xl text-black font-inter m-5">
+    <div className="w-full relative bg-white overflow-hidden text-left text-9xl text-black font-inter">
       <div className="m-5">
         <span className="font-semibold">My Cart</span>
         <b> </b>

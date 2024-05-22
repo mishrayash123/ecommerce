@@ -81,9 +81,9 @@ useEffect(() => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-      <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter m-5">
+      <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter">
       
-      <div className="flex md:items-center md:justify-center mb-4">
+      <div className="flex md:items-center md:justify-center mb-4 m-5">
       <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
         <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
       </div>

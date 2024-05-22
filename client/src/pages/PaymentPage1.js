@@ -176,9 +176,9 @@ const PaymentPage1 = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-       <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter m-5 my-16">
+       <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter my-16">
       
-      <div className="flex md:items-center md:justify-center mb-4">
+      <div className="flex md:items-center md:justify-center m-5 mb-4">
       <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
         <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
       </div>
@@ -187,7 +187,7 @@ const PaymentPage1 = () => {
         alt=""
         src="/vector-14.svg"
       />
-      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid border-black">
+      <div className=" rounded-11xl flex flex-row items-center justify-center md:py-2.5 md:px-8 text-black border-[1.5px] border-solid m-5 border-black">
         <div className=" font-semibold text-xs md:text-xl">ADDRESS</div>
       </div>
       <img

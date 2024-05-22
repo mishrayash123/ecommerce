@@ -46,7 +46,7 @@ const WISHLISTPAGE = () => {
         prop="2"
       />
     <div className="w-full relative bg-white  overflow-hidden text-left text-9xl text-black font-inter">
-      <div className="absolute top-[147px] left-[calc(50%_-_700px)]">
+      <div className="m-5">
         <span className="font-semibold">My Orders</span>
         <b> </b>
         <span>({orderdata.filter((e) => (e.userid === userid)).length})</span>

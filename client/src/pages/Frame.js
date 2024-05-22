@@ -63,7 +63,6 @@ const ADDRESSPOPUP = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-        {/* <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" /> */}
 
         {/************************* * here  ends navbar **********************************/}
 

@@ -89,10 +89,14 @@ const MATERIALPAGE = () => {
 
 
   return (
-    <div className="w-full text-lg text-gray-600 font-made-tommy">
-      <MainHeader solarbagOutline="/solarbagoutline1.svg" ionsearch="/ionsearch.svg" basilnotificationOutline="/basilnotificationoutline.svg" prop="2" />
-
-
+    <div className="w-full text-lg text-gray-600 font-made-tommy ">
+     <MainHeader
+        className="sticky z-50"
+        solarbagOutline="/solarbagoutline1.svg"
+        ionsearch="/ionsearch.svg"
+        basilnotificationOutline="/basilnotificationoutline.svg"
+        prop="2"
+      />
       {products.filter((e) => (e._id == location.state.id)).map(products => (
         
           <div className="flex w-full  mt-12 flex-col md:flex-row">
@@ -134,17 +138,7 @@ const MATERIALPAGE = () => {
                 <div className=" text-sm lg:text-xl font-inter">
                   MRP incl. of all taxes
                 </div>
-                {/* here will be sizes  */}
-
-
-
-
-
-
-
-
-
-
+                
                 <div className="text-xl mb-3 font-semibold font-inter mt-4">
                   Please select a size.
                 </div>
@@ -303,20 +297,17 @@ const MATERIALPAGE = () => {
       ))}
 
 
-<div  className="mt-20" >
-<FrameComponent1
-       
-        frame10="/frame-10.svg"
-        frame11="/frame-11.svg"
-        frame12="/frame-123.svg"
-        frame14="/frame-143.svg"
-        propTop="unset"
-        propBottom="0px"
-        propBackgroundColor="#ff6868"
-        propBackgroundColor1="#ebebeb"
-        propBackgroundColor2="#ff6868"
-      />
-</div>
+<div className="mt-auto ">
+        <FrameComponent1
+          frame10="/frame-10.svg"
+          frame11="/frame-11.svg"
+          frame12="/frame-12.svg"
+          frame14="/frame-14.svg"
+          propBackgroundColor="salmon"
+          propBackgroundColor1="whitesmoke"
+          propBackgroundColor2="salmon"
+        />
+      </div>
       
        
     </div>

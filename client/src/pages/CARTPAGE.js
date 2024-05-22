@@ -87,9 +87,9 @@ const handlesubmit = async()=>{
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter m-5">
+    <div className="w-full  bg-white overflow-hidden text-left text-base text-white font-inter">
       
-      <div className="flex md:items-center md:justify-center mb-4">
+      <div className="flex md:items-center md:justify-center mb-4 m-5">
       <div className=" rounded-11xl bg-salmon-100 p-3 flex flex-row items-center justify-center md:py-2.5 md:px-8">
         <div className=" font-semibold text-xs md:text-xl">MY BAG</div>
       </div>
@@ -114,7 +114,7 @@ const handlesubmit = async()=>{
 
       <div className="flex flex-col xl:flex-row">
 
-      <div className='  flex flex-col gap-8 ' >
+      <div className='  flex flex-col gap-8 m-5' >
 
       {
                     products.filter((e)=>(e.userid===userid)).map(products => (
@@ -154,7 +154,7 @@ const handlesubmit = async()=>{
 </div>
         <div className="flex flex-row gap-4">
         <img
-        className=" md:w-[244px] md:h-[325px] object-cover"
+        className=" md:w-[244px] md:h-[325px] w-1/4 object-cover"
         alt=""
         src={products.image1}
       />
@@ -179,7 +179,7 @@ const handlesubmit = async()=>{
                     ))}
                     </div>
 
-       <div className=" flex flex-col mt-4 md:mr-20 space-y-6">
+       <div className=" flex flex-col mt-4 md:mr-20 space-y-6 m-5">
        <div className=" rounded-md bg-salmon-100 md:w-[459px] w-72 flex flex-row items-center justify-center md:py-2.5  text-5xl font-made-tommy cursor-pointer" onClick={()=>{
         handlesubmit();
       }}>

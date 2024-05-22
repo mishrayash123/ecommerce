@@ -18,9 +18,9 @@ const PROFILE = () => {
         basilnotificationOutline="/basilnotificationoutline.svg"
         prop="2"
       />
-    <div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy m-5">
+    <div className="w-full  bg-white  overflow-hidden text-left text-mini text-black font-made-tommy">
                                           
-      <div className="flex  flex-col lg:flex-row  justify-evenly ">
+      <div className="flex  flex-col lg:flex-row  justify-evenly m-5">
         <div className="space-y-9 flex flex-col  justify-center lg:justify-start items-center md:justify-start">
       <div className=" bg-gainsboro-100 w-[313px]  p-2 text-sm font-inter">
         <div className=" font-semibold">
