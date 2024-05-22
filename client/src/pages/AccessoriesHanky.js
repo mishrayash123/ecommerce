@@ -62,19 +62,19 @@ const AccessoriesHanky = () => {
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
-          className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
           alt="main image"
           src="/image-29@2x.png"
         />
         {/***************** side navigation component *************************/}
-        <div className="absolute top-20 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
+        <div className="absolute top-0 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
           <Link to="/accessories-socks" className="no-underline text-white">
-            <div className="md:p-4 bg-yellow-400 rounded-bl-11xl p-1  ">Socks</div>
+            <div className="md:p-4  bg-salmon-100  rounded-bl-11xl p-1  ">Socks</div>
           </Link>
-          <Link to="/accessories-hanky" className=" p-1 md:p-4 bg-salmon-100 no-underline text-white">
+          <Link to="/accessories-hanky" className=" p-1 md:p-4 bg-yellow-400 no-underline text-white">
             <div>Hanky </div>
           </Link>
-          <Link to="/accessories-arm-sleeves" className=" p-1 md:p-4 bg-salmon-100 no-underline text-white">
+          <Link to="/accessories-arm-sleeves" className=" p-1 md:p-4 rounded-br-11xl  bg-salmon-100 no-underline text-white">
             <div>Arm sleeves</div>
           </Link>
         </div>
