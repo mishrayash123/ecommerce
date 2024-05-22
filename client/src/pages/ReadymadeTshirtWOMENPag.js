@@ -60,13 +60,13 @@ const ReadymadeTshirtWOMENPage = () => {
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
-          className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
           alt="main image"
           src="/image-7@2x.png"
         />
 
         {/***************** side navigation component *************************/}
-        <div className="absolute top-20 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
+        <div className="absolute top-0 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
           <Link to="/readymade-tshirt-men-page" className="no-underline text-white">
             <div className="md:p-4  bg-salmon-100 rounded-bl-11xl p-1  ">MEN</div>
           </Link>
