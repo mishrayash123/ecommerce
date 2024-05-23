@@ -12,6 +12,7 @@ const AccessoriesSocks = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
   const [products, setproducts] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const nav = useNavigate();
 
 
@@ -48,10 +49,37 @@ const AccessoriesSocks = () => {
     setSelectedOption(option);
     setShowDropdown(false);
   };
+  const handlePriceRangeChange = (range) => {
+    setSelectedPriceRange(range);
+  };
+  const filterProductsByPriceRange = (products) => {
+    if (!selectedPriceRange) return products;
+
+    const [min, max] = selectedPriceRange
+      .replace(/Rs\.|,/g, "")
+      .split("To")
+      .map(Number);
+
+    return products.filter((product) => {
+      let price;
+
+      if (typeof product.price === "number") {
+        price = product.price;
+      } else if (typeof product.price === "string") {
+        price = Number(product.price.replace(/Rs\.|,/g, ""));
+      } else {
+        return false;
+      }
+
+      return price >= min && price <= max;
+    });
+  };
+
+  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "AccessoriesSocks"));
 
   return (
     <div className=" bg-white text-dimgray-600 font-poppins">
-<MainHeader
+      <MainHeader
         className="sticky z-50"
         solarbagOutline="/solarbagoutline1.svg"
         ionsearch="/ionsearch.svg"
@@ -158,12 +186,12 @@ const AccessoriesSocks = () => {
             <FrameComponent3 />
           </div>
           <div className='mb-3'>
-            <FrameComponent4 />
+            <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />
           </div>
         </div>
         {/******************************* code with filter ****************************************** */}
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.filter((e)=>(e.category==="AccessoriesSocks")).map((product) => (
+          {filteredProducts.map((product) => (
             <a
               key={product._id}
               href=''

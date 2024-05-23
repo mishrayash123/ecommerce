@@ -12,6 +12,7 @@ const ThermalMEN = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
   const [products, setproducts] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const nav = useNavigate();
 
 
@@ -49,6 +50,36 @@ const ThermalMEN = () => {
     setShowDropdown(false);
   };
 
+  const handlePriceRangeChange = (range) => {
+    setSelectedPriceRange(range);
+  };
+
+  const filterProductsByPriceRange = (products) => {
+    if (!selectedPriceRange) return products;
+
+    const [min, max] = selectedPriceRange
+      .replace(/Rs\.|,/g, "")
+      .split("To")
+      .map(Number);
+
+    return products.filter((product) => {
+      let price;
+
+      if (typeof product.price === "number") {
+        price = product.price;
+      } else if (typeof product.price === "string") {
+        price = Number(product.price.replace(/Rs\.|,/g, ""));
+      } else {
+        return false;
+      }
+
+      return price >= min && price <= max;
+    });
+  };
+
+  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "ThermalMEN"));
+
+
   return (
     <div className=" bg-white text-dimgray-600 font-poppins">
 <MainHeader
@@ -64,17 +95,17 @@ const ThermalMEN = () => {
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
-          className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
           alt="main image"
           src="/image-29@2x.png"
         />
 
         {/***************** side navigation component *************************/}
-        <div className="absolute top-20 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
+        <div className="absolute top-0 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
           <Link to="/thermal-men" className="no-underline text-white">
             <div className="md:p-4 bg-yellow-400 rounded-bl-11xl p-1  ">MEN</div>
           </Link>
-          <Link to="/thermal-women" className=" p-1 md:p-4 bg-salmon-100 no-underline text-white">
+          <Link to="/thermal-women" className=" p-1 md:p-4 bg-salmon-100 rounded-br-11xl no-underline text-white">
             <div>WOMEN </div>
           </Link>
         </div>
@@ -185,7 +216,7 @@ const ThermalMEN = () => {
           </div>
 
           <div className='mb-3'>
-            <FrameComponent4 />
+            <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />
           </div>
 
 
@@ -199,8 +230,8 @@ const ThermalMEN = () => {
 
 
         {/******************************* code with filter ****************************************** */}
-        <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.filter((e)=>(e.category==="ThermalMEN")).filter((e)=>(e.gender==="Male")).map((product) => (
+        <div className="grid grid-cols-1  md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center  mb-5 md:gap-10 lg:gap-9 ">
+          {filteredProducts.filter((e)=>(e.gender==="Male")).map((product) => (
             <a
               key={product._id}
               href=''

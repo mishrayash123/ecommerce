@@ -174,7 +174,7 @@ const FrameComponent4 = ({ onPriceRangeChange }) => {
 
   const clearFilter = () => {
     setSelectedPriceRange("");
-    onPriceRangeChange(""); // Notify the parent component about the change
+    onPriceRangeChange("");
   };
 
   return (
@@ -182,6 +182,18 @@ const FrameComponent4 = ({ onPriceRangeChange }) => {
       <h2 className='text-2xl pl-2'>PRICES</h2>
       <div className="rounded-6xs m-3 bg-whitesmoke-200 flex items-center justify-center p-2.5 text-lg text-darkgray-400 font-made-tommy border-[0.7px] border-solid border-silver mb-4">
         <div className="w-full">Search for Prices</div>
+      </div>
+      <div className=" pl-2">
+        <label className="radio-label">
+          <input
+            type="radio"
+            value="Rs. 99 To Rs. 799"
+            checked={selectedPriceRange === "Rs. 99 To Rs. 799"}
+            onChange={() => handlePriceRangeChange("Rs. 99 To Rs. 799")}
+          />
+          <span className="radio-custom"></span>
+          Rs. 99 To Rs. 799
+        </label>
       </div>
       <div className=" pl-2">
         <label className="radio-label">

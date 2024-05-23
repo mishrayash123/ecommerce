@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 const ReadymadeKIDSPage = () => {
   const [products, setproducts] = useState([]);
+  const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const nav = useNavigate();
 
 
@@ -41,9 +42,39 @@ const ReadymadeKIDSPage = () => {
     fetchData();
   }, []);
 
+  const handlePriceRangeChange = (range) => {
+    setSelectedPriceRange(range);
+  };
+  const filterProductsByPriceRange = (products) => {
+    if (!selectedPriceRange) return products;
+
+    const [min, max] = selectedPriceRange
+      .replace(/Rs\.|,/g, "")
+      .split("To")
+      .map(Number);
+
+    return products.filter((product) => {
+      let price;
+
+      if (typeof product.price === "number") {
+        price = product.price;
+      } else if (typeof product.price === "string") {
+        price = Number(product.price.replace(/Rs\.|,/g, ""));
+      } else {
+        return false;
+      }
+
+      return price >= min && price <= max;
+    });
+  };
+
+  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "ReadymadeKIDS"));
+
+
+
   return (
     <div className="bg-white text-dimgray-600 font-poppins">
-<MainHeader
+      <MainHeader
         className="sticky z-50"
         solarbagOutline="/solarbagoutline1.svg"
         ionsearch="/ionsearch.svg"
@@ -53,20 +84,20 @@ const ReadymadeKIDSPage = () => {
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
-          className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
           alt="main image"
           src="/image-22@2x.png"
         />
 
 
-        <div className="absolute top-20 lg:left-10 flex rounded-t-none justify-between flex-row w-auto gap-1 md:gap-[10px] lg:text-6xl py-2  px-2 font-bold text-white md:text-4xl text-sm bg-salmon-100 font-made-tommy rounded-bl-11xl rounded-br-11xl">
+        <div className="absolute top-0 lg:left-10 flex rounded-t-none justify-between flex-row w-auto gap-1 md:gap-[10px] lg:text-6xl py-2  px-2 font-bold text-white md:text-4xl text-sm bg-salmon-100 font-made-tommy rounded-bl-11xl rounded-br-11xl">
           <div className="pl-2">BOYS |</div>
 
           <div className="pr-2">GIRLS</div>
         </div>
 
         {/***************** side navigation component *************************/}
-        <div className="absolute top-20 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
+        <div className="absolute top-0 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
           <Link to="/readymade-tshirt-men-page" className="no-underline text-white">
             <div className="md:p-4  bg-salmon-100 rounded-bl-11xl p-1  ">MEN</div>
           </Link>
@@ -143,7 +174,7 @@ const ReadymadeKIDSPage = () => {
             </div>
           </div>
           <div className="md:mb-4">
-            <FrameComponent4 />
+            <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />
           </div>
 
 
@@ -152,7 +183,7 @@ const ReadymadeKIDSPage = () => {
 
 
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.filter((e)=>(e.category==="ReadymadeKIDS")).map((product) => (
+          {filteredProducts.map((product) => (
             <a
               key={product._id}
               href=''
