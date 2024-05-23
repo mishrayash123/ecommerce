@@ -63,7 +63,7 @@ const ReadymadeLowerPage = () => {
       <div className="relative">
         {/*************************** Main Image ***************************/}
         <img
-          className="mt-20 w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
+          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
           alt="main image"
           src="/image-15@2x.png"
         />
