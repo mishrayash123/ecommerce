@@ -187,24 +187,24 @@ const FrameComponent4 = ({ onPriceRangeChange }) => {
         <label className="radio-label">
           <input
             type="radio"
-            value="Rs. 774 To Rs. 1248"
-            checked={selectedPriceRange === "Rs. 774 To Rs. 1248"}
-            onChange={() => handlePriceRangeChange("Rs. 774 To Rs. 1248")}
+            value="Rs. 799 To Rs. 1299"
+            checked={selectedPriceRange === "Rs. 799 To Rs. 1299"}
+            onChange={() => handlePriceRangeChange("Rs. 799 To Rs. 1299")}
           />
           <span className="radio-custom"></span>
-          Rs. 774 To Rs. 1248
+          Rs. 799 To Rs. 1299
         </label>
       </div>
       <div className=" pl-2">
         <label className="radio-label">
           <input
             type="radio"
-            value="Rs. 299 To Rs. 773"
-            checked={selectedPriceRange === "Rs. 299 To Rs. 773"}
-            onChange={() => handlePriceRangeChange("Rs. 299 To Rs. 773")}
+            value="Rs. 1300 To Rs. 2199"
+            checked={selectedPriceRange === "Rs. 1300 To Rs. 2199"}
+            onChange={() => handlePriceRangeChange("Rs. 1300 To Rs. 2199")}
           />
           <span className="radio-custom"></span>
-          Rs. 299 To Rs. 773
+          Rs. 1300 To Rs. 2199
         </label>
       </div>
 
@@ -212,12 +212,12 @@ const FrameComponent4 = ({ onPriceRangeChange }) => {
         <label className="radio-label">
           <input
             type="radio"
-            value="Rs. 1249 To Rs. 1723"
-            checked={selectedPriceRange === "Rs. 1249 To Rs. 1723"}
-            onChange={() => handlePriceRangeChange("Rs. 1249 To Rs. 1723")}
+            value="Rs. 2200 To Rs. 5999"
+            checked={selectedPriceRange === "Rs. 2200 To Rs. 5999"}
+            onChange={() => handlePriceRangeChange("Rs. 2200 To Rs. 5999")}
           />
           <span className="radio-custom"></span>
-          Rs. 1249 To Rs. 1723
+          Rs. 2200 To Rs. 5999
         </label>
       </div>
 
@@ -225,12 +225,12 @@ const FrameComponent4 = ({ onPriceRangeChange }) => {
         <label className="radio-label">
           <input
             type="radio"
-            value="Rs. 1724 To Rs. 5000"
-            checked={selectedPriceRange === "Rs. 1724 To Rs. 5000"}
-            onChange={() => handlePriceRangeChange("Rs. 1724 To Rs. 5000")}
+            value="Rs. 6000 To Rs. 10000"
+            checked={selectedPriceRange === "Rs. 6000 To Rs. 10000"}
+            onChange={() => handlePriceRangeChange("Rs. 6000 To Rs. 10000")}
           />
           <span className="radio-custom"></span>
-          Rs. 1724 To Rs. 5000
+          Rs. 6000 To Rs. 10000
         </label>
       </div>
 
