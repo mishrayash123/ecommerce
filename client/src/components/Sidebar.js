@@ -30,7 +30,7 @@ const Sidebar = () => {
       </button>
 
       <div
-        className={`fixed inset-0 z-20 bg-black bg-opacity-50 transition-opacity duration-300 ease-linear md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-20 bg-black bg-opacity-50 transition-opacity duration-300  ease-linear md:hidden ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         onClick={toggleSidebar}
       ></div>
 
@@ -49,7 +49,7 @@ const Sidebar = () => {
               <a href="/dashboard3" className="block p-2 text-white rounded" style={{"textDecoration":"none"}}>Today’s Sales</a>
             </li>
             <li className="mb-2">
-              <a href="/dashboard2" className="block p-2 text-white rounded" style={{"textDecoration":"none"}}>Today’s Order</a>
+              <a href="/dashboard2" className="block p-2 text-white rounded" style={{"textDecoration":"none"}}>Orders</a>
             </li>
             <li className="mb-2">
               <a href="/dashboard1" className="block p-2 text-white rounded" style={{"textDecoration":"none"}}>Today’s Visitors</a>

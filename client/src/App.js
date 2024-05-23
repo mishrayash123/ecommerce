@@ -38,6 +38,8 @@ import Dashboard2 from "./pages/Dashboard2";
 import Dashboard1 from "./pages/Dashboard1";
 import PaymentPage1 from "./pages/PaymentPage1";
 import Cart from "./pages/Cart"
+import Vieworder from './pages/Vieworder'
+import Updateorder from './pages/Updateorder'
 
 function App() {
  
@@ -73,7 +75,8 @@ function App() {
         path="/accessories-arm-sleeves"
         element={<AccessoriesArmSleeves />}
       />
-      
+      <Route path="/updateorder" element={<Updateorder />} />
+       <Route path="/vieworder" element={<Vieworder />} />
       <Route path="/wishlist-page" element={<WISHLISTPAGE />} />
       <Route path="/wishlist-page1" element={<WISHLISTPAGE1 />} />
       <Route path="/material-page" element={<MATERIALPAGE />} />
