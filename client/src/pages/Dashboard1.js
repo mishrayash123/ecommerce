@@ -93,7 +93,8 @@ const Dashboard1 = () => {
     }
   }
 
-  const handleInsertProduct = async() => {
+  const handleInsertProduct = async(e) => {
+    e.preventDefault();
     try {
       const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtoproducts", {
         method: "POST",

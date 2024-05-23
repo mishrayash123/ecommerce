@@ -93,11 +93,12 @@ const FrameComponent14 = () => {
                 {products.category}
                 </td>
                 <td class="px-6 py-4">
-                    <div className="cursor-pointer flex-row" onClick={(e) => remove(products._id)} class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><img
+                    <div className=" flex flex-row" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                      <img
                   className="w-4 h-4"
                   alt=""
                   src="/mdideleteq.svg"
-                /> Delete</div>
+                /> <div className='cursor-pointer' onClick={(e) => remove(products._id)} >Delete</div></div>
                 </td>
             </tr>
           ))}
