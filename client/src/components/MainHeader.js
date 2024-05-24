@@ -93,9 +93,7 @@ const Header = ({
     <div className="flex items-center justify-between px-4 py-2">
       <div className="flex flex-grow items-center justify-center md:justify-end">
         <div className="hidden md:flex space-x-4">
-        <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-            <b>Home</b>
-          </Link>
+
           <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }}>
             <b>Your wishlist</b>
           </Link>
@@ -165,6 +163,11 @@ const Header = ({
         className="absolute top-[-1px] left-[0px] hidden xl:block shadow-[1px_7px_11.4px_rgba(0,_0,_0,_0.25)] rounded-t-none rounded-br-51xl rounded-bl-none bg-salmon-100 w-[870px] h-[89px] overflow-hidden text-5xl text-white"
         style={frameDiv3Style}
       >
+          <div className="absolute top-[30px] left-[24px] flex flex-row items-start justify-start">
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <b>Home</b>
+          </Link>
+        </div>
         <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start">
         <Link to="/undergarments-men-women" style={{ textDecoration: 'none', color: 'inherit' }}>
           <b className="relative">Undergarments</b>
@@ -195,6 +198,12 @@ const Header = ({
             src="/mingcutedownfill.svg"
           />
         </div>
+        <img
+          className="absolute top-[calc(50%_-_22.5px)] left-[120px] max-w-full overflow-hidden h-[47px]"
+          alt=""
+          src="/vector-3.svg"
+          style={vectorIconStyle}
+        />
         <img
           className="absolute top-[calc(50%_-_22.5px)] left-[335px] max-w-full overflow-hidden h-[47px]"
           alt=""

@@ -102,11 +102,6 @@ const MATERIALPAGE = () => {
           <div className="flex w-full  mt-12 flex-col md:flex-row">
             <div className="md:w-1/3  w-full h-full flex flex-col">
               <img
-                className="border-4 border-black overflow-hidden"
-                alt=""
-                src={products.image2}
-              />
-              <img
                 className="hidden overflow-hidden md:inline-block mt-4"
                 alt=""
                 src={products.image1}
