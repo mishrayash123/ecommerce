@@ -21,6 +21,8 @@ const Header = ({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isReadymadeDropdownOpen, setIsReadymadeDropdownOpen] = useState(false);
   const [isAccessoriesDropdownOpen, setIsAccessoriesDropdownOpen] = useState(false);
+  const [isUndergarmentsDropdownOpen, setIsUndergarmentsDropdownOpen] = useState(false);
+  const [isThermalDropdownOpen, setIsThermalDropdownOpen] = useState(false);
 
   const frameDiv1Style = useMemo(() => {
     return {
@@ -131,15 +133,71 @@ const Header = ({
             <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
               <b>Home</b>
             </Link>
-            <Link to="/undergarments-men-women" style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Link to="#" onClick={() => setIsUndergarmentsDropdownOpen(!isUndergarmentsDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
               <b className="relative">Undergarments</b>
+              <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
             </Link>
-            <Link to="/thermal-men" style={{ textDecoration: 'none', color: 'inherit' }}>
+            {isUndergarmentsDropdownOpen && (
+              <div className="flex flex-col space-y-2 pl-4">
+                <Link to="/undergarments-men-women1" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Men
+                </Link>
+                <Link to="/undergarments-men-women" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Women
+                </Link>
+              </div>
+            )}
+            <Link to="#" onClick={() => setIsReadymadeDropdownOpen(!isReadymadeDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
+              <b className="relative">Readymade</b>
+              <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
+            </Link>
+            {isReadymadeDropdownOpen && (
+              <div className="flex flex-col space-y-2 pl-4">
+                <Link to="/readymade-tshirt-men-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Men
+                </Link>
+                <Link to="/readymade-tshirt-women-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Women
+                </Link>
+                <Link to="/readymade-kids-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Kids
+                </Link>
+                <Link to="/readymade-lower-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Lower
+                </Link>
+              </div>
+            )}
+            <Link to="#" onClick={() => setIsThermalDropdownOpen(!isThermalDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
               <b className="relative">Thermal</b>
+              <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
             </Link>
-            <Link to="/accessories-hanky" style={{ textDecoration: 'none', color: 'inherit' }}>
+            {isThermalDropdownOpen && (
+              <div className="flex flex-col space-y-2 pl-4">
+                <Link to="/thermal-men" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Men
+                </Link>
+                <Link to="/thermal-women" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Women
+                </Link>
+              </div>
+            )}
+            <Link to="#" onClick={() => setIsAccessoriesDropdownOpen(!isAccessoriesDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
               <b className="relative">Accessories</b>
+              <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
             </Link>
+            {isAccessoriesDropdownOpen && (
+              <div className="flex flex-col space-y-2 pl-4">
+                <Link to="/accessories-socks" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Socks
+                </Link>
+                <Link to="/accessories-arm-sleeves" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Arm Sleeves
+                </Link>
+                <Link to="/accessories-hanky" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                  Hanky
+                </Link>
+              </div>
+            )}
             {isLoggedIn ? (
               <Link to="/profile" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
                 <img className="rounded-45xl w-[35px] h-[35px] overflow-hidden" alt="profile" src="/codiconaccount2.svg" />
@@ -162,10 +220,21 @@ const Header = ({
             <b>Home</b>
           </Link>
         </div>
-        <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start">
-          <Link to="/undergarments-men-women" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className="absolute top-[30px] left-[351px] flex flex-row items-start justify-start gap-[5px] text-center overflow-visible z-40">
+          <Link to="#" onClick={() => setIsUndergarmentsDropdownOpen(!isUndergarmentsDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
             <b className="relative">Undergarments</b>
+            <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
           </Link>
+          {isUndergarmentsDropdownOpen && (
+            <div className="absolute top-[40px] left-0 bg-white text-black w-[200px] shadow-md rounded-md z-50">
+              <Link to="/undergarments-men-women1" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Men
+              </Link>
+              <Link to="/undergarments-men-women" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Women
+              </Link>
+            </div>
+          )}
         </div>
         <div className="absolute top-[30px] left-[155px] flex flex-row items-start justify-start gap-[5px] text-center  overflow-visible z-40">
           <Link to="#" onClick={() => setIsReadymadeDropdownOpen(!isReadymadeDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -180,16 +249,30 @@ const Header = ({
               <Link to="/readymade-tshirt-women-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
                 Women
               </Link>
-              <Link to="/readymade-tshirt-kids-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <Link to="/readymade-kids-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
                 Kids
+              </Link>
+              <Link to="/readymade-lower-page" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Lower
               </Link>
             </div>
           )}
         </div>
-        <div className="absolute top-[30px] left-[571px] flex flex-row items-start justify-start">
-          <Link to="/thermal-men" style={{ textDecoration: 'none', color: 'inherit' }}>
+        <div className="absolute top-[30px] left-[571px] flex flex-row items-start justify-start gap-[5px] text-center overflow-visible z-40">
+          <Link to="#" onClick={() => setIsThermalDropdownOpen(!isThermalDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
             <b className="relative">Thermal</b>
+            <img className="w-6 relative h-6 overflow-hidden shrink-0" alt="" src="/mingcutedownfill.svg" />
           </Link>
+          {isThermalDropdownOpen && (
+            <div className="absolute top-[40px] left-0 bg-white text-black w-[200px] shadow-md rounded-md z-50">
+              <Link to="/thermal-men" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Men
+              </Link>
+              <Link to="/thermal-women" className="block px-4 py-2" style={{ textDecoration: 'none', color: 'inherit' }}>
+                Women
+              </Link>
+            </div>
+          )}
         </div>
         <div className="absolute top-[30px] left-[705px] flex flex-row items-center justify-start gap-[5px] text-center z-40">
           <Link to="#" onClick={() => setIsAccessoriesDropdownOpen(!isAccessoriesDropdownOpen)} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -240,3 +323,4 @@ const Header = ({
 };
 
 export default Header;
+
