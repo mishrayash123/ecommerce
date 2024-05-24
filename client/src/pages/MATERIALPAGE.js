@@ -4,8 +4,10 @@ import Property1Frame2 from "../components/Property1Frame2";
 import { useLocation } from 'react-router-dom'
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'
+import { useAuth } from "../AuthContext";
 
 const MATERIALPAGE = () => {
+  const {isLoggedIn} = useAuth();
   const location = useLocation();
   const [products, setproducts] = useState([]);
   const userid = localStorage.getItem("paricollectionuserId");
@@ -138,56 +140,7 @@ const MATERIALPAGE = () => {
                   Please select a size.
                 </div>
 
-
-                <div className="md:flex text-center  text-[10px] md:text-[20px] md:flex-row  md:flex-wrap grid grid-cols-3 gap-2">
-                  <div className="relative py-2 px-3 text-darkgray-200 rounded-[10px] border-[2px] border-solid border-darkgray-200">
-                    XXS
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <img
-                        className="w-full h-full object-contain"
-                        alt=""
-                        src="/vector-9.svg"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative py-2 px-3 text-darkgray-200 rounded-[10px] border-[2px] border-solid border-darkgray-200">
-                    XS
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <img
-                        className="w-full h-full object-contain"
-                        alt=""
-                        src="/vector-9.svg"
-                      />
-                    </span>
-                  </div>
-                  <div className="py-2 px-3 text-black rounded-[10px] border-[2px] border-solid border-black">S</div>
-                  <div className="py-2 px-3 text-salmon-100 rounded-[10px] border-[2px] border-solid border-salmon-100">M</div>
-                  <div className="py-2 px-3 text-black rounded-[10px] border-[2px] border-solid border-black">L</div>
-                  <div className="py-2 px-3 text-black rounded-[10px] border-[2px] border-solid border-black">XL</div>
-                  <div className="relative py-2 px-3 text-darkgray-200 rounded-[10px] border-[2px] border-solid border-darkgray-200">
-                    XXL
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <img
-                        className="w-full h-full object-contain"
-                        alt=""
-                        src="/vector-9.svg"
-                      />
-                    </span>
-                  </div>
-                  <div className="relative py-2 px-3 text-darkgray-200 rounded-[10px] border-[2px] border-solid border-darkgray-200">
-                    XXXL
-                    <span className="absolute inset-0 flex items-center justify-center">
-                      <img
-                        className="w-full h-full object-contain"
-                        alt=""
-                        src="/vector-9.svg"
-                      />
-                    </span>
-                  </div>
-
-                </div>
-
-
+{/* 
                 <div className="md:text-xl text-xs font-inter mt-2 flex flex-row items-center">
                   <span className="flex items-center">
                     <b>Size not available?</b>
@@ -196,7 +149,7 @@ const MATERIALPAGE = () => {
                   <span className="[text-decoration:underline] text-salmon-100 md:mt-2 sm:mt-0 sm:ml-2">
                     Notify Me
                   </span>
-                </div>
+                </div> */}
 
                 <div className="text-xl mt-4 font-inter flex flex-col md:flex-row gap-4">
                   <div className="rounded-lg box-border flex md:flex-col gap-2 flex-row items-center w-full md:w-auto">
@@ -233,17 +186,29 @@ const MATERIALPAGE = () => {
 
                 {/* *******************cart and wishlist button****************** */}
                 <div className="flex w-[80%] mb-10 flex-col justify-center md:flex-row mt-10 gap-2">
-                  <div className="rounded-md text-sm bg-salmon-100  py-1.5 text-center justify-center w-full md:text-5xl text-white cursor-pointer" onClick={() => {
+                  {
+                    isLoggedIn ? <div className="rounded-md text-sm bg-salmon-100  py-1.5 text-center justify-center w-full md:text-5xl text-white cursor-pointer" onClick={() => {
 
-                    handleaddtocart(products._id, products.title, products.color, products.gender, products.price, products.description, products.details, products.category, products.subcategory, products.subcategory1, products.image1, products.image2, products.image3, products.image4);
-                  }} >
-                    <div className="relative font-medium" >ADD TO CART</div>
-                  </div>
-                  <div className="rounded-md bg-white text-sm  text-center md:text-5xl w-full py-1.5 text-salmon-100 border-[2px] border-solid border-salmon-100 cursor-pointer" onClick={() => {
-                    handleaddtowishlist(products._id, products.title, products.color, products.gender, products.size, products.price, products.description, products.details, products.category, products.subcategory, products.subcategory1, products.image1, products.image2, products.image3, products.image4);
-                  }}>
+                      handleaddtocart(products._id, products.title, products.color, products.gender, products.price, products.description, products.details, products.category, products.subcategory, products.subcategory1, products.image1, products.image2, products.image3, products.image4);
+                    }} >
+                      <div className="relative font-medium" >ADD TO CART</div>
+                    </div> :<div className="rounded-md text-sm bg-salmon-100  py-1.5 text-center justify-center w-full md:text-5xl text-white cursor-pointer" onClick={() => {
+nav('/login')
+}} >
+<div className="relative font-medium" >ADD TO CART</div>
+</div>
+                  }
+                   {
+                    isLoggedIn ? <div className="rounded-md bg-white text-sm  text-center md:text-5xl w-full py-1.5 text-salmon-100 border-[2px] border-solid border-salmon-100 cursor-pointer" onClick={() => {
+                      handleaddtowishlist(products._id, products.title, products.color, products.gender, products.size, products.price, products.description, products.details, products.category, products.subcategory, products.subcategory1, products.image1, products.image2, products.image3, products.image4);
+                    }}>
+                      <div className="relative font-medium">ADD TO WISHLIST</div>
+                    </div> :<div className="rounded-md bg-white text-sm  text-center md:text-5xl w-full py-1.5 text-salmon-100 border-[2px] border-solid border-salmon-100 cursor-pointer" onClick={() => {
+nav('/login')
+}}>
                     <div className="relative font-medium">ADD TO WISHLIST</div>
                   </div>
+                  }
                 </div>
 
                 <div className="flex md:flex-row gap-4 flex-col ">

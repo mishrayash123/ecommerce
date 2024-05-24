@@ -9,14 +9,72 @@ import { Link } from 'react-router-dom';
 
 
 const AccessoriesSocks = () => {
+  const userid = localStorage.getItem("paricollectionuserId");
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
   const [products, setproducts] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const nav = useNavigate();
+  const [currentIndex, setCurrentIndex] = useState(1);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 6); // Assuming there are 5 slides
+  };
+
+  useEffect(() => {
+    setInterval(nextSlide, 10000);
+  }, []);
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 6) % 6);
+  };
+
+  const items = [
+    <img key={1} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={2} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={3} src="https://png.pngtree.com/thumb_back/fh260/background/20201108/pngtree-blak-friday-sale-background-with-illustration-of-online-shope-mobile-phone-image_456310.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={4} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-banner-background-with-shopping-cart-and-gift-box-picture-image_1242738.jpg" alt="Kitten 2"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={5} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-background-design-template-banner-discount-vector-poster-business-picture-image_1227059.jpg" alt="Kitten 3"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={6} src="https://static.vecteezy.com/system/resources/previews/006/309/295/non_2x/flash-sale-banner-background-special-offer-template-design-for-media-promotion-and-social-media-business-post-vector.jpg" alt="Kitten 2"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={7} src="https://t3.ftcdn.net/jpg/02/62/18/46/360_F_262184611_bXhmboL9oE6k2ILu4qXxNWFhNJCEbTn2.jpg" alt="Kitten 3"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+  ];
 
 
+  const slideButtons = Array.from({ length: 6 }, (_, i) => (
+    <button
+      key={i}
+      type="button"
+      className={`w-3 h-3 rounded-full ${
+        i === currentIndex ? 'bg-white' : 'bg-white/30 dark:bg-gray-800/30'
+      }`}
+      aria-current={i === currentIndex}
+      aria-label={`Slide ${i + 1}`}
+      onClick={() => setCurrentIndex(i)}
+    ></button>
+  ));
 
+
+  const handleaddtowishlist = async (productid, title, color, gender, size, price, description, details, category, subcategory, subcategory1, image1, image2, image3, image4) => {
+    try {
+      const response = await fetch("https://ecommercebackend-32ve.onrender.com/addtocart", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userid, productid, title, color, gender, size, price, description, details, category, subcategory, subcategory1, image1, image2, image3, image4
+        }),
+      });
+
+      if (response.ok) {
+        alert("Added to wishlist");
+      } else {
+        alert("Already in wishlist");
+      }
+    } catch (error) {
+      console.error("Error during registration:", error);
+    }
+  };
 
   const fetchData = async () => {
     try {
@@ -89,23 +147,26 @@ const AccessoriesSocks = () => {
       {/***************************main image starts here **************************************/}
       <div className="relative">
         {/*************************** Main Image ***************************/}
-        <img
-          className=" w-full h-auto md:aspect-w-16 md:aspect-h-9 object-cover"
-          alt="main image"
-          src="/image-29@2x.png"
-        />
-        {/***************** side navigation component *************************/}
-        <div className="absolute top-0 right-0 flex rounded-t-none justify-between flex-row w-auto   lg:text-9xl  md:font-bold text-white md:text-4xl text-sm  font-made-tommy ">
-          <Link to="/accessories-socks" className="no-underline text-white">
-            <div className="md:p-4 bg-yellow-400 rounded-bl-11xl p-1  ">Socks</div>
-          </Link>
-          <Link to="/accessories-hanky" className=" p-1 md:p-4 bg-salmon-100 no-underline text-white">
-            <div>Hanky </div>
-          </Link>
-          <Link to="/accessories-arm-sleeves" className=" p-1 md:p-4 rounded-br-11xl bg-salmon-100 no-underline text-white">
-            <div>Arm sleeves</div>
-          </Link>
-        </div>
+        <div id="default-carousel" className="relative w-full" data-carousel="slide">
+      <div className="relative h-56 overflow-hidden  md:h-96">
+        {items.map((item,index) => (
+          <div
+            key={index}
+            className={` duration-700 ease-in-out ${
+              index - 1 === currentIndex ? 'block' : 'hidden'
+            }`}
+            data-carousel-item
+          >
+          {item}
+          </div>
+        ))}
+      </div>
+      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        {slideButtons}
+      </div>
+    
+      
+    </div>
       </div>
       {/***************************main image ends here **************************************/}
       {/* here is the scrollable dots  */}
@@ -192,7 +253,9 @@ const AccessoriesSocks = () => {
         {/******************************* code with filter ****************************************** */}
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
           {filteredProducts.map((product) => (
-            <a
+              <div className="font-inter md:ml-2 lg:ml-0 relative">
+                <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
+                <a
               key={product._id}
               href=''
               className="no-underline"
@@ -201,13 +264,12 @@ const AccessoriesSocks = () => {
                 nav('/material-page', { state: { id: product._id } });
               }}
             >
-              <div className="font-inter md:ml-2 lg:ml-0 relative">
-                <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
                   <img
                     className="w-full h-[300px] object-cover rounded-t-xl"
                     alt=""
                     src={product.image1}
                   />
+</a>
                   <div className="mt-0 rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg bg-bisque h-full">
                     <div className="font-sans text-black text-xl font-bold pt-5 pb-3 pl-2">
                       {product.title}
@@ -224,14 +286,16 @@ const AccessoriesSocks = () => {
                       MRP incl. of all taxes
                     </div>
                     <img
-                      className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] "
+                      className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] cursor-pointer"
                       alt=""
                       src="/solarbagoutline6.svg"
+                      onClick={() => {
+                        handleaddtowishlist(product._id, product.title, product.color, product.gender, product.size, product.price, product.description, product.details, product.category, product.subcategory, product.subcategory1, product.image1, product.image2, product.image3, product.image4);
+                      }}
                     />
                   </div>
                 </div>
               </div>
-            </a>
           ))}
         </div>
       </div>

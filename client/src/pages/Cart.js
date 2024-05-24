@@ -92,7 +92,7 @@ useEffect(() => {
               className="no-underline"
               onClick={(e) => {
                 e.preventDefault();
-                nav('/material-page', { state: { id: product._id } });
+                nav('/material-page', { state: { id: product.productid } });
               }}
             >
                   <img
