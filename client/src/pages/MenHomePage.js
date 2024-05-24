@@ -111,7 +111,7 @@ const MenHomePage = () => {
         prop="2"
       />
 
-      <div>
+      <div className="">
       <div id="default-carousel" className="relative w-full" data-carousel="slide">
       <div className="relative h-56 overflow-hidden  md:h-96">
         {items.map((item,index) => (
