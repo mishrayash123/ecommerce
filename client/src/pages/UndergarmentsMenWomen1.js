@@ -269,11 +269,10 @@ const UndergarmentsMenWomen1 = () => {
 
         {/******************************* code with filter ****************************************** */}
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.filter((e)=>(e.gender==="Male")).map((product) => (
-            
-              <div className="font-inter md:ml-2 lg:ml-0 relative">
-                <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
-                <a
+          {filteredProducts.filter((e)=>(e.gender==="Male")).map((product) => (
+            <div className="font-inter md:ml-2 lg:ml-0 relative">
+            <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
+            <a
               key={product._id}
               href=''
               className="no-underline"
