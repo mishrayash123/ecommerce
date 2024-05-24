@@ -230,7 +230,7 @@ const UndergarmentsMenWomen1 = () => {
 
         {/******************************* code with filter ****************************************** */}
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
-          {products.filter((e)=>(e.gender==="Male")).map((product) => (
+          {filteredProducts.filter((e)=>(e.gender==="Male")).map((product) => (
             <a
               key={product._id}
               href=''
