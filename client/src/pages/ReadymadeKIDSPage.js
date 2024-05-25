@@ -12,6 +12,12 @@ const ReadymadeKIDSPage = () => {
   const nav = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(1);
   const userid = localStorage.getItem("paricollectionuserId");
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+    // You can perform any action here based on the selected size
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % 6); // Assuming there are 5 slides
@@ -126,8 +132,19 @@ const ReadymadeKIDSPage = () => {
     });
   };
 
-  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "ReadymadeKIDS"));
-
+  const filterProducts = (products) => {
+    // Filter by price range
+    let filteredProducts = filterProductsByPriceRange(products);
+  
+    // Filter by size if a size is selected
+    if (selectedSize) {
+      filteredProducts = filteredProducts.filter((product) => product.size === selectedSize);
+    }
+  
+    return filteredProducts;
+  };
+  
+  const filteredProducts = filterProducts(products.filter((e) => e.category === "ReadymadeKIDS"));
 
 
   return (
@@ -203,15 +220,16 @@ const ReadymadeKIDSPage = () => {
                 <div className="w-full">Search for Size</div>
               </div>
               <div className="flex flex-wrap my-2 p-1">
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">2-3Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">4-5Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">6-7Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">8-9Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">10-11Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">12-13Y</div>
-                <div className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center">14-15Y</div>
-
-              </div>
+          {['XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL','XXXL'].map(size => (
+    <div
+      key={size}
+      className="border-2 border-solid my-2 border-black text-gray-600 font-bold text-sm md:text-lg w-1/5 py-1 mx-2 rounded-lg text-center cursor-pointer"
+      onClick={() => handleSizeSelect(size)}
+    >
+      {size}
+    </div>
+  ))}
+</div>
             </div>
           </div>
           <div className="md:mb-4">

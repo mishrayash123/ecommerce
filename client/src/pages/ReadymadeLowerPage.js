@@ -15,6 +15,12 @@ const ReadymadeLowerPage = () => {
   const nav = useNavigate();
   const userid = localStorage.getItem("paricollectionuserId");
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+    // You can perform any action here based on the selected size
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % 6); // Assuming there are 5 slides
@@ -135,7 +141,20 @@ const ReadymadeLowerPage = () => {
     });
   };
 
-  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "ReadymadeLower"));
+  const filterProducts = (products) => {
+    // Filter by price range
+    let filteredProducts = filterProductsByPriceRange(products);
+  
+    // Filter by size if a size is selected
+    if (selectedSize) {
+      filteredProducts = filteredProducts.filter((product) => product.size === selectedSize);
+    }
+  
+    return filteredProducts;
+  };
+  
+  const filteredProducts = filterProducts(products.filter((e) => e.category === "ReadymadeLower"));
+
 
 
   return (
@@ -249,7 +268,7 @@ const ReadymadeLowerPage = () => {
 
 
           <div className='mb-3'>
-            <FrameComponent3 />
+          <FrameComponent3 onSizeSelect={handleSizeSelect} />
           </div>
 
           <div className='mb-3'>

@@ -15,6 +15,12 @@ const ReadymadeTshirtWOMENPage = () => {
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const nav = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(1);
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+    // You can perform any action here based on the selected size
+  };
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % 6); // Assuming there are 5 slides
@@ -133,7 +139,20 @@ const ReadymadeTshirtWOMENPage = () => {
     });
   };
 
-  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "ReadymadeTshirtWOMEN"));
+
+    const filterProducts = (products) => {
+    // Filter by price range
+    let filteredProducts = filterProductsByPriceRange(products);
+  
+    // Filter by size if a size is selected
+    if (selectedSize) {
+      filteredProducts = filteredProducts.filter((product) => product.size === selectedSize);
+    }
+  
+    return filteredProducts;
+  };
+  
+  const filteredProducts = filterProducts(products.filter((e) => e.category === "ReadymadeTshirtWOMEN"));
 
   return (
     <div className="bg-white text-dimgray-600 font-poppins">
@@ -226,7 +245,7 @@ const ReadymadeTshirtWOMENPage = () => {
             easyFitFullSleeveTShirt="Easy Fit Full Sleeve T-shirt"
           />
           <div className='mb-3'>
-            <FrameComponent3 />
+          <FrameComponent3 onSizeSelect={handleSizeSelect} />
           </div>
           <div className='mb-3'>
             <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />

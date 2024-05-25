@@ -14,6 +14,12 @@ const UndergarmentsMenWomen = () => {
   const [selectedOption, setSelectedOption] = useState("Select Sorting Options");
   const [products, setproducts] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
+  const [selectedSize, setSelectedSize] = useState('');
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
+    // You can perform any action here based on the selected size
+  };
 
   const nav = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -129,7 +135,19 @@ const UndergarmentsMenWomen = () => {
     });
   };
 
-  const filteredProducts = filterProductsByPriceRange(products.filter((e) => e.category === "UndergarmentsMenWomen"));
+  const filterProducts = (products) => {
+    // Filter by price range
+    let filteredProducts = filterProductsByPriceRange(products);
+  
+    // Filter by size if a size is selected
+    if (selectedSize) {
+      filteredProducts = filteredProducts.filter((product) => product.size === selectedSize);
+    }
+  
+    return filteredProducts;
+  };
+  
+  const filteredProducts = filterProducts(products.filter((e) => e.category === "UndergarmentsMenWomen"));
 
 
 
@@ -251,7 +269,7 @@ const UndergarmentsMenWomen = () => {
 
 
           <div className='mb-3'>
-            <FrameComponent3 />
+          <FrameComponent3 onSizeSelect={handleSizeSelect} />
           </div>
 
           <div className='mb-3'>
