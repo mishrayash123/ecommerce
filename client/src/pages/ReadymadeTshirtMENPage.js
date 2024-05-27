@@ -186,7 +186,7 @@ const ReadymadeTshirtMENPage = () => {
           </div>
         ))}
       </div>
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <div className="absolute  flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         {slideButtons}
       </div>     
     </div>

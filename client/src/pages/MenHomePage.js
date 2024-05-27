@@ -126,7 +126,7 @@ const MenHomePage = () => {
           </div>
         ))}
       </div>
-      <div className="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      <div className="absolute xl:z-30 z-0  flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
         {slideButtons}
       </div>
       

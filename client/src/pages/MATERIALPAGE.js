@@ -101,10 +101,10 @@ const MATERIALPAGE = () => {
       />
       {products.filter((e) => (e._id == location.state.id)).map(products => (
         
-          <div className="flex w-full  mt-12 flex-col md:flex-row">
+          <div className="flex w-full   mt-12 flex-col md:flex-row">
             <div className="md:w-1/3  w-full h-full flex flex-col">
               <img
-                className="hidden overflow-hidden md:inline-block mt-4"
+                className=" overflow-hidden  mt-4"
                 alt=""
                 src={products.image1}
               />
@@ -151,7 +151,7 @@ const MATERIALPAGE = () => {
                   </span>
                 </div> */}
 
-                <div className="text-xl mt-4 font-inter flex flex-col md:flex-row gap-4">
+                <div className="text-xl mt-4 font-inter flex flex-col md:flex-row gap-4 ">
                   <div className="rounded-lg box-border flex md:flex-col gap-2 flex-row items-center w-full md:w-auto">
                     <label htmlFor="availableSize" className="text-black text-base font-bold ">Size</label>
                     <select

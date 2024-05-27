@@ -6,8 +6,8 @@ const Property1Frame2 = ({ details, description }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div className="flex flex-col items-start justify-start text-left text-xl text-dimgray-400 font-inter  p-4 w-full">
-      <div className="w-full max-w-3xl bg-white box-border flex flex-col items-start justify-center py-4 px-6 border border-solid border-darkgray-600">
+    <div className="flex flex-col items-start justify-start text-left text-xl text-dimgray-400 font-inter  p-4 ">
+      <div className=" w-full max-w-3xl bg-white box-border flex flex-col items-start justify-center py-4 px-6 border border-solid border-darkgray-600">
         <div  onClick={() => setShowDescription(!showDescription)}  className="font-semibold mb-2 flex justify-between items-center w-full">
           <span>Product Description</span>
           <button 
