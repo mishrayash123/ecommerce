@@ -154,10 +154,10 @@ const Header = ({
         <div className="flex items-center">
 
 
-          <div className=" md:w-[334px] flex flex-row h-[51px] rounded-3xl w-full content-center bg-palegoldenrod">
-            <img className=" pt-3 w-[25px] h-[25px] pr-1  overflow-hidden" alt="search" src="/ionsearch.svg" />
+          <div className=" md:w-[334px] flex flex-row sm:h-[51px] h-[30px] rounded-3xl w-full content-center bg-palegoldenrod">
+            <img className=" sm:pt-3 sm:w-[25px] sm:h-[25px] mr:pr-1  overflow-hidden" alt="search" src="/ionsearch.svg" />
             <input
-              className=" placeholder:font-semibold  rounded-3xl  w-fit overflow-hidden  outline-none font-made-tommy text-xl bg-palegoldenrod placeholder:text-gray-300"
+              className=" placeholder:font-semibold  rounded-3xl  w-fit overflow-hidden  outline-none font-made-tommy sm:text-xl bg-palegoldenrod placeholder:text-gray-300"
               type="text"
               value={searchQuery}
               onChange={(e) => handleSearch(e.target.value)}
@@ -207,7 +207,7 @@ const Header = ({
         {isMenuOpen && (
           <div className="xl:hidden fixed inset-0 bg-black bg-opacity-30 z-10" onClick={() => setIsMenuOpen(false)}>
             <div className="fixed flex flex-col top-0 right-0 w-2/3 h-full bg-[#FF6868] text-white p-4 space-y-4 z-20" onClick={(e) => e.stopPropagation()}>
-              <button className="mb-4 text-xl bg-transparent" onClick={() => setIsMenuOpen(false)}>
+              <button className="mb-4 w-4 text-xl bg-transparent" onClick={() => setIsMenuOpen(false)}>
                 &#10005;
               </button>
               <Link to="/wishlist-page1" style={{ textDecoration: 'none', color: 'inherit' }} onClick={() => setIsMenuOpen(false)}>
