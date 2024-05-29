@@ -164,7 +164,8 @@ const ReadymadeTshirtWOMENPage = () => {
     // Filter by title if filterByTitle is defined
     if (filterByTitle) {
       filteredProducts = filteredProducts.filter(product =>
-        product.description.includes(filterByTitle)
+        product.description.includes(filterByTitle) ||
+        product.title.includes(filterByTitle)
       );
     }
 

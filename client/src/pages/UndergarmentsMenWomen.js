@@ -160,7 +160,8 @@ const UndergarmentsMenWomen = () => {
     // Filter by title if filterByTitle is defined
     if (filterByTitle) {
       filteredProducts = filteredProducts.filter(product =>
-        product.description.includes(filterByTitle)
+        product.description.includes(filterByTitle) ||
+        product.title.includes(filterByTitle)
       );
     }
 
@@ -174,7 +175,7 @@ const UndergarmentsMenWomen = () => {
   const sizes = [
     'Over Sized undergarments', 
     'All undergarments', 
-    'Women Full undergarments', 
+    'Men Full undergarments', 
     'stylish undergarments', 
     'undergarments', 
     'short undergarments', 

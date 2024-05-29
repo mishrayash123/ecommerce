@@ -15,9 +15,9 @@ const AccessoriesHanky = () => {
   const [products, setproducts] = useState([]);
   const [selectedPriceRange, setSelectedPriceRange] = useState("");
   const [selectedSize, setSelectedSize] = useState('');
-  const [filterByTitle , setFilterByTitle] = useState("")
+  const [filterByTitle, setFilterByTitle] = useState("")
 
-  const handleData = (size) =>{
+  const handleData = (size) => {
     setFilterByTitle(size)
   }
 
@@ -41,13 +41,13 @@ const AccessoriesHanky = () => {
   };
 
   const items = [
-    <img key={1} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={2} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={3} src="https://png.pngtree.com/thumb_back/fh260/background/20201108/pngtree-blak-friday-sale-background-with-illustration-of-online-shope-mobile-phone-image_456310.jpg" alt="Kitten 1"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={4} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-banner-background-with-shopping-cart-and-gift-box-picture-image_1242738.jpg" alt="Kitten 2"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={5} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-background-design-template-banner-discount-vector-poster-business-picture-image_1227059.jpg" alt="Kitten 3"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={6} src="https://static.vecteezy.com/system/resources/previews/006/309/295/non_2x/flash-sale-banner-background-special-offer-template-design-for-media-promotion-and-social-media-business-post-vector.jpg" alt="Kitten 2"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
-    <img key={7} src="https://t3.ftcdn.net/jpg/02/62/18/46/360_F_262184611_bXhmboL9oE6k2ILu4qXxNWFhNJCEbTn2.jpg" alt="Kitten 3"  className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"/>,
+    <img key={1} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={2} src="https://marketplace.canva.com/EAFKG4KiOj4/1/0/1600w/canva-black-yellow-bold-bag-fashion-sale-banner-mbZi15kP9Yg.jpg" alt="Kitten 1" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={3} src="https://png.pngtree.com/thumb_back/fh260/background/20201108/pngtree-blak-friday-sale-background-with-illustration-of-online-shope-mobile-phone-image_456310.jpg" alt="Kitten 1" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={4} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-banner-background-with-shopping-cart-and-gift-box-picture-image_1242738.jpg" alt="Kitten 2" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={5} src="https://png.pngtree.com/background/20210714/original/pngtree-black-friday-sale-background-design-template-banner-discount-vector-poster-business-picture-image_1227059.jpg" alt="Kitten 3" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={6} src="https://static.vecteezy.com/system/resources/previews/006/309/295/non_2x/flash-sale-banner-background-special-offer-template-design-for-media-promotion-and-social-media-business-post-vector.jpg" alt="Kitten 2" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
+    <img key={7} src="https://t3.ftcdn.net/jpg/02/62/18/46/360_F_262184611_bXhmboL9oE6k2ILu4qXxNWFhNJCEbTn2.jpg" alt="Kitten 3" className="absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />,
   ];
 
 
@@ -55,9 +55,8 @@ const AccessoriesHanky = () => {
     <button
       key={i}
       type="button"
-      className={`w-3 h-3 rounded-full ${
-        i === currentIndex ? 'bg-white' : 'bg-white/30 dark:bg-gray-800/30'
-      }`}
+      className={`w-3 h-3 rounded-full ${i === currentIndex ? 'bg-white' : 'bg-white/30 dark:bg-gray-800/30'
+        }`}
       aria-current={i === currentIndex}
       aria-label={`Slide ${i + 1}`}
       onClick={() => setCurrentIndex(i)}
@@ -142,42 +141,43 @@ const AccessoriesHanky = () => {
   const filterProducts = (products) => {
     // Filter by price range
     let filteredProducts = filterProductsByPriceRange(products);
-  
+
     // Filter by size if a size is selected
     if (selectedSize) {
       filteredProducts = filteredProducts.filter((product) => product.size === selectedSize);
     }
-  
+
     return filteredProducts;
   };
-  
+
   const filterByTitleDescription = (products) => {
     let filteredProducts = filterProducts(products);
-  
+
     // Filter by title if filterByTitle is defined
     if (filterByTitle) {
       filteredProducts = filteredProducts.filter(product =>
-        product.description.includes(filterByTitle)
+        product.description.includes(filterByTitle) ||
+        product.title.includes(filterByTitle)
       );
     }
 
     return filteredProducts;
   };
-  
+
   const filteredProducts = filterByTitleDescription(
     products.filter(product => product.category === "AccessoriesHanky")
   );
-  
+
   const sizes = [
-    'Over Sized Hanky', 
-    'All Hanky', 
-    'Men Full Hanky', 
-    'stylish Hanky', 
-    'Hanky', 
-    'short Hanky', 
+    'Over Sized Hanky',
+    'All Hanky',
+    'Men Full Hanky',
+    'stylish Hanky',
+    'Hanky',
+    'short Hanky',
     'Easy Fit Hanky'
   ];
-  
+
 
 
 
@@ -188,7 +188,7 @@ const AccessoriesHanky = () => {
 
   return (
     <div className=" bg-white text-dimgray-600 font-poppins">
-<MainHeader
+      <MainHeader
         className="sticky z-50"
         solarbagOutline="/solarbagoutline1.svg"
         ionsearch="/ionsearch.svg"
@@ -197,30 +197,29 @@ const AccessoriesHanky = () => {
       />
       {/***************************main image starts here **************************************/}
       <div >
-       
+
       </div>
       {/***************************main image ends here **************************************/}
       {/* here is the scrollable dots  */}
       <div id="default-carousel" className="relative w-full" data-carousel="slide">
-      <div className="relative h-56 overflow-hidden  md:h-96">
-        {items.map((item,index) => (
-          <div
-            key={index}
-            className={` duration-700 ease-in-out ${
-              index - 1 === currentIndex ? 'block' : 'hidden'
-            }`}
-            data-carousel-item
-          >
-          {item}
-          </div>
-        ))}
+        <div className="relative h-56 overflow-hidden  md:h-96">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className={` duration-700 ease-in-out ${index - 1 === currentIndex ? 'block' : 'hidden'
+                }`}
+              data-carousel-item
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+        <div className="absolute flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+          {slideButtons}
+        </div>
+
+
       </div>
-      <div className="absolute flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-        {slideButtons}
-      </div>
-    
-      
-    </div>
       {/* *********************scrollable dots  ends *********************/}
       {/******************************** title of the page ********************** */}
       <div className='flex flex-row mb-10  w-[95%]  md:w-full items-start justify-center'>
@@ -276,88 +275,88 @@ const AccessoriesHanky = () => {
       <div className='flex flex-col md:flex-row'>
         {/****************************  filtering component named products , sizes and prices **********************/}
         <div className='flex md:w-[30%] flex-col'>
-        <div className="shadow-[1px_2px_15.4px_rgba(0,_0,_0,_0.25)] rounded-6xs bg-white box-border w-[80%] md:w-full mb-5 md:mb-0 max-w-[412px] overflow-hidden text-left text-mini text-black font-poppins border-[0.7px] border-solid border-darkgray-500 mx-auto">
+          <div className="shadow-[1px_2px_15.4px_rgba(0,_0,_0,_0.25)] rounded-6xs bg-white box-border w-[80%] md:w-full mb-5 md:mb-0 max-w-[412px] overflow-hidden text-left text-mini text-black font-poppins border-[0.7px] border-solid border-darkgray-500 mx-auto">
 
-<h2 className='text-2xl pl-2'>PRODUCTS</h2>
-<div className="rounded-6xs m-3 bg-whitesmoke-200 flex items-center justify-center p-2.5 text-lg text-darkgray-400 font-made-tommy border-[0.7px] border-solid border-silver mb-4">
-  <div className="w-full">Search for Product</div>
-</div>
-<div>
-  <img
-    className="rounded-sm ml-2 w-5 h-5 cursor-pointer"
-    alt="none"
-    src="/frame-39.svg"
-  />
-</div>
-<div className="my-2 p-1">
-  {sizes.map((size, index) => (
-    <label key={index} className="block cursor-pointer my-2">
-      <input
-        type="radio"
-        name="size"
-        value={size}
-        className="mr-2"
-        onClick={()=>handleData(size)}
-      />
-      {size}
-    </label>
-  ))}
-</div>
-<div className="rounded-sm bg-whitesmoke-200 w-5 h-5 shadow-[0px_0px_3.8px_rgba(0, 0, 0, 0.25)_inset] mr-2" />
-</div>
-          <div className='mb-3'>
-          <FrameComponent3 onSizeSelect={handleSizeSelect} />
+            <h2 className='text-2xl pl-2'>PRODUCTS</h2>
+            <div className="rounded-6xs m-3 bg-whitesmoke-200 flex items-center justify-center p-2.5 text-lg text-darkgray-400 font-made-tommy border-[0.7px] border-solid border-silver mb-4">
+              <div className="w-full">Search for Product</div>
+            </div>
+            <div>
+              <img
+                className="rounded-sm ml-2 w-5 h-5 cursor-pointer"
+                alt="none"
+                src="/frame-39.svg"
+              />
+            </div>
+            <div className="my-2 p-1">
+              {sizes.map((size, index) => (
+                <label key={index} className="block cursor-pointer my-2">
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    className="mr-2"
+                    onClick={() => handleData(size)}
+                  />
+                  {size}
+                </label>
+              ))}
+            </div>
+            <div className="rounded-sm bg-whitesmoke-200 w-5 h-5 shadow-[0px_0px_3.8px_rgba(0, 0, 0, 0.25)_inset] mr-2" />
           </div>
           <div className='mb-3'>
-          <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />
+            <FrameComponent3 onSizeSelect={handleSizeSelect} />
+          </div>
+          <div className='mb-3'>
+            <FrameComponent4 onPriceRangeChange={handlePriceRangeChange} />
           </div>
         </div>
         {/******************************* code with filter ****************************************** */}
         <div className="grid grid-cols-1 md:w-[72%] mx-auto sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 justify-center mb-5 md:gap-10 lg:gap-9 ">
           {filteredProducts.map((product) => (
-              <div className="font-inter md:ml-2 lg:ml-0 relative">
-                <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
+            <div className="font-inter md:ml-2 lg:ml-0 relative">
+              <div className="w-full lg:w-[95%] rounded-br-[135px] mt-2 rounded-bl-xl rounded-t-xl shadow-dimgray-600 shadow-lg relative">
                 <a
-              key={product._id}
-              href=''
-              className="no-underline"
-              onClick={(e) => {
-                e.preventDefault();
-                nav('/material-page', { state: { id: product._id } });
-              }}
-            >
+                  key={product._id}
+                  href=''
+                  className="no-underline"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    nav('/material-page', { state: { id: product._id } });
+                  }}
+                >
                   <img
                     className="w-full h-[300px] object-cover rounded-t-xl"
                     alt=""
                     src={product.image1}
                   />
-                  </a>
-                  <div className="mt-0 rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg bg-bisque h-full">
-                    <div className="font-sans text-black text-xl font-bold pt-5 pb-3 pl-2">
-                      {product.title}
-                    </div>
-                    <div className="font-semibold pl-2 text-gray-500 pb-4">
-                      ₹{product.price}
-                    </div>
-                    <img
-                      className="pl-3 max-h-full w-[80%]"
-                      alt=""
-                      src="/vector-13.svg"
-                    />
-                    <div className="text-xs text-gray-500 pb-2 pl-2 mt-1">
-                      MRP incl. of all taxes
-                    </div>
-                    <img
-                      className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] cursor-pointer"
-                      alt=""
-                      src="/solarbagoutline6.svg"
-                      onClick={() => {
-                        handleaddtowishlist(product._id, product.title, product.color, product.gender, product.size, product.price, product.description, product.details, product.category, product.subcategory, product.subcategory1, product.image1, product.image2, product.image3, product.image4);
-                      }}
-                    />
+                </a>
+                <div className="mt-0 rounded-br-[135px] rounded-bl-xl shadow-dimgray-600 shadow-lg bg-bisque h-full">
+                  <div className="font-sans text-black text-xl font-bold pt-5 pb-3 pl-2">
+                    {product.title}
                   </div>
+                  <div className="font-semibold pl-2 text-gray-500 pb-4">
+                    ₹{product.price}
+                  </div>
+                  <img
+                    className="pl-3 max-h-full w-[80%]"
+                    alt=""
+                    src="/vector-13.svg"
+                  />
+                  <div className="text-xs text-gray-500 pb-2 pl-2 mt-1">
+                    MRP incl. of all taxes
+                  </div>
+                  <img
+                    className="rounded-full w-[100px] h-[100px] overflow-hidden absolute bottom-0 right-0   m-[-12px] cursor-pointer"
+                    alt=""
+                    src="/solarbagoutline6.svg"
+                    onClick={() => {
+                      handleaddtowishlist(product._id, product.title, product.color, product.gender, product.size, product.price, product.description, product.details, product.category, product.subcategory, product.subcategory1, product.image1, product.image2, product.image3, product.image4);
+                    }}
+                  />
                 </div>
               </div>
+            </div>
           ))}
         </div>
       </div>

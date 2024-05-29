@@ -165,6 +165,8 @@ const AccessoriesArmSleeves = () => {
     if (filterByTitle) {
       filteredProducts = filteredProducts.filter(product =>
         product.description.includes(filterByTitle)
+        ||
+        product.title.includes(filterByTitle)
       );
     }
 
